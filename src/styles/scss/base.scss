@@ -1,0 +1,112 @@
+/* Style the button that is used to open and close the collapsible content */
+.FAQ_img_wrapper {
+  text-align: center;
+}
+
+.FAQ_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 60px 210px;
+}
+
+.collapsible {
+  background-color: #F7F7F8;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  height: 66px;
+  border: none;
+  border-radius: 6px;
+  text-align: left;
+  outline: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  margin: 15px 0px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: rgba(97, 161, 153, 0.1);
+}
+
+.active {
+  color: #61A199;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+}
+
+.content p {
+  width: 80%;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: left;
+}
+
+.collapsible:after {
+  content: url("../assets/svg/arrow.svg");
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: url("../assets/svg/arrow.svg");
+  transform: rotate(180deg);
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .h1 {
+    font-size: 32px;
+  }
+  .h2 {
+    font-size: 24px;
+  }
+  header {
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top:20px;
+    padding-bottom: 40px;
+  }
+
+  #logo_link {
+    margin-left: 5px;
+  }
+  #navigation {
+    display: none;
+  }
+
+  #burger_menu_button {
+    display: inline;
+    float: right;
+  }
+  .FAQ > p {
+    font-size: 16px;
+  }
+
+  .FAQ_wrapper {
+    margin: 30px 20px;
+  }
+
+  .FAQ_wrapper button {
+    font-size: 14px;
+  }
+
+  .content p {
+    font-size: 14px;
+    width: 100%;
+  }
+}
