@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack serve"
+    "start": "webpack serve --mode=development",
+    "stand": "webpack --mode=development"
   },
   "author": "",
   "license": "ISC",
@@ -21,11 +22,17 @@
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "style-loader": "^2.0.0",
-    "webpack": "^5.21.2",
     "webpack-cli": "^4.5.0",
     "yargs": "^16.2.0"
   },
   "devDependencies": {
+    "babel-plugin-root-import": "^6.6.0",
+    "file-loader": "^6.2.0",
+    "sass": "^1.32.7",
+    "sass-loader": "^11.0.1",
+    "source-map-loader": "^2.0.1",
+    "svg-url-loader": "^7.1.1",
+    "webpack": "^5.22.0",
     "webpack-dev-server": "^3.11.2"
   }
 }

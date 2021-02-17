@@ -1,0 +1,322 @@
+
+body {
+  overflow: auto;
+}
+
+h1 {
+  /* H1 Desktop */
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 120%;
+  /* identical to box height, or 77px */
+  text-align: center;
+
+  /* Black */
+  color: #1B1B1B;
+}
+
+h2 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 120%;
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+h3 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+}
+p {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 147.3%;
+  /* or 35px */
+  text-align: center;
+
+  /* Black */
+  color: #1B1B1B;
+}
+
+a {
+  cursor: pointer;
+   &:hover {
+    color: #3d3d3d;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+#logo_link {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color:#1B1B1B;
+}
+
+.nav_default_link {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #1B1B1B;
+  margin-right: 30px;
+}
+
+#login_button {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  background-color: transparent;
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+
+  color: #1B1B1B;
+}
+
+#burger_menu_button {
+  display: none;
+}
+
+#login_button:hover {
+  color: #adedbd;
+  border-color: #adedbd;
+}
+
+header {
+  margin-right: 100px;
+  margin-left: 100px;
+  margin-top:20px;
+  padding-bottom: 40px;
+}
+
+#logo_link {
+  float: left;
+}
+
+nav {
+  float: right;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    float: left;
+    margin-top: 8px;
+  }
+
+  button {
+    margin-top:-5px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+
+main {
+  img {
+    padding-top: 170px;
+  }
+}
+
+.about-us-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+
+
+#contacts {
+  margin-top:160px;
+  width: 100%;
+  height: 350px;
+  background: #F7F9FB;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.wrapper_contacts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 30px;
+}
+
+.separator {
+  position: absolute;
+  width: 1px;
+  height: 62px;
+  background: #C8C8CF;
+}
+
+hr.solid {
+  border: 1px solid #C8C8CF;
+  background-color: #C8C8CF;
+  -webkit-transform: rotate(90deg);
+  width: 15%;
+  margin-top: 10%;
+}
+
+.wrapper_contacts div p {
+  font-family: "Roboto";
+  font-style: normal;
+}
+.wrapper_contacts div p:nth-of-type(odd) {
+  font-size: 14px;
+}
+.wrapper_contacts div p:nth-of-type(even) {
+  font-size: 20px;
+}
+
+.wrapper_contacts div:nth-child(2) {
+  /* background-color: red; */
+}
+
+.wrapper_contacts div:nth-child(1) p {
+  text-align: right;
+}
+
+.wrapper_contacts div:nth-child(1) p:nth-of-type(1) {
+  margin-right: 43px;
+}
+
+#team_mobile {
+  display: none;
+}
+.wrapper_team_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 240px;
+}
+
+.wrapper_team > div {
+  /* display: inline-block; */
+  width: 180px;
+}
+
+.wrapper-footer {
+  height: 125px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 20px;
+}
+
+
+footer {
+  position: absolute;
+  width: 100%;
+  margin-bottom:0;
+  margin-top: 120px;
+  left:0;
+  height: 125px;
+  background: #3F3D56;
+}
+
+.copyright {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #fff;
+  opacity: 0.4;
+}
+
+.icon {
+  color: #fff;
+  font-size: 2rem;
+  margin-right: 20px;
+}
+
+.icons {
+  margin-right: 20px;
+}
+
+.icon:hover {
+  color: #e0e0e0;
+}
+
+
+@media screen and (max-width: 768px) {
+  .h1 {
+    font-size: 32px;
+  }
+  .h2 {
+    font-size: 24px;
+  }
+  header {
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top:20px;
+  }
+
+  #logo_link {
+    margin-left: 5px;
+  }
+  #navigation {
+    display: none;
+  }
+
+  #burger_menu_button {
+    display: inline;
+    float: right;
+  }
+  #about_us > p {
+    font-size: 16px;
+  }
+
+  .wrapper_contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  hr {
+    display: none;
+  }
+  #team {
+    display: none;
+  }
+  #team_mobile {
+    display: block;
+  }
+  .wrapper_team_row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .wrapper_team_row > div {
+    text-align: center;
+    margin: 0 40px;
+  }
+
+}

@@ -1,12 +1,16 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const { SourceMapDevToolPlugin } = require("webpack");
+
 module.exports = {
   entry: "./src/index.js",
   output: {
       path: path.join(__dirname, "/dist"),
-      filename: "bundle.js"
+      filename: "bundle.js",
+      // sourceMapFilename: "bundle.js.map"
   },
+// devtool: 'source-map',
   devServer: {
     contentBase: './dist',
     open: true,
@@ -22,14 +26,47 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        test: /\.s[ac]ss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.js$/,
+        enforce: 'pre',
+        use: ['source-map-loader'],
+      },
+      {
+        test: /\.(png|jpe?g|gif)(woff(2)?|ttf|eot|svg)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'svg-url-loader',
+            options: {
+              limit: 10000,
+            },
+          },
+        ],
       }
     ]
   },
+
+  resolve: {
+   extensions: ['.ts', '.tsx', '.js', '.jsx'],
+  },
+
+
   plugins: [
     new HtmlWebpackPlugin({
        template: "/src/index.html"
+    }),
+    new SourceMapDevToolPlugin({
+      filename: "bundle.map"
     })
   ]
 }
