@@ -264,29 +264,7 @@ footer {
 
 
 @media screen and (max-width: 768px) {
-  .h1 {
-    font-size: 32px;
-  }
-  .h2 {
-    font-size: 24px;
-  }
-  header {
-    margin-right: 20px;
-    margin-left: 20px;
-    margin-top:20px;
-  }
-
-  #logo_link {
-    margin-left: 5px;
-  }
-  #navigation {
-    display: none;
-  }
-
-  #burger_menu_button {
-    display: inline;
-    float: right;
-  }
+  
   #about_us > p {
     font-size: 16px;
   }

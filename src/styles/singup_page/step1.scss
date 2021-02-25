@@ -1,0 +1,82 @@
+@mixin general_font {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+
+form {
+  max-width: 676px;
+  margin: 0 auto 105px auto;
+
+  h3 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 147.3%;
+    color: #1B1B1B;
+  }
+
+  .form_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    label {
+      @include general_font;
+      color: #1B1B1B;
+    }
+
+    div:first-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      max-width: 260px;
+    }
+
+    div:last-child {
+      width: 416px;
+      input {
+        @include general_font;
+        display: block;
+        border: 1px solid #61A199;
+        box-sizing: border-box;
+        border-radius: 6px;
+        padding: 14px 12px;
+        opacity: 0.7;
+      }
+
+      input:nth-child(odd) {
+        width: 416px;
+      }
+      input:nth-child(even) {
+        margin: 20px 0;
+      }
+
+    }
+  }
+}
+
+.continue_div {
+  width: 100%;
+  height: 85px;
+
+  hr {
+    background: #FFFFFF;
+    box-shadow: 0px -1px 0px #DEE2E4;
+  }
+  &_wrapper {
+    margin: 0 auto;
+    max-width: 176px;
+    button {
+      background: #E6E6E6;
+      border-color: transparent;
+      border-radius: 6px;
+      padding: 16px 40px;
+      color: #B4B5BD;
+    }
+  }
+}

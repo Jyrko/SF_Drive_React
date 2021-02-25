@@ -15,7 +15,7 @@ const ${argv.filename} = (props) => {
 export default ${argv.filename};
   `;
 
-  fs.writeFile(path.resolve(__dirname, `src/components/${argv.page ? argv.page : ''}/${argv.filename}.jsx`), template)
+  fs.writeFile(path.resolve(__dirname, `src/components/${argv.page ? argv.page : ''}/${argv.filename}.js`), template)
     .then(() => console.log("File was successfully created"))
     .catch(err => console.log(err));
     console.log(template);

@@ -35,12 +35,8 @@ module.exports = {
         use: ['source-map-loader'],
       },
       {
-        test: /\.(png|jpe?g|gif)(woff(2)?|ttf|eot|svg)?$/,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
+         test: /\.(jpg|jpeg|png|woff|woff2|eot|ttf)$/,
+         use: 'url-loader?limit=100000'
       },
       {
         test: /\.svg$/,

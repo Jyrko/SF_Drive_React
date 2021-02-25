@@ -1,0 +1,19 @@
+.singup_section {
+  margin-top: 96px;
+  &_step {
+    color: #828282;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+  }
+  h2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 120%;
+
+    color: #1B1B1B;
+  }
+}
