@@ -6,15 +6,18 @@ const { SourceMapDevToolPlugin } = require("webpack");
 module.exports = {
   entry: "./src/index.js",
   output: {
+      filename: "[name].js",
       path: path.join(__dirname, "/dist"),
-      filename: "bundle.js",
+      publicPath: '/'
       // sourceMapFilename: "bundle.js.map"
   },
 // devtool: 'source-map',
   devServer: {
     contentBase: './dist',
     open: true,
+    hot: true,
     port: 8080,
+    historyApiFallback: true
   },
   module: {
     rules: [
@@ -61,8 +64,8 @@ module.exports = {
     new HtmlWebpackPlugin({
        template: "/src/index.html"
     }),
-    new SourceMapDevToolPlugin({
-      filename: "bundle.map"
-    })
+    // new SourceMapDevToolPlugin({
+    //   filename: "bundle.map"
+    // })
   ]
 }

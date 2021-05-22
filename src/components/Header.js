@@ -1,16 +1,18 @@
 import React from 'react';
 
+import logo from '~/assets/svg/Logo.svg';
 
 const Header = (props) => {
   return (
     <header>
-      <a id="logo_link">SkillDrive</a>
+      <img src={logo}/>
       <nav id="navigation">
         <ul>
-          <li><a href="#" className="nav_default_link">Home (FIX)</a></li>
-          <li><a href="#" className="nav_default_link">О нас</a></li>
-          <li><a href="#" className="nav_default_link">Условия</a></li>
-          <li><a href="#" className="nav_default_link">Частые вопросы</a></li>
+          <li><a href="http://localhost:8080" className="nav_default_link">Home (FIX)</a></li>
+          <li><a href="http://localhost:8080/" className="nav_default_link">О нас</a></li>
+          <li><a href="http://localhost:8080/" className="nav_default_link">Условия</a></li>
+          <li><a href="http://localhost:8080/faq" className="nav_default_link">Частые вопросы</a></li>
+          <li><a href="http://localhost:8080/singup" className="nav_default_link">Регистрация</a></li>
           <button id="login_button">Войти</button>
         </ul>
       </nav>

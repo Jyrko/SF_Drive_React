@@ -1,11 +1,4 @@
-@mixin general_font {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
-}
-
+@import "../mixins.scss";
 
 form {
   max-width: 676px;
@@ -26,7 +19,7 @@ form {
     justify-content: space-between;
 
     label {
-      @include general_font;
+      @include general_font(14px);
       color: #1B1B1B;
     }
 
@@ -40,13 +33,13 @@ form {
     div:last-child {
       width: 416px;
       input {
-        @include general_font;
-        display: block;
-        border: 1px solid #61A199;
-        box-sizing: border-box;
-        border-radius: 6px;
-        padding: 14px 12px;
-        opacity: 0.7;
+        @include general_font(14px);
+        @include general_input;
+      }
+
+      .invalid_input {
+        opacity: 1;       
+        border: 2px solid red;
       }
 
       input:nth-child(odd) {
@@ -57,26 +50,12 @@ form {
       }
 
     }
-  }
-}
 
-.continue_div {
-  width: 100%;
-  height: 85px;
-
-  hr {
-    background: #FFFFFF;
-    box-shadow: 0px -1px 0px #DEE2E4;
-  }
-  &_wrapper {
-    margin: 0 auto;
-    max-width: 176px;
-    button {
-      background: #E6E6E6;
-      border-color: transparent;
-      border-radius: 6px;
-      padding: 16px 40px;
-      color: #B4B5BD;
+    &_password {
+        input:nth-child(even) {
+          width: 416px;
+        }
     }
+
   }
 }

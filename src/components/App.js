@@ -16,14 +16,14 @@ const App = (props) => {
   return (
     <div className="App">
       <Switch>
-        <Route path="/">
+        <Route path="/singup">
           <Singup />
-        </Route>
-        <Route path="/about">
-          <About />
         </Route>
         <Route path="/faq">
           <Faq />
+        </Route>
+        <Route path="/">
+          <About />
         </Route>
       </Switch>
     </div>
