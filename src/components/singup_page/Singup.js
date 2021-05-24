@@ -6,6 +6,7 @@ import Header from '../Header';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
+import Confirmation from './Confirmation';
 
 import '~/styles/singup_page/base.scss';
 import '~/styles/singup_page/step1.scss';
@@ -29,16 +30,21 @@ const Singup = (props) => {
       case 2:
         return <Step3 parentCallback={callbackFunction}/>
       default:
-        return <Step1 parentCallback={callbackFunction}/>
+        return <div/>
     }
   }
 
   return (
     <div>
-      <Header />
-      <p className="step_p">Шаг {step+1} из 3</p>
+      { (step < 3)
+        ? <>
+        <Header />
+        <p className="step_p">Шаг {step+1} из 3</p>
+        </>
+        : <Confirmation />
+      }
       { (step === 0)
-        ? <Step2 parentCallback={callbackFunction}/>
+        ? <Step1 parentCallback={callbackFunction}/>
         : currentStep(step)
       }
     </div>
