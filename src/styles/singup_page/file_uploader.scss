@@ -1,0 +1,78 @@
+.uploader_preview {
+  display: grid;
+  grid-gap: 20px;
+  margin: 0 auto;
+  margin-bottom: 75px;
+  margin-top: 50px;
+  width: 680px;
+
+
+  .document-div {
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 330px;
+    .document-preview-img {
+      width: 330px;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    &_description {
+      height: 35px;
+      padding: 16px 20px;
+
+      &_filename {
+        font-family: "Roboto";
+        font-size: 16px;
+      }
+
+      &_size {
+        font-family: "Roboto";
+        font-size: 12px;
+        color: #828282;
+      }
+    }
+  }
+
+  .file-uploader {
+    max-width: 680px;
+    height: 320px;
+    border: 1px dashed #BDBDBD;
+    box-sizing: border-box;
+    border-radius: 10px;
+    &_wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 680px;
+      height: 320px;
+
+      .uploader {
+        background-image: url("../../assets/svg/singup_page/file_uploader/upload-cloud.svg");
+        background-color: transparent;
+        border: none;
+        width: 48px;
+        height: 48px;
+      }
+
+      #choose-file {
+        font-size: 20px;
+        span {
+          color: #61A199;
+        }
+      }
+
+      #file-restrictions {
+        font-size: 14px;
+        color: #828282;
+      }
+    }
+
+    input {
+      display: none;
+    }
+  }
+}

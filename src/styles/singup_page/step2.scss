@@ -1,0 +1,36 @@
+.step2_div {
+  &_wrapper {
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 75px;
+    margin-top: 50px;
+    width: 430px;
+    height: 320px;
+
+    .selfie_img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      width: 430px;
+      height: 320px;
+      object-fit: cover;
+    }
+    .frame_button {
+      position: absolute;
+      opacity: 0;
+      display: hidden;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      cursor: pointer;
+      border: none;
+      width: 430px;
+      height: 320px;
+    }
+  }
+
+  #selfie {
+    display: none;
+  }
+}

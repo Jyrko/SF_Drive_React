@@ -1,0 +1,36 @@
+@mixin general_font($font_size) {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $font_size;
+  line-height: 16px;
+}
+
+@mixin general_input {
+  display: block;
+  border: 1px solid #E0E0E0;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 14px 12px;
+  opacity: 0.7;
+
+  &:hover {
+    border-color: #61A199;
+  }
+
+  &:focus {
+    opacity: 1;
+    border: 2px solid #61A199;
+    outline: none;
+  }
+}
+
+@mixin general_button {
+  @include general_font(16px);
+  background: #61A199;
+  border-color: transparent;
+  border-radius: 6px;
+  padding: 16px 40px;
+  margin: 16px 0;
+  color: #FFFFFF;
+}

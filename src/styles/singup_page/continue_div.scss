@@ -1,0 +1,40 @@
+@import '../mixins.scss';
+
+.continue_div {
+  width: 100%;
+  height: 85px;
+
+  hr {
+    background: #FFFFFF;
+    box-shadow: 0px -1px 0px #DEE2E4;
+    opacity: 0.25;
+  }
+  &_wrapper {
+    margin: 0 auto;
+    max-width: 176px;
+
+    .notActive {
+      @include general_font(16px);
+      background: #E6E6E6;
+      border-color: transparent;
+      border-radius: 6px;
+      padding: 16px 40px;
+      margin: 16px 0;
+      color: #B4B5BD;
+    }
+
+    .active {
+      @include general_font(16px);
+      background: #61A199;
+      border-color: transparent;
+      border-radius: 6px;
+      padding: 16px 40px;
+      margin: 16px 0;
+      color: #FFFFFF;
+    }
+
+    .active::after {
+      display: none; //FIXES STRANGE ARROW UNDER BUTTON'S TEXT
+    }
+  }
+}
