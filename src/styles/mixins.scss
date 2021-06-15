@@ -33,4 +33,41 @@
   padding: 16px 40px;
   margin: 16px 0;
   color: #FFFFFF;
+
+  transition: 0.2s;
+}
+
+@mixin general_link($font_size) {
+  @include general_font($font_size);
+  text-decoration: none;
+  color: #508E87;
+}
+
+@mixin plain_button($font_size) {
+  @include general_font($font_size);
+  background-color: transparent;
+  border: none;
+  color: #508E87;
+
+  &:hover {
+    color: black;
+  }
+}
+
+@mixin plain_buttons($font_size) {
+  button {
+    @include general_font($font_size);
+    background-color: transparent;
+    border: none;
+    color: #508E87;
+  }
+
+  button:hover {
+    color: black;
+  }
+
+  .is-inactive {
+    background-color: #E5E7F0;
+    color: black;
+  }
 }

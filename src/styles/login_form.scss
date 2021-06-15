@@ -1,0 +1,165 @@
+@import "./mixins";
+
+.login_form {
+  position: fixed;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  margin-left: -100px;
+  margin-top: -52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &_main {
+    position: relative;
+    width: 504px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+
+    &_return_btn {
+      position: absolute;
+      left: 25px;
+      cursor: pointer;
+    }
+
+    &_close_btn {
+      position: absolute;
+      right: 25px;
+      cursor: pointer;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-top: 40px;
+    }
+    p {
+      @include general_font(14px);
+    }
+
+    .submit-btn {
+      @include general_button();
+      margin: 0 auto;
+    }
+    .is-inactive {
+      background-color: #E5E7F0;
+      color: black;
+    }
+
+    input {
+      @include general_font(14px);
+      @include general_input();
+      margin: 0 0 20px 0;
+      width: 345px;
+      height: 44px;
+
+      &[type="password"] {
+        width: 100%;
+        padding-right: 120px;
+        display: inline;
+      }
+    }
+
+
+    &_wrapper {
+      height: 670px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &_title {
+        margin-bottom: 40px;
+      }
+      &_form {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+
+        &_password_field_div {
+          position: relative;
+          width: 345px;
+          .forgot-pass {
+            @include plain_button(14px);
+            position: absolute;
+            right: 5px;
+            top: 15px;
+          }
+        }
+      }
+
+      hr {
+        margin-top: 40px;
+        margin-bottom: 30px;
+        width: 350px;
+        background: #DEDBF1;
+      }
+
+      &_singup_btn {
+        @include general_link(14px);
+      }
+    }
+
+    &_restore_wrapper {
+      height: 560px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &_title {
+        margin-bottom: 10px;
+      }
+
+      &_description {
+        margin-bottom: 40px;
+      }
+
+      input {
+        margin-bottom: 40px;
+      }
+    }
+
+    &_recovery_sent_wrapper {
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &_title {
+        margin-top: 35px;
+        margin-bottom: 10px;
+      }
+
+    }
+  }
+}
+
+@media only screen and (max-device-width: 768px) {
+  .login_form {
+    &_main {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      &_wrapper {
+        height: 100%;
+        width: 100%;
+      }
+
+      &_restore_wrapper {
+        height: 100%;
+        width: 100%;
+      }
+      &_recovery_sent_wrapper {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
