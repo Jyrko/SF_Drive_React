@@ -1,3 +1,4 @@
+//Fonts
 @mixin general_font($font_size) {
   font-family: Roboto;
   font-style: normal;
@@ -6,6 +7,7 @@
   line-height: 16px;
 }
 
+//Inputs
 @mixin general_input {
   display: block;
   border: 1px solid #E0E0E0;
@@ -25,6 +27,7 @@
   }
 }
 
+//Buttons
 @mixin general_button {
   @include general_font(16px);
   background: #61A199;
@@ -37,11 +40,6 @@
   transition: 0.2s;
 }
 
-@mixin general_link($font_size) {
-  @include general_font($font_size);
-  text-decoration: none;
-  color: #508E87;
-}
 
 @mixin plain_button($font_size) {
   @include general_font($font_size);
@@ -70,4 +68,24 @@
     background-color: #E5E7F0;
     color: black;
   }
+}
+
+// Links
+@mixin general_link($font_size) {
+  @include general_font($font_size);
+  text-decoration: none;
+  color: #508E87;
+}
+
+@mixin link_like_buttton($font_size) {
+  @include general_font($font_size);
+  text-decoration: none;
+  background: #61A199;
+  border-color: transparent;
+  border-radius: 6px;
+  padding: 16px 40px;
+  margin: 16px 0;
+  color: #FFFFFF;
+
+  transition: 0.2s;
 }

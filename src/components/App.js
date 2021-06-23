@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import About from './about_us_page/About';
 import Faq from './faq_page/Faq';
 import Singup from './singup_page/Singup';
+import Home from './home_page/HomePage.js';
 //https://stackoverflow.com/questions/61767538/devtools-failed-to-load-sourcemap-for-webpack-node-modules-js-map-http-e
 
 
@@ -21,6 +22,9 @@ const App = (props) => {
         </Route>
         <Route path="/faq">
           <Faq />
+        </Route>
+        <Route path="/home">
+          <Home />
         </Route>
         <Route path="/">
           <About />

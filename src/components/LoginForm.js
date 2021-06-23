@@ -1,16 +1,20 @@
 import React, {useState, useEffect} from 'react';
+import axios from 'axios';
+
+import { HOSTNAME } from '../constants';
 
 import '~/styles/login_form.scss';
 import authImg from '~/assets/svg/authorization.svg';
 import recoveryImg from '~/assets/svg/recovery_password.svg';
 import checkEmailImg from '~/assets/svg/check_email.svg';
 
+
 function LoginForm(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [isLoginInactive, setIsLoginInactive] = useState(false);
-  const [isRecoveryInactive, setIsRecoveryInactive] = useState(false);
+  const [isLoginActive, setIsLoginActive] = useState(false);
+  const [isRecoveryActive, setIsRecoveryActive] = useState(false);
 
 
   const [isLoginWindow, setIsLoginWindow] = useState(true);
@@ -23,20 +27,20 @@ function LoginForm(props) {
   function validateLoginFields() {
     if (EMAIL_REGEX.test(email) && PASSWORD_REGEX.test(password)) {
       console.log("Login Valid")
-      setIsLoginInactive(true);
+      setIsLoginActive(true);
     } else {
       console.log("Login Inactive")
-      setIsLoginInactive(false);
+      setIsLoginActive(false);
     }
   }
 
   function validateRecoveryFields() {
     if (EMAIL_REGEX.test(email)) {
       console.log("Recovery Valid")
-      setIsRecoveryInactive(true);
+      setIsRecoveryActive(true);
     } else {
       console.log("Recovery Inactive")
-      setIsRecoveryInactive(false);
+      setIsRecoveryActive(false);
     }
   }
   useEffect(() => {
@@ -46,6 +50,30 @@ function LoginForm(props) {
       validateRecoveryFields();
     }
   })
+
+  function onLoginFormSubmit(e) {
+    e.preventDefault();
+    if (isLoginActive) {
+      // axios.post(`${HOSTNAME}/auth/login`, { email, password })
+      // .then(response => response.data)
+      // .then(data => console.log(data));
+
+      fetch(`${HOSTNAME}/auth/login`, {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          "email": email,
+          "password": password
+        })
+      })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(err => console.log(err));
+    }
+  }
 
   function onForgotPassClick(e) {
     e.preventDefault();
@@ -61,7 +89,7 @@ function LoginForm(props) {
 
   function onRecoverySubmitClick(e) {
     e.preventDefault();
-    if (!isRecoveryInactive) return;
+    if (!isRecoveryActive) return;
 
     setIsRecoverySentWindow(true);
     setIsRecoveryWindow(false);
@@ -79,16 +107,16 @@ function LoginForm(props) {
         <div className="login_form_main_wrapper">
           <img src={authImg}/>
           <h2 className="login_form_main_wrapper_title">Авторизация</h2>
-          <form className="login_form_main_wrapper_form">
+          <form className="login_form_main_wrapper_form" onSubmit={onLoginFormSubmit}>
             <input type="email" placeholder="Электронная почта" onChange={(e) => setEmail(e.target.value)}></input>
             <div className="login_form_main_wrapper_form_password_field_div">
               <input type="password" placeholder="Пароль" onChange={(e) => setPassword(e.target.value)}></input>
               <button onClick={onForgotPassClick} className="forgot-pass">Забыли пароль?</button>
             </div>
-            <button type="submit" className={isLoginInactive ? "submit-btn" : "submit-btn is-inactive"}>Войти</button>
+            <button type="submit" className={isLoginActive ? "submit-btn" : "submit-btn is-inactive"}>Войти</button>
           </form>
           <hr />
-          <a className="login_form_main_wrapper_singup_btn"href="#">Зарегестрироваться</a>
+          <a className="login_form_main_wrapper_singup_btn"href="http://localhost:8080/singup">Зарегестрироваться</a>
         </div>
         :
         isRecoveryWindow
@@ -103,7 +131,7 @@ function LoginForm(props) {
             <p className="login_form_main_restore_wrapper_description">Мы отправим ссылку для восстановления пароля <br />на вашу электронную почту</p>
             <form className="login_form_main_wrapper_form">
               <input type="email" placeholder="Электронная почта" onChange={(e) => setEmail(e.target.value)}></input>
-              <button type="submit" className={isRecoveryInactive ? "submit-btn" : "submit-btn is-inactive"} onClick={onRecoverySubmitClick}>Отправить</button>
+              <button type="submit" className={isRecoveryActive ? "submit-btn" : "submit-btn is-inactive"} onClick={onRecoverySubmitClick}>Отправить</button>
             </form>
           </div>
         </>
