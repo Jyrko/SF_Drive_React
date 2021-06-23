@@ -20,9 +20,8 @@ const Header = (props) => {
       <img src={logo}/>
       <nav id="navigation">
         <ul>
-          <li><a href="http://localhost:8080/home" className="nav_default_link">Главная</a></li>
           <li><a href="http://localhost:8080/" className="nav_default_link">О нас</a></li>
-          <li><a href="http://localhost:8080/" className="nav_default_link">Условия</a></li>
+          <li><a href="http://localhost:8080/home" className="nav_default_link">Условия</a></li>
           <li><a href="http://localhost:8080/faq" className="nav_default_link">Частые вопросы</a></li>
           <button id="login_button" onClick={onLoginButtonCLick}>Войти</button>
         </ul>

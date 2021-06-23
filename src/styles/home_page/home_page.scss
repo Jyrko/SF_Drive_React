@@ -59,6 +59,7 @@
           justify-content: center;
           align-items: center;
         }
+
       }
       &_image_div_center {
         img {
@@ -139,6 +140,10 @@
 
   .car_sharing_reviews_section {
     background: #F7F9FB;
+    padding: 110px 0 90px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .car_sharing_try_yourself_section {

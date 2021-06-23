@@ -19,6 +19,8 @@ import step3Svg from '~/assets/svg/home_page/step_3.svg';
 import rentCarSvg from '~/assets/svg/home_page/rent_car.svg';
 import haveCarSvg from '~/assets/svg/home_page/have_car.svg';
 
+import { SliderData } from './SliderData';
+
 function HomePage(props) {
   return (
     <>
@@ -78,7 +80,7 @@ function HomePage(props) {
 
           <section className="car_sharing_reviews_section">
             <h2 className="car_sharing_reviews_section_title">Отзывы клиентов</h2>
-            <ReviewSlider />
+            <ReviewSlider slides={SliderData}/>
           </section>
 
           <section className="car_sharing_try_yourself_section">
