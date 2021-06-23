@@ -2,7 +2,7 @@ import React from 'react';
 
 import faq from "~/assets/svg/FAQ.svg";
 
-import Header from "../Header";
+import Header from "../nav/Header";
 import Footer from "../Footer";
 
 import '~/styles/base_faq.scss';

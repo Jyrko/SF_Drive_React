@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Switch} from 'react-router-dom';
 
-import Header from '../Header';
+import Header from '../nav/Header';
 
 import Step1 from './Step1';
 import Step2 from './Step2';

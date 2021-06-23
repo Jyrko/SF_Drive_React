@@ -135,7 +135,7 @@ nav a {
   header {
     margin-right: 20px;
     margin-left: 20px;
-    margin-top:20px;
+    margin-top: 20px;
   }
 
   #logo_link {
@@ -149,4 +149,68 @@ nav a {
     display: inline;
     float: right;
   }
+}
+@media screen and (min-width: 768px) {
+  .is-mobile {
+    display: none !important;
+  }
+}
+
+#mobile_navigation {
+  position: fixed;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  z-index: 15;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px 20px;
+}
+
+#mobile_navigation .mobile_navigation_logo_div {
+  background-color: #ffffff;
+  width: 100%;
+}
+
+#mobile_navigation .mobile_navigation_logo_div .close_btn {
+  position: fixed;
+  right: 25px;
+  top: 25px;
+  z-index: 15;
+}
+
+
+
+#mobile_navigation nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(15px, -40px);
+}
+#mobile_navigation nav a {
+  font-family: "Roboto";
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
+}
+#mobile_navigation nav hr {
+  width: 90%;
+  height: 1px;
+  background: #DCE0ED;
+}
+
+
+#mobile_navigation #login_button {
+  position: fixed;
+  width: 90%;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  bottom: 20px;
+  margin: 0 auto;
 }

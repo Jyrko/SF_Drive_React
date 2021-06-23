@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from "../Header";
+import Header from "../nav/Header";
 import Footer from "../Footer";
 import ReviewSlider from "../slider/ReviewSlider";
 

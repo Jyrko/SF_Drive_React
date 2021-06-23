@@ -15,11 +15,13 @@ function ReviewSlider({ slides }) {
     return null;
   }
 
-  useEffect(() => {
-    setInterval(() => {
-      setCurrent(current === length - 1 ? 0 : current + 1);
-    }, 5000)
-  }, [])
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrent(current === length - 1 ? 0 : current + 1);
+  //   }, 5000)
+  //
+  //   return () => clearInterval(interval);
+  // }, [])
   function nextSlide(e) {
     setCurrent(current === length - 1 ? 0 : current + 1);
     console.log(current);
