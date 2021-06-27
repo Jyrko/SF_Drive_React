@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {Link} from 'react-router-dom';
 
 import "~/styles/singup_page/confirmation.scss";
 
 import logo from '~/assets/svg/Logo.svg';
-import confirmation from '~/assets/svg/singup_page/confirmation.svg'
-function Confirmation() {
+import confirmation from '~/assets/svg/singup_page/confirmation.svg';
+
+function Confirmation({currentUser}) {
+  useEffect(() => {
+    console.log(currentUser[0].documentPhotos);
+  }, []);
   return (
     <>
       <header>

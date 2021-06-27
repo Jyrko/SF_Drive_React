@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 import ContinueSingUp from './ContinueSingUp';
 
-const Step1 = (props) => {
+const Step1 = ({parentCallback, addStep1}) => {
   const [fullname, setFullname] = useState("");
   const [birthday, setBirthday] = useState("1970-01-01");
   const [email, setEmail] = useState("")
@@ -51,12 +51,26 @@ const Step1 = (props) => {
 
   function callbackFunction(isValid) {
     SetNeedToValidate(isValid);
-    if (needToValidate) {
-      // Doing fetch request here //
+    if (isValid) {
+      addStep1({
+        name: fullname,
+        email: email,
+        password: password,
+        birthday: birthday,
+        passport: {
+          serial: serialPassport,
+          dateOfIssue: dateOfIssuePassport,
+          issuingAuthority: issuingAuthority,
+        },
+        license: {
+          serial: serialLicense,
+          dateOfIssue: dateOfIssueLicense,
+        }
+      })
       console.log("Sending data to the server")
     }
 
-    props.parentCallback(needToValidate, 0);
+    parentCallback(needToValidate, 0);
     console.log("Validation - " + needToValidate);
   }
 
@@ -158,8 +172,8 @@ const Step1 = (props) => {
           <label htmlFor="password-reapeat">Повторить пароль</label>
         </div>
         <div className="form_wrapper_password">
-          <input type="password" id="password" name="password" onChange={(e) => onChangePattern(e, setPassword, PASSWORD_REGEX, setIsValidPassword)} placeholder="••••••••••••••••••••••••" />
-          <input type="password" id="password-reapeat" name="password-reapeat" onChange={(e) => onPasswordRepeatChange(e)} placeholder="••••••••••••••••••••••••" />
+          <input type="password" id="password" name="password" onChange={(e) => onChangePattern(e, setPassword, PASSWORD_REGEX, setIsValidPassword)} placeholder="••••••••••••••••••••••••" autoComplete="on"/>
+          <input type="password" id="password-reapeat" name="password-reapeat" onChange={(e) => onPasswordRepeatChange(e)} placeholder="••••••••••••••••••••••••" autoComplete="on"/>
         </div>
       </div>
     </form>

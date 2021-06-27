@@ -3,15 +3,22 @@ import ContinueSingUp from './ContinueSingUp';
 
 import frame from "~/assets/img/singup/step2/Frame.jpg";
 
-const Step2 = (props) => {
+const Step2 = ({parentCallback, addStep2}) => {
   const inputFile = useRef(null);
+  const [profileImage, setProfileImage] = useState(null);
   const [file, setFile] = useState(null);
   const buttonStyle = {
     backgroundImage: `url(${file})`
   }
 
   function callbackFunction(isValid) {
-    props.parentCallback(isValid, 1);
+    if (isValid) {
+      addStep2({
+        profileImage: profileImage
+      })
+    }
+
+    parentCallback(isValid, 1);
   }
 
   function onButtonClick(e) {
@@ -20,6 +27,7 @@ const Step2 = (props) => {
 
   function handleFile(e) {
     const image = event.target.files[0];
+    setProfileImage(image);
     setFile(URL.createObjectURL(image));
   }
 

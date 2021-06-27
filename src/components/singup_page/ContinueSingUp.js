@@ -1,8 +1,7 @@
-import React, {useEffect} from 'react';
-
+import React, {useEffect, useState} from 'react';
+import { useStore } from 'react-redux'
 
 const ContinueSingUp = (props) => {
-
   useEffect(() => {
     if (props.isValid) {
 

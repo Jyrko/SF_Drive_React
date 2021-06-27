@@ -3,10 +3,10 @@ import {Switch} from 'react-router-dom';
 
 import Header from '../nav/Header';
 
-import Step1 from './Step1';
-import Step2 from './Step2';
-import Step3 from './Step3';
-import Confirmation from './Confirmation';
+import Step1 from '~/redux/containers/Step1';
+import Step2 from '~/redux/containers/Step2';
+import Step3 from '~/redux/containers/Step3';
+import Confirmation from '~/redux/containers/Confirmation';
 
 import '~/styles/singup_page/base.scss';
 import '~/styles/singup_page/step1.scss';
