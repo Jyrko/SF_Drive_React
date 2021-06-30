@@ -53,6 +53,7 @@
     input {
       @include general_font(14px);
       @include general_input();
+      display: block;
       margin: 0 0 20px 0;
       width: 345px;
       height: 44px;

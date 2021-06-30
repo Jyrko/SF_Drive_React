@@ -35,10 +35,11 @@ form {
       input {
         @include general_font(14px);
         @include general_input;
+        display: block;
       }
 
       .invalid_input {
-        opacity: 1;       
+        opacity: 1;
         border: 2px solid red;
       }
 

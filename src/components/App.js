@@ -7,6 +7,10 @@ import Singup from './singup_page/Singup';
 import Home from './home_page/HomePage.js';
 //https://stackoverflow.com/questions/61767538/devtools-failed-to-load-sourcemap-for-webpack-node-modules-js-map-http-e
 
+////////
+import RentCarMain from '~/components/authed_user/rent_car_search_page/RentCarMain';
+/////
+
 
 import '../styles/header.scss';
 import '../styles/footer.scss';
@@ -17,6 +21,9 @@ const App = (props) => {
   return (
     <div className="App">
       <Switch>
+        <Route path="/authed/main">
+          <RentCarMain />
+        </Route>
         <Route path="/singup">
           <Singup />
         </Route>
