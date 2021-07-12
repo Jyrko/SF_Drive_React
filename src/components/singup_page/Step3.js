@@ -5,7 +5,7 @@ import ContinueSingUp from './ContinueSingUp';
 
 import frame from "~/assets/img/singup/step2/Frame.jpg";
 
-import { HOSTNAME, POST_HEADERS_FORMDATA } from '../../constants';
+import { HOSTNAME, POST_HEADERS_FORMDATA, ACCESS_TOKEN_KEY} from '../../constants';
 
 const Step3 = ({parentCallback, addStep3, currentUser}) => {
   const didMountRef = useRef(false);
@@ -22,8 +22,13 @@ const Step3 = ({parentCallback, addStep3, currentUser}) => {
       body: formedData
     })
     .then((response) => response.json())
-    .then(data => console.log(data))
+    .then(data => {
+      console.log(data);
+      sessionStorage.setItem(ACCESS_TOKEN_KEY, data.accessToken);
+      parentCallback(newUserInfo.length ? true : false, 2);
+    })
     .catch(error => console.log(error));
+
   }
 
   function formAndSendUser() {
@@ -38,9 +43,6 @@ const Step3 = ({parentCallback, addStep3, currentUser}) => {
     for (let i = 0; i < currentUser[0].documentPhotos.length; i++) {
       formedUser.append("documentPhotos", currentUser[0].documentPhotos[i]);
     }
-
-    console.log(formedUser.get("documentPhotos"));
-
 
     sendUser(formedUser);
   }
@@ -58,7 +60,6 @@ const Step3 = ({parentCallback, addStep3, currentUser}) => {
         documentPhotos: newUserInfo
       })
     }
-    //parentCallback(isValid, 2);
   }
 
   return (

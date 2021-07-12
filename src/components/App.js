@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
+
+import validateUser from '~/functions/validateUser';
 
 import About from './about_us_page/About';
 import Faq from './faq_page/Faq';
 import Singup from './singup_page/Singup';
 import Home from './home_page/HomePage.js';
-//https://stackoverflow.com/questions/61767538/devtools-failed-to-load-sourcemap-for-webpack-node-modules-js-map-http-e
+import Loading from './Loading';
 
 ////////
-import RentCarMain from '~/components/authed_user/rent_car_search_page/RentCarMain';
+import RentCarMain from '~/components/authed_user/RentCarMain';
 /////
 
 
@@ -18,25 +20,40 @@ import '~/styles/fonts.scss';
 import '~/styles/normalize.scss';
 
 const App = (props) => {
+  const [validUser, setValidUser] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(async () => {
+    setLoading(true);
+    const isValidUser = validateUser();
+    setValidUser(isValidUser)
+    setLoading(false);
+  }, [])
+
   return (
     <div className="App">
-      <Switch>
-        <Route path="/authed/main">
-          <RentCarMain />
-        </Route>
-        <Route path="/singup">
-          <Singup />
-        </Route>
-        <Route path="/faq">
-          <Faq />
-        </Route>
-        <Route path="/home">
-          <Home />
-        </Route>
-        <Route path="/">
-          <About />
-        </Route>
-      </Switch>
+      <Loading loading={loading}>
+        <Switch>
+          <Route path="/authed">
+            <RentCarMain />
+          </Route>
+          <Route path="/singup">
+            <Singup />
+          </Route>
+          <Route path="/faq">
+            <Faq />
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/">
+            <About />
+          </Route>
+        </Switch>
+      </Loading>
     </div>
   )
 }

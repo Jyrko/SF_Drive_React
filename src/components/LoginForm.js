@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
-import { HOSTNAME } from '../constants';
+import authUser from '~/functions/authUser';
 
 import '~/styles/login_form.scss';
 import authImg from '~/assets/svg/authorization.svg';
@@ -51,27 +51,11 @@ function LoginForm(props) {
     }
   })
 
-  function onLoginFormSubmit(e) {
+  async function onLoginFormSubmit(e) {
     e.preventDefault();
     if (isLoginActive) {
-      // axios.post(`${HOSTNAME}/auth/login`, { email, password })
-      // .then(response => response.data)
-      // .then(data => console.log(data));
-
-      fetch(`${HOSTNAME}/auth/login`, {
-        method: "POST",
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          "email": email,
-          "password": password
-        })
-      })
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(err => console.log(err));
+      await authUser(email, password);
+      window.location.reload(false);
     }
   }
 

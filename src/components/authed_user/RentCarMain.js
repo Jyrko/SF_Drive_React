@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import CarSearch from './CarSearch';
 import Footer from '~/components/Footer';
 import Header from '~/components/nav/Header';
+// import Loading from '~/components/Loading';
+
+import validateUser from '~/functions/validateUser';
+
 import SClasse from '~/assets/img/rent_car_search_page/recommended_cars/merc.jpg'
 import SClasseOwner from '~/assets/img/rent_car_search_page/recommended_cars/owner.png'
 
 import '~/styles/authed_user/rent_car_main.scss';
 
 export default function RentCarMain(props) {
+  useEffect(async () => {
+    console.log("Component mounting");
+    console.log(await validateUser());
+  }, []);
 
   const carTemplate =
   <div className="recommend_wrapper_car">
