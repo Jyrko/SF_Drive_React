@@ -1,6 +1,8 @@
 import React from 'react';
 
 import '~/styles/authed_user/car_search.scss';
+import '../../../node_modules/react-date-range/dist/styles.scss';
+import '../../../node_modules/react-date-range/dist/theme/default.scss';
 
 export default function CarSearch(props) {
   return (

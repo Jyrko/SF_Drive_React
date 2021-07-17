@@ -6,7 +6,11 @@ export default async function validateUser() {
 
   const result = await fetch(`${HOSTNAME}/auth/user`, {
     method: 'POST',
-    headers: POST_HEADERS,
+    headers: {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "Authorization": `Bearer ${accessToken}`
+    },
     body: JSON.stringify({
       "accessToken": accessToken
     })
