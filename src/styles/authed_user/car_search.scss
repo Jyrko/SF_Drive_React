@@ -1,13 +1,17 @@
 @import "../mixins";
 
 .rent_car_search {
-  button {
+  button[type=submit] {
     @include general_button();
     padding-top: 12px;
     padding-bottom: 12px;
     margin-left: 18px;
   }
-  input {
+
+  button {
+
+  }
+  .rent_car_search_form_text_input {
     @include general_input();
   }
 
