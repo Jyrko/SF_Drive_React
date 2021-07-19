@@ -1,21 +1,47 @@
 @import "../mixins";
 
 .rent_car_search {
+  h2 {
+    @media only screen and (max-width: 768px) {
+      font-size: 36px;
+    }
+  }
+
   button[type=submit] {
     @include general_button();
-    padding-top: 12px;
-    padding-bottom: 12px;
-    margin-left: 18px;
-  }
+    margin: 2px 0px 0px 18px;
 
-  button {
-
-  }
-  .rent_car_search_form_text_input {
-    @include general_input();
+    @media only screen and (max-width: 768px) {
+      margin-top: 10px;
+      margin-left: 0px;
+      width: 335px;
+    }
   }
 
   &_form {
     max-width: 1030px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .rent_car_search_form_date_picker {
+      width: 170px;
+      .MuiOutlinedInput-adornedEnd {
+        padding-right: 0px;
+      }
+      .MuiSvgIcon-root {
+        color: #61A199;
+      }
+    }
+    .MuiFormControl-root {
+      @media only screen and (max-width: 768px) {
+        width: 335px;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 }

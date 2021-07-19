@@ -1,9 +1,10 @@
 import { createTheme } from '@material-ui/core';
 import green from '@material-ui/core/colors/green';
 
-export const searchTheme = createTheme({
+export const availabilityTheme = createTheme({
   palette: {
     primary: green,
+    main: "#ffffff",
     secondary: {
       main: '#f48fb1',
     },
@@ -24,7 +25,7 @@ export const searchTheme = createTheme({
     },
     MuiFormControl: {
       root: {
-        width: "293px"
+        width: "450px"
       },
       marginNormal: {
         marginTop: "9px"
