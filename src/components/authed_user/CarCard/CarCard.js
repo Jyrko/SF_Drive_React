@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from 'react';
 
-import ContinueDiv from "../ContinueDiv";
-import ImageGallery from "./ImageGallery";
+import Header from '~/components/nav/Header';
+import ContinueDiv from "../../ContinueDiv";
+import ImageGallery from "../ImageGallery";
+import CarOptions from "./CarOptions";
+
+//tempfiles
+import first from "~/assets/img/tempfiles/1.jpg";
+import second from "~/assets/img/tempfiles/2.jpg";
+import third from "~/assets/img/tempfiles/3.jpg";
 
 import "~/styles/authed_user/car_card/car_card.scss";
 import owner from "~/assets/img/car_card/owner_sample.png";
 import separator from "~/assets/svg/authed/separator.svg";
 import star from "~/assets/svg/authed/star.svg";
+import morePhotos from "~/assets/svg/authed/more_photos.svg";
 
 import ruLocale from "date-fns/locale/ru";
 import { DatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
@@ -19,6 +27,8 @@ export default function CarCard(props) {
   let currentDate = new Date();
   let nextMonthDate = new Date();
 
+  const [showMorePhotos, setShowMorePhotos] = useState(false);
+
   const [carName, setCarName] = useState("Car Model");
   const [yearProduction, setYearProduction] = useState("2021");
 
@@ -28,6 +38,23 @@ export default function CarCard(props) {
 
   const [currentMonthDate, setCurrentMonthDate] = useState((new Date()).setDate((new Date()).getDate() + 31));
   const [lastMonthDate, setLastMonthDate] = useState((new Date()).setDate((new Date()).getDate() + 1));
+
+  const options_template = [
+    "airConditioner",
+    "airBags",
+    "aux",
+    "bluetooth",
+    "cruiseControl",
+    "losfixFastening",
+    "multimedia",
+    "navigationSys",
+    "parktronic",
+    "heater",
+    "seatHeater",
+    "seatVent",
+    "roofRack",
+    "rearCam"
+  ]
 
 
   useEffect(() => {
@@ -51,8 +78,23 @@ export default function CarCard(props) {
     props.parentCallback(true);
   }
 
+  function onShowMorePhotosHandler(e) {
+    e.preventDefault();
+    setShowMorePhotos(!showMorePhotos);
+  }
+
+  function showMorePhotosParentCallback(isClosed) {
+    setShowMorePhotos(!isClosed);
+  }
+
   return (
       <>
+        <Header />
+        {
+          showMorePhotos
+          ? <ImageGallery parentCallback={showMorePhotosParentCallback} />
+          : <></>
+        }
         <div className="car_card">
           <div className="return_to_home" onClick={returnToHomeHandler}>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +103,23 @@ export default function CarCard(props) {
             <span className="return_to_home_title">Назад</span>
           </div>
           <section className="car_gallery">
-            <ImageGallery />
+            <div className="car_gallery_container">
+              <div className="car_gallery_container_main">
+                <button className="car_gallery_container_main_show_slider_btn_mobile" onClick={onShowMorePhotosHandler}>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 14V2C20 1.46957 19.7893 0.960859 19.4142 0.585786C19.0391 0.210714 18.5304 0 18 0H6C5.46957 0 4.96086 0.210714 4.58579 0.585786C4.21071 0.960859 4 1.46957 4 2V14C4 14.5304 4.21071 15.0391 4.58579 15.4142C4.96086 15.7893 5.46957 16 6 16H18C18.5304 16 19.0391 15.7893 19.4142 15.4142C19.7893 15.0391 20 14.5304 20 14ZM9 10L11.03 12.71L14 9L18 14H6L9 10ZM0 4V18C0 18.5304 0.210714 19.0391 0.585786 19.4142C0.960859 19.7893 1.46957 20 2 20H16V18H2V4" fill="white"/>
+                  </svg>
+                </button>
+                <img src={first} className="car_gallery_container_main_image" />
+              </div>
+              <div className="car_gallery_container_additional">
+                <img src={second} className="car_gallery_container_additional_image" />
+                <div className="car_gallery_container_additional_more">
+                  <img src={third} className="car_gallery_container_additional_more_image" />
+                  <button className="car_gallery_container_additional_more_btn" onClick={onShowMorePhotosHandler}>Показать ещё фото</button>
+                </div>
+              </div>
+            </div>
           </section>
 
           <section className="car_and_owner_basic_info">
@@ -119,7 +177,7 @@ export default function CarCard(props) {
 
           <section className="car_options">
             <h3 className="car_options_title">Опции</h3>
-            dunno
+            <CarOptions options={options_template}/>
             <img className="car_card_separator" src={separator} />
           </section>
 

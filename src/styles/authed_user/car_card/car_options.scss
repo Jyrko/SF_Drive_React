@@ -1,0 +1,20 @@
+.car_options {
+  &_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 30px;
+
+      &_option {
+        display: flex;
+        align-items: center;
+
+        &_image {
+          margin-right: 20px;
+        }
+      }
+
+      @media only screen and (max-width: 468px) {
+        grid-template-columns: 1fr;
+      }
+    }
+}

@@ -1,0 +1,59 @@
+.car_photos_slider {
+  position: relative;
+  width: 1000px;
+
+  &_arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    cursor: pointer;
+
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &_arrow_left {
+    left: 25px;
+  }
+
+  &_arrow_right {
+    right: 25px;
+  }
+
+  &_content {
+      max-width: 675px;
+      margin: 0 auto;
+
+      &_image {
+        width: 677px;
+        height: 464px;
+      }
+  }
+
+  &_dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+    &_dot {
+      margin-right: 10px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    //padding: 0 20px;
+    max-width: 500px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  @media screen and (max-width: 480px) {
+    //padding: 0 20px;
+    max-width: 325px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+}

@@ -13,6 +13,12 @@
     margin: 0 auto;
     max-width: 176px;
 
+    button[type=submit] {
+      @media only screen and (max-width: 468px) {
+        width: 100%;
+      }
+    }
+
     .notActive {
       @include general_font(16px);
       background: #E6E6E6;

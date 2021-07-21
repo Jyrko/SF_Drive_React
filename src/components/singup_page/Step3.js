@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef} from 'react';
 
-import FileUploader from './FileUploader';
+import FileUploader from '~/components/FileUploader/FileUploader';
 import ContinueSingUp from './ContinueSingUp';
 
 import frame from "~/assets/img/singup/step2/Frame.jpg";

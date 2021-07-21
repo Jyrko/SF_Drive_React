@@ -9,8 +9,10 @@ import Singup from './singup_page/Singup';
 import Home from './home_page/HomePage.js';
 import Loading from './Loading';
 
-////////
+////////Authed User
 import RentCarMain from '~/components/authed_user/RentCarMain';
+import MyCars from "~/components/authed_user/MyCars";
+import AddNewCar from "~/components/authed_user/add_new_car/AddNewCar";
 /////
 
 
@@ -34,6 +36,12 @@ const App = (props) => {
     <div className="App">
       <Loading loading={loading}>
         <Switch>
+          <Route path="/authed/my-cars/add-new">
+            <AddNewCar />
+          </Route>
+          <Route path="/authed/my-cars">
+            <MyCars />
+          </Route>
           <Route path="/authed">
             <RentCarMain />
           </Route>

@@ -51,7 +51,7 @@
       height: 320px;
 
       .uploader {
-        background-image: url("../../assets/svg/singup_page/file_uploader/upload-cloud.svg");
+        background-image: url("../assets/svg/singup_page/file_uploader/upload-cloud.svg");
         background-color: transparent;
         border: none;
         width: 48px;
@@ -69,10 +69,22 @@
         font-size: 14px;
         color: #828282;
       }
+
+      @media only screen and (max-width: 768px) {
+        max-width: 340px;
+      }
     }
 
     input {
       display: none;
     }
+
+    @media only screen and (max-width: 768px) {
+      max-width: 340px;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr !important;
+    width: 340px;
   }
 }

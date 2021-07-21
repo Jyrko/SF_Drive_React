@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import CarSearch from './CarSearch';
 import Footer from '~/components/Footer';
 import Header from '~/components/nav/Header';
-import CarCard from './CarCard';
+import CarCard from './CarCard/CarCard';
 // import Loading from '~/components/Loading';
 
 import validateUser from '~/functions/validateUser';
@@ -45,9 +45,9 @@ export default function RentCarMain(props) {
 
   return (
     <>
-      <Header />
       { !carChosen ?
         <>
+          <Header />
           <section className="rent_car_search">
             <h2>Арендуйте Автомобиль</h2>
             <CarSearch />

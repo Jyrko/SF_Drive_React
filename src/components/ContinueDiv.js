@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { useStore } from 'react-redux';
 
-import "~/styles/singup_page/confirmation.scss";
+import "~/styles/singup_page/continue_div.scss";
 
 const ContinueDiv = (props) => {
   useEffect(() => {
@@ -13,6 +13,7 @@ const ContinueDiv = (props) => {
   function onClickSubmit(e) {
     e.preventDefault();
     if (props.parentCallback) {
+      console.log("Continue div callback")
       if (props.isValid === "true") {
         props.parentCallback(true);
       } else {
@@ -24,7 +25,7 @@ const ContinueDiv = (props) => {
     <div className="continue_div">
       <hr />
       <div className="continue_div_wrapper">
-        { props.isValid === "true"?
+        { props.isValid === "true" ?
         <button type="submit" onClick={onClickSubmit} form="step1" className="active">{props.buttonName}</button>
         : <button type="submit" onClick={onClickSubmit} form="step1" className="notActive">{props.buttonName}</button>
         }

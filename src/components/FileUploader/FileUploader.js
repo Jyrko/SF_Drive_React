@@ -1,6 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react';
 
-import "~/styles/singup_page/file_uploader.scss";
+import "~/styles/file_uploader.scss";
 const DEFAULT_MAX_FILE_SIZE_IN_BYTES = 30000000;
 const KILO_BYTES_PER_BYTE = 1000;
 

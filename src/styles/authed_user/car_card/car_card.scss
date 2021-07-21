@@ -41,6 +41,69 @@
     }
   }
 
+  .car_gallery {
+    margin-top: 30px;
+    &_container {
+      display: grid;
+      grid-template-columns: 1fr 0.5fr;
+
+      &_main {
+        position: relative;
+        max-width: 710px;
+        min-width: 350px;
+
+        &_show_slider_btn_mobile {
+          display: none;
+          @media only screen and (max-width: 1030px) {
+            position: absolute;
+            display: inline;
+            right: 20px;
+            top: 20px;
+            background-color: rgba(0,0,0, 0.9);
+            border: none;
+            z-index: 2;
+            padding: 12px;
+            border-radius: 8px;
+          }
+        }
+
+        img {
+          @media only screen and (max-width: 768px) {
+            max-width: 100%;
+          }
+        }
+      }
+
+      &_additional {
+        &_image {
+          margin-bottom: 15px;
+        }
+
+        &_more {
+          position: relative;
+          &_btn {
+            @include general_font(16px);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 18px;
+            color: white;
+            border: none;
+            border-radius: 8px;
+          }
+        }
+        @media only screen and (max-width: 1030px) {
+          display: none;
+        }
+      }
+      @media only screen and (max-width: 1030px) {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+    }
+  }
   .car_and_owner_basic_info {
     &_car {
       &_title {
@@ -61,11 +124,18 @@
             font-size: 24px;
             text-align: left;
             margin-bottom: 14px;
+            @media only screen and (max-width: 768px) {
+              text-align: center;
+            }
           }
           &_desc {
             font-size: 14px;
             color: #8D8B99;
             text-align: left;
+
+            @media only screen and (max-width: 768px) {
+                text-align: center;
+            }
           }
         }
       }
@@ -103,7 +173,23 @@
         a {
           font-size: 16px;
         }
+
+        @media only screen and (max-width: 768px) {
+          padding: 0 20px;
+        }
       }
+
+      @media only screen and (max-width: 768px) {
+        top: 0;
+        padding: 40px 0;
+        margin-top: 30px;
+        width: 100%;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -131,6 +217,11 @@
     &_pickers {
       display: flex;
       flex-direction: row;
+
+      @media only screen and (max-width: 768px) {
+        flex-direction: column;
+        justify-content: center;
+      }
     }
   }
 
@@ -191,7 +282,13 @@
           }
         }
       }
+      @media only screen and (max-width: 478px) {
+        grid-template-columns: 1fr;
+      }
     }
+  }
+  @media only screen and (max-width: 1030px) {
+    padding: 0 20px;
   }
 }
 
@@ -216,15 +313,25 @@
 .MuiPickersCalendarHeader-daysHeader {
   .MuiTypography-root {
     margin-right: 25px !important;
+    @media only screen and (max-width: 478px) {
+      margin-right: 7px !important;
+    }
   }
 }
 
 .MuiPickersCalendar-week {
   .MuiButtonBase-root {
     margin-right: 25px !important;
+    @media only screen and (max-width: 478px) {
+      margin-right: 7px !important;
+    }
   }
 }
 
 .MuiPickersBasePicker-pickerView {
   min-width: 450px !important;
+
+  @media only screen and (max-width: 478px) {
+    min-width: 310px !important;
+  }
 }

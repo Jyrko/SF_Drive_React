@@ -1,0 +1,33 @@
+.image_gallery {
+  position: fixed;
+  height: 105vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 20;
+  margin-top: -94px;
+
+  img {
+    opacity: 1;
+  }
+
+  &_close_div {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    cursor: pointer;
+
+    &_button_svg {
+      &_path {
+        fill: white
+      }
+    }
+  }
+
+  &_slider {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -42,8 +42,8 @@ const Header = (props) => {
       <ul>
         { validUser ?
           <>
-          <li><a href="http://localhost:8080/" className="nav_default_link">Бронирования</a></li>
-          <li><a href="http://localhost:8080/home" className="nav_default_link">Мои автомобили</a></li>
+          <li><a href="http://localhost:8080/authed" className="nav_default_link">Бронирования</a></li>
+          <li><a href="http://localhost:8080/authed/my-cars" className="nav_default_link">Мои автомобили</a></li>
           <li><a href="http://localhost:8080/faq" className="nav_default_link">Сообщения</a></li>
           <img className="profile_image" src={profileImage}/>
           </>
@@ -76,11 +76,11 @@ const Header = (props) => {
         validUser ?
         <>
         <nav>
-            <a href="http://localhost:8080/" className="mobile_navigation_nav_default_link">О нас</a>
+            <a href="http://localhost:8080/authed" className="mobile_navigation_nav_default_link">Бронирования</a>
             <hr />
-            <a href="http://localhost:8080/home" className="mobile_navigation_nav_default_link">Условия</a>
+            <a href="http://localhost:8080/authed/my-cars" className="mobile_navigation_nav_default_link">Мои автомобили</a>
             <hr />
-            <a href="http://localhost:8080/faq" className="mobile_navigation_nav_default_link">Частые вопросы</a>
+            <a href="http://localhost:8080/faq" className="mobile_navigation_nav_default_link">Сообщения</a>
         </nav>
         <div className="profile-container">
           <img className="profile-image" src={profileImage}/>
