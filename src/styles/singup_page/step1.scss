@@ -1,6 +1,67 @@
 @import "../mixins.scss";
 
-form {
+#step1_singup {
+  max-width: 676px;
+  margin: 0 auto 105px auto;
+
+  h3 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 147.3%;
+    color: #1B1B1B;
+  }
+
+  .form_wrapper_singup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    label {
+      @include general_font(14px);
+      color: #1B1B1B;
+    }
+
+    div:first-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      max-width: 260px;
+    }
+
+    div:last-child {
+      width: 416px;
+      input {
+        @include general_font(14px);
+        @include general_input;
+        display: block;
+      }
+
+      .invalid_input {
+        opacity: 1;
+        border: 2px solid red;
+      }
+
+      input:nth-child(odd) {
+        width: 416px;
+      }
+      input:nth-child(even) {
+        margin: 20px 0;
+      }
+
+    }
+
+    &_password {
+        input:nth-child(even) {
+          width: 416px;
+        }
+    }
+
+  }
+}
+
+#step1 {
   max-width: 676px;
   margin: 0 auto 105px auto;
 

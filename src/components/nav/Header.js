@@ -44,7 +44,7 @@ const Header = (props) => {
           <>
           <li><a href="http://localhost:8080/authed" className="nav_default_link">Бронирования</a></li>
           <li><a href="http://localhost:8080/authed/my-cars" className="nav_default_link">Мои автомобили</a></li>
-          <li><a href="http://localhost:8080/faq" className="nav_default_link">Сообщения</a></li>
+          <li><a href="http://localhost:8080/authed/messages" className="nav_default_link">Сообщения</a></li>
           <img className="profile_image" src={profileImage}/>
           </>
           :
@@ -80,7 +80,7 @@ const Header = (props) => {
             <hr />
             <a href="http://localhost:8080/authed/my-cars" className="mobile_navigation_nav_default_link">Мои автомобили</a>
             <hr />
-            <a href="http://localhost:8080/faq" className="mobile_navigation_nav_default_link">Сообщения</a>
+            <a href="http://localhost:8080/authed/messages" className="mobile_navigation_nav_default_link">Сообщения</a>
         </nav>
         <div className="profile-container">
           <img className="profile-image" src={profileImage}/>

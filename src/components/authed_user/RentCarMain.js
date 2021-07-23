@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
+import Loading from '~/components/Loading';
 import CarSearch from './CarSearch';
 import Footer from '~/components/Footer';
 import Header from '~/components/nav/Header';
 import CarCard from './CarCard/CarCard';
-// import Loading from '~/components/Loading';
 
-import validateUser from '~/functions/validateUser';
+import validateUser from "~/functions/validateUser";
 
 import SClasse from '~/assets/img/rent_car_search_page/recommended_cars/merc.jpg'
 import SClasseOwner from '~/assets/img/rent_car_search_page/recommended_cars/owner.png'
@@ -15,18 +15,23 @@ import SClasseOwner from '~/assets/img/rent_car_search_page/recommended_cars/own
 import '~/styles/authed_user/rent_car_main.scss';
 
 export default function RentCarMain(props) {
+
   const [selectedCar, setSelectedCar] = useState("60ed97db4cab66e18a30954d");
   const [carChosen, setCarChosen] = useState(false);
 
-  useEffect(async () => {
-    console.log("Component mounting");
-    console.log(await validateUser());
+  const [isLogined, setIsLogined] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  }, []);
+  useEffect(async () => {
+    setLoading(true);
+    const isValid = await validateUser();
+    setIsLogined(isValid);
+    setLoading(false)
+  }, [])
 
   function carViewClickHandler(e) {
     e.preventDefault();
-    setCarChosen(true)
+    setCarChosen(true);
   }
 
   function childReturnToHome(isReturned) {
@@ -44,35 +49,37 @@ export default function RentCarMain(props) {
   </div>;
 
   return (
-    <>
-      { !carChosen ?
-        <>
-          <Header />
-          <section className="rent_car_search">
-            <h2>Арендуйте Автомобиль</h2>
-            <CarSearch />
-          </section>
-          <section className="recommend">
-              <h3>Рекомендуем поблизости</h3>
-              <div className="recommend_wrapper">
-                {carTemplate}
-                {carTemplate}
-                {carTemplate}
-                {carTemplate}
-                {carTemplate}
-                {carTemplate}
-                {carTemplate}
-                {carTemplate}
-                {carTemplate}
-                {carTemplate}
-                {carTemplate}
-                {carTemplate}
-              </div>
-          </section>
-          <Footer />
-        </>
-        : <CarCard carId={selectedCar} parentCallback={childReturnToHome}/>
-      }
-    </>
+    <Loading loading={loading}>
+      { isLogined ?
+          !carChosen ?
+          <>
+            <Header />
+            <section className="rent_car_search">
+              <h2>Арендуйте Автомобиль</h2>
+              <CarSearch />
+            </section>
+            <section className="recommend">
+                <h3>Рекомендуем поблизости</h3>
+                <div className="recommend_wrapper">
+                  {carTemplate}
+                  {carTemplate}
+                  {carTemplate}
+                  {carTemplate}
+                  {carTemplate}
+                  {carTemplate}
+                  {carTemplate}
+                  {carTemplate}
+                  {carTemplate}
+                  {carTemplate}
+                  {carTemplate}
+                  {carTemplate}
+                </div>
+            </section>
+            <Footer />
+          </>
+          : <CarCard carId={selectedCar} parentCallback={childReturnToHome}/>
+      : <Redirect to="/" />
+    }
+    </Loading>
   )
 }

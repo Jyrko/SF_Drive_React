@@ -5,12 +5,12 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { registrationReducer } from './redux/reducers/registration';
+import rootReducer from './redux/reducers/combinedReducer';
 
 import App from './components/App';
 
 const store = createStore(
-  registrationReducer,
+  rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

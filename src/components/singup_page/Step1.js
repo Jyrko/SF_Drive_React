@@ -120,9 +120,9 @@ const Step1 = ({parentCallback, addStep1}) => {
 
   return (
     <>
-    <form id="step1">
+    <form id="step1_singup">
       <h3>Информация о вас</h3>
-      <div className="form_wrapper">
+      <div className="form_wrapper_singup">
         <div>
           <label htmlFor="fullname">ФИО</label>
           <label htmlFor="birthday">Дата рождения</label>
@@ -139,7 +139,7 @@ const Step1 = ({parentCallback, addStep1}) => {
       </div>
 
       <h3>Паспорт</h3>
-      <div className="form_wrapper">
+      <div className="form_wrapper_singup">
         <div>
           <label htmlFor="serial-passport">Серия и номер</label>
           <label htmlFor="date-of-issue-passport">Дата выдачи</label>
@@ -154,7 +154,7 @@ const Step1 = ({parentCallback, addStep1}) => {
       </div>
 
       <h3>Водительское удостоверение</h3>
-      <div className="form_wrapper">
+      <div className="form_wrapper_singup">
         <div>
           <label htmlFor="serial-license">Серия и номер</label>
           <label htmlFor="date-of-issue-license">Дата выдачи</label>
@@ -166,7 +166,7 @@ const Step1 = ({parentCallback, addStep1}) => {
       </div>
 
       <h3>Пароль</h3>
-      <div className="form_wrapper">
+      <div className="form_wrapper_singup">
         <div>
           <label htmlFor="password">Придумайте пароль</label>
           <label htmlFor="password-reapeat">Повторить пароль</label>

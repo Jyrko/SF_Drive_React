@@ -1,32 +1,35 @@
 import React, {useState, useEffect} from 'react';
-import {Switch} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 
 import Header from '~/components/nav/Header';
 
-import Step1 from './Step1';
-import Step2 from './Step2';
-import Step3 from './Step3';
-import Step4 from './Step4';
+import validateUser from '~/functions/validateUser';
+import Loading from '~/components/Loading';
+
+
+import Step1 from '~/redux/containers/addNewCar/Step1';
+import Step2 from '~/redux/containers/addNewCar/Step2';
+import Step3 from '~/redux/containers/addNewCar/Step3';
+import Step4 from '~/redux/containers/addNewCar/Step4';
 
 import Confirmation from './Confirmation';
-
-import validateUser from '~/functions/validateUser';
 
 import '~/styles/singup_page/base.scss';
 import "~/styles/authed_user/add_new_car/add_new_car.scss"
 
 const AddNewCar = (props) => {
-  const [step, setStep] = useState(0)
+
+  const [step, setStep] = useState(0);
+
+  const [isLogined, setIsLogined] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(async () => {
-    console.log("Component mounting");
-    if (await validateUser()) {
-      console.log("access granted")
-    } else {
-      console.log("access restricted")
-    }
-
-  }, []);
+    setLoading(true);
+    const isValid = await validateUser();
+    setIsLogined(isValid);
+    setLoading(false)
+  }, [])
 
   function callbackFunction(isValidStep, numOfStep) {
     setStep(numOfStep+1)
@@ -65,18 +68,22 @@ const AddNewCar = (props) => {
 
   return (
     <div>
-      { (step < 4)
-        ? <>
-        <Header />
-        <p className="step_p">Шаг {step+1} из 4</p>
-        {currentStepH2(step)}
-        </>
-        : <Confirmation />
-      }
-      { (step === 0)
-        ? <Step1 parentCallback={callbackFunction}/>
-        : currentStep(step)
-      }
+      <Loading loading={loading}>
+        { isLogined ?
+            (step < 4)
+            ? <>
+            <Header />
+            <p className="step_p">Шаг {step+1} из 4</p>
+            {currentStepH2(step)}
+            </>
+            : <Confirmation />
+          : <Redirect to="/" />
+        }
+        { (step === 0)
+          ? <Step1 parentCallback={callbackFunction}/>
+          : currentStep(step)
+        }
+      </Loading>
     </div>
   )
 }

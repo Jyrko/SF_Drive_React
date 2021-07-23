@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react';
-
-import validateUser from '~/functions/validateUser';
+import React from 'react';
 
 export default function Loading(props) {
   const { loading, children } = props;

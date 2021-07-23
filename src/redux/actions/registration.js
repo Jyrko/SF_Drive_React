@@ -32,25 +32,3 @@ export const addStep3 = (step3) => ({
     documentPhotos: step3.documentPhotos
   }
 });
-
-
-
-
-// {
-//   id: Number,
-//   name: String,
-//    email: String,
-//    password: String,
-//    birthday: Date,
-//    passport: {
-//      serial: String,
-//      dateOfIssue: Date,
-//      issuingAuthority: String
-//    },
-//    license: {
-//      serial: String,
-//      dateOfIssue: Date,
-//    },
-    // profileImage: ArrayBuffer,
-    // documentPhotos: <ArrayBuffer>
-// }

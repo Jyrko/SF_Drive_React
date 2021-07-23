@@ -34,9 +34,6 @@ export default function Step1(props) {
 
   function onCarModelsChange(e) {
     console.log(carManufacturerModels);
-    setCarManufacturerModel(e.target.value);
-    setCarManufacturerModel("");
-    setCarManufacturerModels([]);
   }
 
   return (
@@ -78,6 +75,12 @@ export default function Step1(props) {
 
             <label className="form_wrapper_container_label" htmlFor="transmission">Трансмиссия</label>
             <SelectInput key="transmission" customId="transmission" listData={["Автоматическая"]} />
+
+            <label className="form_wrapper_container_label" htmlFor="wheel_drive">Привод</label>
+            <SelectInput key="wheel_drive" customId="wheel_drive" listData={["Автоматическая"]} />
+
+            <label className="form_wrapper_container_label" htmlFor="vehicle_type">Тип кузова</label>
+            <SelectInput key="vehicle_type" customId="vehicle_type" listData={["Автоматическая"]} />
           </div>
         </div>
 

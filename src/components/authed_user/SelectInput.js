@@ -7,12 +7,12 @@ export default function SelectInput({ listData, onChange, customId }) {
 
     return (
       <div className="select_input">
-        <input id={customId} type="text" list="list" onChange={selectInputHandler}/>
+        <input type="text" list="list" onChange={selectInputHandler}/>
         <datalist id="list">
           {listData.map((listOption, index) => {
               return <option key={listOption} value={listOption} />
           })}
         </datalist>
-        </div>
+      </div>
     )
 }

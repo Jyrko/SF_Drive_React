@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import { addStep3 } from '../actions/registration';
+import { addStep3 } from '../../actions/registration';
 import Step3 from '~/components/singup_page/Step3';
 
 const mapStateToProps = (state) => ({
-  currentUser: state
+  currentUser: state.user
 })
 
 const mapDispatchToProps = (dispatch) => ({
