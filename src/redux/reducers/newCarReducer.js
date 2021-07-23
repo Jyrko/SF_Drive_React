@@ -8,18 +8,31 @@ export const newCarReducer = (state = [], action) => {
         ...state,
         {
           id: ++lastId,
-          name: action.payload.name,
-          email: action.payload.email,
-          password: action.payload.password,
-          birthday: action.payload.birthday,
-          passport: {
-            serial: action.payload.passport.serial,
-            dateOfIssue: action.payload.passport.dateOfIssue,
-            issuingAuthority: action.payload.passport.issuingAuthority,
+          specs: {
+            manufacturer: action.payload.manufacturer,
+            model: action.payload.model,
+            yearOfProduction: action.payload.yearOfProduction,
+            vehicleRegistrationPlate: action.payload.vehicleRegistrationPlate,
+            vinNumber: action.payload.vinNumber,
+            color: action.payload.color,
+            engineType: action.payload.engineType,
+            engineDisplacement: action.payload.engineDisplacement,
+            engineHp: action.payload.engineHp,
+            transmissionType: action.payload.transmissionType,
+            wheelDrive: action.payload.wheelDrive,
+            vehicleType: action.payload.vehicleType,
+            mileage: action.payload.mileage,
+            vehiclePassportSerial: action.payload.vehiclePassportSerial,
+            stsSerial: action.payload.stsSerial
           },
-          license: {
-            serial: action.payload.license.serial,
-            dateOfIssue: action.payload.license.dateOfIssue,
+          rentInfo: {
+            regularPrice: action.payload.regularPrice,
+            threeDayRentPrice: action.payload.threeDayRentPrice,
+            fiveDayPlusRentPrice: action.payload.fiveDayPlusRentPrice
+          },
+          insurance: {
+            osagoSerial: action.payload.osagoSerial,
+            kaskoSerial: action.payload.kaskoSerial
           }
         }
       ]
@@ -55,7 +68,7 @@ export const newCarReducer = (state = [], action) => {
 
     case actions.STEP4_CAR_COMPLETED:
       return state.map(car => car.id === lastId ? {...car, documentPhotos: action.payload.documentPhotos} : car);
-      
+
     default: return state;
   }
 };

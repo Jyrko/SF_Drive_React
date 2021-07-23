@@ -15,58 +15,72 @@ import seatVent from "~/assets/svg/authed/car_options/seat_vent.svg";
 
 export const CAR_OPTIONS_ARRAY = [
     {
+      title: "airConditioner",
       icon: airConditioner,
       text: "Кондиционер"
     },
     {
+      title: "airBags",
       icon: airBags,
       text: "Подушки безопасности"
     },
     {
-      icon: airConditioner,
+      title: "aux",
+      icon: aux,
       text: "AUX-кабель"
     },
     {
+      title: "bluetooth",
       icon: bluetooth,
       text: "Поддержка Bluetooth"
     },
     {
+      title: "cruiseControl",
       icon: cruiseControl,
       text: "Круиз-контроль"
     },
     {
+      title: "multimedia",
       icon: multimedia,
       text: "Мультимедия"
     },
     {
+      title: "navigationSys",
       icon: navigationSys,
       text: "Навигация"
     },
     {
+      title: "IsofixFastening",
       icon: IsofixFastening,
       text: "Крепления Isofix"
     },
     {
+      title: "heater",
       icon: heater,
       text: "Автономный подогреватель"
     },
     {
+      title: "seatHeater",
       icon: seatHeater,
       text: "Подогрев сидений"
     },
     {
+      title: "seatVent",
       icon: seatVent,
       text: "Вентиляция сидений"
     },
     {
+      title: "rearCam",
       icon: rearCam,
       text: "Камера заднего вида"
     },
     {
+      title: "roofRack",
       icon: roofRack,
       text: "Багажник на крыше"
     },
     {
+      title: "parktronic",
       icon: parktronic,
       text: "Парктроники"
     },

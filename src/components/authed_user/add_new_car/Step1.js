@@ -24,7 +24,7 @@ export default function Step1(props) {
   const [wheelDrive, setWheelDrive] = useState("");
   const [vehicleType, setVehicleType] = useState("");
 
-  const [milage, setMileage] = useState("");
+  const [mileage, setMileage] = useState("");
   const [ptsSerial, setPtsSerial] = useState("");
   const [stsSerial, setStsSerial] = useState("");
 
@@ -101,10 +101,7 @@ export default function Step1(props) {
 
   useEffect(() => {
     for (let car of listData.ALL_CAR_MODELS_ARRAY) {
-      console.log(carManufacturer);
-      console.log(car.brand);
       if (car.brand === carManufacturer) {
-        console.log("Car Models " + car.models);
         setCarManufacturerModels(car.models);
       }
     }
@@ -112,31 +109,43 @@ export default function Step1(props) {
   }, [carManufacturer])
 
   function childsParentCallback(isContinued) {
+    console.log("clickecd. IS ContinueDiv - " + isContinued)
+    if (isContinued) {
+      props.addCarStep1({
+        specs: {
+          manufacturer: carManufacturer,
+          model: carManufacturerModel,
+          yearOfProduction: yeatOfProduction,
+          vehicleRegistrationPlate: licensePlate,
+          vinNumber: vin,
+          color: color,
+          engineType: engineType,
+          engineDisplacement: engineVolume,
+          engineHp: engineHP,
+          transmissionType: transmission,
+          wheelDrive: wheelDrive,
+          vehicleType: vehicleType,
+          mileage,
+          vehiclePassportSerial: ptsSerial,
+          stsSerial
+        },
+        rentInfo: {
+          regularPrice,
+          threeDayRentPrice,
+          fiveDayPlusRentPrice: fiveDayRentPrice
+        },
+        insurance: {
+          osagoSerial: osago,
+          kaskoSerial: this.kasko ? this.kasko : ""
+        }
+      })
+    }
+
     props.parentCallback(isContinued, 0);
   }
 
   function checkIfValidStep1() {
-    console.log(
-      isValidCarManufacturer &&
-      isValidCarManufacturerModel &&
-      isValidYeatOfProduction &&
-      isValidLicensePlate &&
-      isValidVin &&
-      isValidColor &&
-      isValidEngineType &&
-      isValidEngineVolume &&
-      isValidEngineHP &&
-      isValidTransmission &&
-      isValidWheelDrive &&
-      isValidVehicleType &&
-      isValidMileage &&
-      isValidPtsSerial &&
-      isValidStsSerial &&
-      isValidRegularPrice &&
-      isValidThreeDayRentPrice &&
-      isValidFiveDayRentPrice &&
-      isValidOsago
-    )
+    return true;
     return (
     isValidCarManufacturer &&
     isValidCarManufacturerModel &&
@@ -181,14 +190,14 @@ export default function Step1(props) {
             <input className="form_wrapper_container_input_large" type="text" id="vin" placeholder="ABCD1234567890" onChange={(e) => onChangePattern(e, setVin, VIN_REGEX, setIsValidVin)}/>
 
             <label className="form_wrapper_container_label" htmlFor="car_color">Цвет</label>
-            <SelectInput key="car_color" customId="car_color" listData={["Белый"]} onChange={(e) => onChangePattern(e, setColor, COLOR_REGEX, setIsValidColor)} />
+            <SelectInput key="car_color" customId="car_color" listData={listData.CAR_COLORS_ARRAY} onChange={(e) => onChangePattern(e, setColor, COLOR_REGEX, setIsValidColor)} />
           </div>
         </div>
 
         <div className="form_wrapper">
           <div className="form_wrapper_container">
             <label className="form_wrapper_container_label" htmlFor="engine_type">Тип двигателя</label>
-            <SelectInput key="engine_type" customId="engine_type" listData={["Бензин"]} onChange={(e) => onChangePattern(e, setEngineType, ENGINE_TYPE_REGEX, setIsValidEngineType)} />
+            <SelectInput key="engine_type" customId="engine_type" listData={listData.CAR_ENGINE_TYPE_ARRAY} onChange={(e) => onChangePattern(e, setEngineType, ENGINE_TYPE_REGEX, setIsValidEngineType)} />
 
             <label className="form_wrapper_container_label" htmlFor="engine_volume">Объем (л)</label>
             <input className="form_wrapper_container_input_small" type="text" id="engine_volume" placeholder="1,0л" onChange={(e) => onChangePattern(e, setEngineVolume, ENGINE_VOLUME_REGEX, setIsValidEngineVolume)}/>
@@ -197,13 +206,13 @@ export default function Step1(props) {
             <input className="form_wrapper_container_input_small" type="text" id="engine_hp" placeholder="100 л.c." onChange={(e) => onChangePattern(e, setEngineHP, ENGINE_HP_REGEX, setIsValidEngineHP)}/>
 
             <label className="form_wrapper_container_label" htmlFor="transmission">Трансмиссия</label>
-            <SelectInput key="transmission" customId="transmission" listData={["Автоматическая"]} onChange={(e) => onChangePattern(e, setTransmisson, COLOR_REGEX, setIsValidTransmisson)} />
+            <SelectInput key="transmission" customId="transmission" listData={listData.CAR_TRANSMISSION_ARRAY} onChange={(e) => onChangePattern(e, setTransmisson, COLOR_REGEX, setIsValidTransmisson)} />
 
             <label className="form_wrapper_container_label" htmlFor="wheel_drive">Привод</label>
-            <SelectInput key="wheel_drive" customId="wheel_drive" listData={["Автоматическая"]} onChange={(e) => onChangePattern(e, setWheelDrive, WHEEL_DRIVE_REGEX, setIsValidWheelDrive)}/>
+            <SelectInput key="wheel_drive" customId="wheel_drive" listData={listData.CAR_WHEEL_DRIVE_ARRAY} onChange={(e) => onChangePattern(e, setWheelDrive, WHEEL_DRIVE_REGEX, setIsValidWheelDrive)}/>
 
             <label className="form_wrapper_container_label" htmlFor="vehicle_type">Тип кузова</label>
-            <SelectInput key="vehicle_type" customId="vehicle_type" listData={["Автоматическая"]} onChange={(e) => onChangePattern(e, setVehicleType, VEHICLE_TYPE_REGEX, setIsValidVehicleType)} />
+            <SelectInput key="vehicle_type" customId="vehicle_type" listData={listData.CAR_VEHICLE_TYPE_ARRAY} onChange={(e) => onChangePattern(e, setVehicleType, VEHICLE_TYPE_REGEX, setIsValidVehicleType)} />
           </div>
         </div>
 
@@ -246,7 +255,7 @@ export default function Step1(props) {
         </div>
       </form>
       { checkIfValidStep1() ?
-        <ContinueDiv isValid="true" form="step1" buttonName="Продолжить" callback={childsParentCallback}/> : <ContinueDiv buttonName="Продолжить" isValid="false"/> }
+        <ContinueDiv isValid="true" buttonName="Продолжить" parentCallback={childsParentCallback}/> : <ContinueDiv buttonName="Продолжить" isValid="false"/> }
     </>
   )
 }

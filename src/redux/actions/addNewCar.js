@@ -4,30 +4,30 @@ export const addCarStep1 = (step1) => ({
   type: actions.STEP1_CAR_COMPLETED,
   payload: {
     specs: {
-      manufacturer: step1.manufacturer,
-      model: step1.model,
-      yearOfProduction: step1.yearOfProduction,
-      vehicleRegistrationPlate: step1.vehicleRegistrationPlate,
-      vinNumber: step1.vinNumber,
-      color: step1.color,
-      engineType: step1.engineType,
-      engineDisplacement: step1.engineDisplacement,
-      engineHp: step1.engineHp,
-      transmissionType: step1.transmissionType,
-      wheelDrive: step1.wheelDrive,
-      vehicleType: step1.vehicleType,
-      mileage: step1.mileage,
-      vehiclePassportSerial: step1.vehiclePassportSerial,
-      stsSerial: step1.stsSerial
+      manufacturer: step1.specs.manufacturer,
+      model: step1.specs.model,
+      yearOfProduction: step1.specs.yearOfProduction,
+      vehicleRegistrationPlate: step1.specs.vehicleRegistrationPlate,
+      vinNumber: step1.specs.vinNumber,
+      color: step1.specs.color,
+      engineType: step1.specs.engineType,
+      engineDisplacement: step1.specs.engineDisplacement,
+      engineHp: step1.specs.engineHp,
+      transmissionType: step1.specs.transmissionType,
+      wheelDrive: step1.specs.wheelDrive,
+      vehicleType: step1.specs.vehicleType,
+      mileage: step1.specs.mileage,
+      vehiclePassportSerial: step1.specs.vehiclePassportSerial,
+      stsSerial: step1.specs.stsSerial
     },
     rentInfo: {
-      regularPrice: step1.regularPrice,
-      threeDayRentPrice: step1.threeDayRentPrice,
-      fiveDayPlusRentPrice: step1.fiveDayPlusRentPrice
+      regularPrice: step1.rentInfo.regularPrice,
+      threeDayRentPrice: step1.rentInfo.threeDayRentPrice,
+      fiveDayPlusRentPrice: step1.rentInfo.fiveDayPlusRentPrice
     },
     insurance: {
-      osagoSerial: step1.osagoSerial,
-      kaskoSerial: step1.kaskoSerial
+      osagoSerial: step1.insurance.osagoSerial,
+      kaskoSerial: step1.insurance.kaskoSerial
     }
   }
 });
@@ -36,25 +36,25 @@ export const addCarStep2 = (step2) => ({
   type: actions.STEP2_CAR_COMPLETED,
   payload: {
     options: {
-      airConditioner: step1.airConditioner,
-      airBags: step1.airBags,
-      bluetooth: step1.bluetooth,
-      cruiseControl: step1.cruiseControl,
-      multimedia: step1.multimedia,
-      navigationSys: step1.navigationSys,
-      IsofixFastening: step1.IsofixFastening,
-      heater: step1.heater,
-      seatHeater: step1.seatHeater,
-      seatVent: step1.seatVent,
-      rearCam: step1.rearCam,
-      roofRack: step1.roofRack,
-      parktronic: step1.parktronic
+      airConditioner: step2.options.airConditioner,
+      airBags: step2.options.airBags,
+      bluetooth: step2.options.bluetooth,
+      cruiseControl: step2.options.cruiseControl,
+      multimedia: step2.options.multimedia,
+      navigationSys: step2.options.navigationSys,
+      IsofixFastening: step2.options.IsofixFastening,
+      heater: step2.options.heater,
+      seatHeater: step2.options.seatHeater,
+      seatVent: step2.options.seatVent,
+      rearCam: step2.options.rearCam,
+      roofRack: step2.options.roofRack,
+      parktronic: step2.options.parktronic
     },
     services: {
-      babySeat: step1.babySeat,
-      carDelivery: step1.carDelivery,
-      endInAnyPlace: step1.endInAnyPlace,
-      fullTank: step1.fullTank
+      babySeat: step2.services.babySeat,
+      carDelivery: step2.services.carDelivery,
+      endInAnyPlace: step2.services.endInAnyPlace,
+      fullTank: step2.services.fullTank
     }
   }
 });

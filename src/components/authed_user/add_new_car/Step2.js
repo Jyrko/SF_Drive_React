@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import ContinueDiv from "~/components/ContinueDiv";
 import RoundSwitch from "~/components/authed_user/RoundSwitch";
@@ -8,8 +8,165 @@ import "~/styles/authed_user/add_new_car/step2.scss";
 import { CAR_OPTIONS_ARRAY } from "~/carOptions";
 
 export default function Step2(props) {
+  const [optionsObject, setOptionsObject] = useState({
+    airConditioner: false,
+    airBags: false,
+    aux: false,
+    bluetooth: false,
+    cruiseControl: false,
+    multimedia: false,
+    navigationSys: false,
+    IsofixFastening: false,
+    heater: false,
+    seatHeater: false,
+    seatVent: false,
+    rearCam: false,
+    roofRack: false,
+    parktronic: false,
+  });
+
+  const [servicesObject, setServicesObject] = useState({
+    babySeat: false,
+    carDelivery: false,
+    endInAnyPlace: false,
+    fullTank: false,
+  });
+
   function childsParentCallback(isContinued) {
+    console.log(optionsObject);
+    if (isContinued) {
+      props.addCarStep2({
+        options: {
+          airConditioner: optionsObject.airConditioner,
+          airBags: optionsObject.airBags,
+          bluetooth: optionsObject.bluetooth,
+          cruiseControl: optionsObject.cruiseControl,
+          multimedia: optionsObject.multimedia,
+          navigationSys: optionsObject.navigationSys,
+          IsofixFastening: optionsObject.IsofixFastening,
+          heater: optionsObject.heater,
+          seatVent: optionsObject.seatVent,
+          seatHeater: optionsObject.seatHeater,
+          rearCam: optionsObject.rearCam,
+          roofRack: optionsObject.roofRack,
+          parktronic: optionsObject.parktronic,
+        },
+        services: {
+          babySeat: servicesObject.babySeat,
+          carDelivery: servicesObject.carDelivery,
+          endInAnyPlace: servicesObject.endInAnyPlace,
+          fullTank: servicesObject.fullTank,
+        }
+      })
+    }
     props.parentCallback(isContinued, 1);
+  }
+
+  function onOptionChange(e, optionName) {
+    console.log("switched " + optionName);
+    switch (optionName) {
+      case "airConditioner":
+       setOptionsObject((prevState) => ({
+         ...prevState,
+         airConditioner: !prevState.airConditioner
+       }));
+       break;
+
+     case "airBags":
+      setOptionsObject((prevState) => ({
+        ...prevState,
+        airBags: !prevState.airBags
+      }));
+      break;
+
+     case "aux":
+       setOptionsObject((prevState) => ({
+         ...prevState,
+         aux: !prevState.aux
+       }));
+       break;
+
+     case "bluetooth":
+      setOptionsObject((prevState) => ({
+        ...prevState,
+        bluetooth: !prevState.bluetooth
+      }));
+      break;
+      case "cruiseControl":
+       setOptionsObject((prevState) => ({
+         ...prevState,
+         cruiseControl: !prevState.cruiseControl
+       }));
+       break;
+
+     case "multimedia":
+      setOptionsObject((prevState) => ({
+        ...prevState,
+        multimedia: !prevState.multimedia
+      }));
+      break;
+
+     case "navigationSys":
+       setOptionsObject((prevState) => ({
+         ...prevState,
+         navigationSys: !prevState.navigationSys
+       }));
+       break;
+
+     case "IsofixFastening":
+      setOptionsObject((prevState) => ({
+        ...prevState,
+        IsofixFastening: !prevState.IsofixFastening
+      }));
+      break;
+
+      case "heater":
+       setOptionsObject((prevState) => ({
+         ...prevState,
+         heater: !prevState.heater
+       }));
+       break;
+
+     case "seatHeater":
+      setOptionsObject((prevState) => ({
+        ...prevState,
+        seatHeater: !prevState.seatHeater
+      }));
+      break;
+
+     case "seatVent":
+       setOptionsObject((prevState) => ({
+         ...prevState,
+         seatVent: !prevState.seatVent
+       }));
+       break;
+
+     case "rearCam":
+      setOptionsObject((prevState) => ({
+        ...prevState,
+        rearCam: !prevState.rearCam
+      }));
+      break;
+
+      case "roofRack":
+       setOptionsObject((prevState) => ({
+         ...prevState,
+         roofRack: !prevState.roofRack
+       }));
+       break;
+
+     case "parktronic":
+      setOptionsObject((prevState) => ({
+        ...prevState,
+        parktronic: !prevState.parktronic
+      }));
+      break;
+
+      default:
+        return;
+    }
+
+    console.log(optionsObject);
   }
 
   return (
@@ -23,7 +180,7 @@ export default function Step2(props) {
                 <img src={option.icon} className="form_wrapper_options_option_icon" alt="Car Option"/>
                 <p>{option.text}</p>
                 <div className="form_wrapper_options_option_switch">
-                  <RoundSwitch  onChange={(e) => console.log("switched")}/>
+                  <RoundSwitch  onChange={(e) => onOptionChange(e, option.title)}/>
                 </div>
               </div>
             )
@@ -42,7 +199,12 @@ export default function Step2(props) {
             </div>
 
             <div className="form_wrapper_additional_services_service_switch">
-              <RoundSwitch  onChange={(e) => console.log("switched")}/>
+              <RoundSwitch  onChange={(e) => {
+                  setServicesObject((prevState) => ({
+                    ...prevState,
+                    babySeat: !prevState.babySeat
+                  }))
+                }}/>
             </div>
           </div>
 
@@ -57,7 +219,12 @@ export default function Step2(props) {
             </div>
 
             <div className="form_wrapper_additional_services_service_switch">
-              <RoundSwitch  onChange={(e) => console.log("switched")}/>
+              <RoundSwitch  onChange={(e) => {
+                  setServicesObject((prevState) => ({
+                    ...prevState,
+                    carDelivery: !prevState.carDelivery
+                  }))
+                }}/>
             </div>
           </div>
 
@@ -72,7 +239,12 @@ export default function Step2(props) {
             </div>
 
             <div className="form_wrapper_additional_services_service_switch">
-              <RoundSwitch  onChange={(e) => console.log("switched")}/>
+              <RoundSwitch  onChange={(e) => {
+                  setServicesObject((prevState) => ({
+                    ...prevState,
+                    endInAnyPlace: !prevState.endInAnyPlace
+                  }))
+                }} />
             </div>
           </div>
 
@@ -87,7 +259,12 @@ export default function Step2(props) {
             </div>
 
             <div className="form_wrapper_additional_services_service_switch">
-              <RoundSwitch  onChange={(e) => console.log("switched")}/>
+              <RoundSwitch  onChange={(e) => {
+                  setServicesObject((prevState) => ({
+                    ...prevState,
+                    fullTank: !prevState.fullTank
+                  }))
+                }} />
             </div>
           </div>
         </div>

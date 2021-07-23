@@ -28,7 +28,6 @@ const Step3 = ({parentCallback, addStep3, currentUser}) => {
       parentCallback(newUserInfo.length ? true : false, 2);
     })
     .catch(error => console.log(error));
-
   }
 
   function formAndSendUser() {

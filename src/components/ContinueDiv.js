@@ -12,6 +12,7 @@ const ContinueDiv = (props) => {
 
   function onClickSubmit(e) {
     e.preventDefault();
+    console.log("Clicked");
     if (props.parentCallback) {
       console.log("Continue div callback")
       if (props.isValid === "true") {

@@ -7,7 +7,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  addStep4: (step4) => dispatch(addCarStep4(step4))
+  addCarStep4: (step4) => dispatch(addCarStep4(step4))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Step4);

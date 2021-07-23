@@ -7,4 +7,4 @@ export const STEP3_COMPLETED = "step3Completed";
 export const STEP1_CAR_COMPLETED = "step1CarCompleted";
 export const STEP2_CAR_COMPLETED = "step2CarCompleted";
 export const STEP3_CAR_COMPLETED = "step3CarCompleted";
-export const STEP4_CAR_COMPLETED = "step3CarCompleted";
+export const STEP4_CAR_COMPLETED = "step4CarCompleted";
