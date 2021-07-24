@@ -22,3 +22,31 @@ export const POST_HEADERS_AUTHED_FORMDATA = {
 
 //USER Info
 export const USER_FULLNAME_KEY = "userFullname";
+
+//MOCK CAR INFO
+export const MOCK_CAR = {
+    "_id": "60fbfb2bf8b6c9126dee46ad",
+    "ownerId": "60f70be433e31925d9a84fe4",
+    "specs": {
+        "manufacturer": "---",
+        "model": "---",
+        "yearOfProduction": "---",
+        "vehicleRegistrationPlate": "---",
+        "vinNumber": "---",
+        "color": "---",
+        "engineType": "---",
+        "engineDisplacement": "---",
+        "engineHp": "---",
+        "transmissionType": "---",
+        "wheelDrive": "---",
+        "vehicleType": "---",
+        "mileage": "---",
+        "vehiclePassportSerial": "---",
+        "stsSerial": "---"
+    },
+    "rentInfo": {
+        "regularPrice": "---",
+        "threeDayRentPrice": "---",
+        "fiveDayPlusRentPrice": "---"
+    }
+};

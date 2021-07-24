@@ -23,7 +23,7 @@ import DateFnsUtils from '@date-io/date-fns';
 import {availabilityTheme} from "~/styles/authed_user/car_card/car_card";
 
 
-export default function CarCard(props) {
+export default function CarCard({car, parentCallback}) {
   let currentDate = new Date();
   let nextMonthDate = new Date();
 
@@ -58,11 +58,12 @@ export default function CarCard(props) {
 
 
   useEffect(() => {
-    console.log(props.carId);
-
     currentDate = currentDate.setDate(currentDate.getDate() - 1);
     nextMonthDate = nextMonthDate.setDate(nextMonthDate.getDate() + 31);
-  }, [])
+    console.log(car);
+
+    setCarName(`${car.specs.manufacturer} ${car.specs.model}, ${car.specs.yearOfProduction}`);
+  }, []);
 
   function lastMonthDatePickerHandler(date) {
     setLastMonthDate(date)
@@ -75,7 +76,7 @@ export default function CarCard(props) {
   }
   function returnToHomeHandler(e) {
     e.preventDefault();
-    props.parentCallback(true);
+    parentCallback(true);
   }
 
   function onShowMorePhotosHandler(e) {
@@ -124,18 +125,18 @@ export default function CarCard(props) {
 
           <section className="car_and_owner_basic_info">
             <div className="car_and_owner_basic_info_car">
-              <h2 className="car_and_owner_basic_info_car_title">Car and Model, 2021</h2>
+              <h2 className="car_and_owner_basic_info_car_title">{`${car.specs.manufacturer} ${car.specs.model}, ${car.specs.yearOfProduction}`}</h2>
               <div className="car_and_owner_basic_info_car_prices">
                 <div className="car_and_owner_basic_info_car_prices_price">
-                  <p className="car_and_owner_basic_info_car_prices_price_value">1800 $/сут.</p>
+                  <p className="car_and_owner_basic_info_car_prices_price_value">{car.rentInfo.regularPrice} ₽/сут.</p>
                   <p className="car_and_owner_basic_info_car_prices_price_desc">обычная аренда</p>
                 </div>
                 <div className="car_and_owner_basic_info_car_prices_price">
-                  <p className="car_and_owner_basic_info_car_prices_price_value">1600 $/сут.</p>
+                  <p className="car_and_owner_basic_info_car_prices_price_value">{car.rentInfo.threeDayRentPrice} ₽/сут.</p>
                   <p className="car_and_owner_basic_info_car_prices_price_desc">при аренде за 3 дня</p>
                 </div>
                 <div className="car_and_owner_basic_info_car_prices_price">
-                  <p className="car_and_owner_basic_info_car_prices_price_value">1400 $/сут.</p>
+                  <p className="car_and_owner_basic_info_car_prices_price_value">{car.rentInfo.fiveDayPlusRentPrice} ₽/сут.</p>
                   <p className="car_and_owner_basic_info_car_prices_price_desc">при аренде более 5 дней</p>
                 </div>
               </div>
@@ -154,22 +155,22 @@ export default function CarCard(props) {
             <h3 className="car_detailed_specs_title">Характеристики</h3>
             <div className="car_detailed_specs_wrapper">
               <p className="car_detailed_specs_wrapper_name">Год выпуска</p>
-              <p className="car_detailed_specs_wrapper_value">2021</p>
+              <p className="car_detailed_specs_wrapper_value">{car.specs.yearOfProduction}</p>
 
               <p className="car_detailed_specs_wrapper_name">Кузов</p>
-              <p className="car_detailed_specs_wrapper_value">Седвн</p>
+              <p className="car_detailed_specs_wrapper_value">{car.specs.vehicleType}</p>
 
               <p className="car_detailed_specs_wrapper_name">Двигатель</p>
-              <p className="car_detailed_specs_wrapper_value">1.6 л / 123 л.с. / бензин</p>
+              <p className="car_detailed_specs_wrapper_value">{car.specs.engineDisplacement} л / {car.specs.engineHp} л.с. / {car.specs.engineType}</p>
 
               <p className="car_detailed_specs_wrapper_name">Трансмиссия</p>
-              <p className="car_detailed_specs_wrapper_value">Автоматическая</p>
+              <p className="car_detailed_specs_wrapper_value">{car.specs.transmissionType}</p>
 
               <p className="car_detailed_specs_wrapper_name">Привод</p>
-              <p className="car_detailed_specs_wrapper_value">Передний</p>
+              <p className="car_detailed_specs_wrapper_value">{car.specs.wheelDrive}</p>
 
               <p className="car_detailed_specs_wrapper_name">Пробег</p>
-              <p className="car_detailed_specs_wrapper_value">125 000 км</p>
+              <p className="car_detailed_specs_wrapper_value">{car.specs.mileage} км</p>
             </div>
 
             <img className="car_card_separator" src={separator} />
