@@ -145,7 +145,6 @@ export default function Step1(props) {
   }
 
   function checkIfValidStep1() {
-    return true;
     return (
     isValidCarManufacturer &&
     isValidCarManufacturerModel &&

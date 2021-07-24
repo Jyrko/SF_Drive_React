@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import FileUploader from '~/components/FileUploader/FileUploader';
 import ContinueDiv from "~/components/ContinueDiv";
 
-import { HOSTNAME, POST_HEADERS_FORMDATA, ACCESS_TOKEN_KEY} from '~/constants';
+import { HOSTNAME, POST_HEADERS_AUTHED_FORMDATA} from '~/constants';
 
 import "~/styles/authed_user/add_new_car/step3-4.scss"
 
@@ -16,41 +16,43 @@ export default function Step4(props) {
     setNewCarInfo(files);
   };
 
-  function sendCar(formedData) {
-    fetch(`${HOSTNAME}/cars/add-car`, {
+  async function sendCar(formedData) {
+    await fetch(`${HOSTNAME}/cars/add-car`, {
       method: "POST",
+      headers: POST_HEADERS_AUTHED_FORMDATA,
       body: formedData
     })
     .then((response) => response.json())
     .then(data => {
       console.log(data);
-      sessionStorage.setItem(ACCESS_TOKEN_KEY, data.accessToken);
-      parentCallback(newUserInfo.length ? true : false, 2);
+      props.parentCallback(newCarInfo.length ? true : false, 3);
     })
     .catch(error => console.log(error));
   }
 
-  useEffect(() => {
+  useEffect(async () => {
     if (didMountRef.current) {
-      formAndSendCar();
+      await formAndSendCar();
     } else didMountRef.current = true;
 
   }, [props.currentCar]);
 
-  function formAndSendCar() {
+  async function formAndSendCar() {
     const formedCar = new FormData();
-    formedCar.append("name", currentCar[0].name);
-    formedCar.append("email", currentCar[0].email);
-    formedCar.append("password", currentCar[0].password);
-    formedCar.append("birthday", currentCar[0].birthday);
-    formedCar.append("passport", JSON.stringify(currentCar[0].passport));
-    formedCar.append("license", JSON.stringify(currentCar[0].license));
-    formedCar.append("profileImage", currentCar[0].profileImage);
-    for (let i = 0; i < currentCar[0].documentPhotos.length; i++) {
-      formedCar.append("documentPhotos", currentCar[0].documentPhotos[i]);
+    console.log(props.currentCar);
+    formedCar.append("specs", JSON.stringify(props.currentCar[0].specs));
+    formedCar.append("rentInfo", JSON.stringify(props.currentCar[0].rentInfo));
+    formedCar.append("insurance", JSON.stringify(props.currentCar[0].insurance));
+    formedCar.append("options", JSON.stringify(props.currentCar[0].options));
+    formedCar.append("services", JSON.stringify(props.currentCar[0].services));
+    // for (let i = 0; i < props.currentCar[0].carPhotos.length; i++) {
+    //   formedCar.append("carPhotos", props.currentCar[0].carPhotos);
+    // }
+    for (let i = 0; i < props.currentCar[0].carPhotos.length; i++) {
+      formedCar.append("documentPhotos", props.currentCar[0].carPhotos[i]);
     }
 
-    sendCar(formedCar);
+    await sendCar(formedCar);
   }
 
   function childsParentCallback(isContinued) {
@@ -59,7 +61,6 @@ export default function Step4(props) {
         documentPhotos: newCarInfo
       })
     }
-    props.parentCallback(isContinued, 3);
   }
 
   return (

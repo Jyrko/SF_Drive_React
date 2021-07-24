@@ -9,30 +9,30 @@ export const newCarReducer = (state = [], action) => {
         {
           id: ++lastId,
           specs: {
-            manufacturer: action.payload.manufacturer,
-            model: action.payload.model,
-            yearOfProduction: action.payload.yearOfProduction,
-            vehicleRegistrationPlate: action.payload.vehicleRegistrationPlate,
-            vinNumber: action.payload.vinNumber,
-            color: action.payload.color,
-            engineType: action.payload.engineType,
-            engineDisplacement: action.payload.engineDisplacement,
-            engineHp: action.payload.engineHp,
-            transmissionType: action.payload.transmissionType,
-            wheelDrive: action.payload.wheelDrive,
-            vehicleType: action.payload.vehicleType,
-            mileage: action.payload.mileage,
-            vehiclePassportSerial: action.payload.vehiclePassportSerial,
-            stsSerial: action.payload.stsSerial
+            manufacturer: action.payload.specs.manufacturer,
+            model: action.payload.specs.model,
+            yearOfProduction: action.payload.specs.yearOfProduction,
+            vehicleRegistrationPlate: action.payload.specs.vehicleRegistrationPlate,
+            vinNumber: action.payload.specs.vinNumber,
+            color: action.payload.specs.color,
+            engineType: action.payload.specs.engineType,
+            engineDisplacement: action.payload.specs.engineDisplacement,
+            engineHp: action.payload.specs.engineHp,
+            transmissionType: action.payload.specs.transmissionType,
+            wheelDrive: action.payload.specs.wheelDrive,
+            vehicleType: action.payload.specs.vehicleType,
+            mileage: action.payload.specs.mileage,
+            vehiclePassportSerial: action.payload.specs.vehiclePassportSerial,
+            stsSerial: action.payload.specs.stsSerial
           },
           rentInfo: {
-            regularPrice: action.payload.regularPrice,
-            threeDayRentPrice: action.payload.threeDayRentPrice,
-            fiveDayPlusRentPrice: action.payload.fiveDayPlusRentPrice
+            regularPrice: action.payload.rentInfo.regularPrice,
+            threeDayRentPrice: action.payload.rentInfo.threeDayRentPrice,
+            fiveDayPlusRentPrice: action.payload.rentInfo.fiveDayPlusRentPrice
           },
           insurance: {
-            osagoSerial: action.payload.osagoSerial,
-            kaskoSerial: action.payload.kaskoSerial
+            osagoSerial: action.payload.insurance.osagoSerial,
+            kaskoSerial: action.payload.insurance.kaskoSerial
           }
         }
       ]
@@ -41,25 +41,25 @@ export const newCarReducer = (state = [], action) => {
       return state.map(car => car.id === lastId ? {
         ...car,
         options: {
-          airConditioner: action.payload.airConditioner,
-          airBags: action.payload.airBags,
-          bluetooth: action.payload.bluetooth,
-          cruiseControl: action.payload.cruiseControl,
-          multimedia: action.payload.multimedia,
-          navigationSys: action.payload.navigationSys,
-          IsofixFastening: action.payload.IsofixFastening,
-          heater: action.payload.heater,
-          seatHeater: action.payload.seatHeater,
-          seatVent: action.payload.seatVent,
-          rearCam: action.payload.rearCam,
-          roofRack: action.payload.roofRack,
-          parktronic: action.payload.parktronic
+          airConditioner: action.payload.options.airConditioner,
+          airBags: action.payload.options.airBags,
+          bluetooth: action.payload.options.bluetooth,
+          cruiseControl: action.payload.options.cruiseControl,
+          multimedia: action.payload.options.multimedia,
+          navigationSys: action.payload.options.navigationSys,
+          IsofixFastening: action.payload.options.IsofixFastening,
+          heater: action.payload.options.heater,
+          seatHeater: action.payload.options.seatHeater,
+          seatVent: action.payload.options.seatVent,
+          rearCam: action.payload.options.rearCam,
+          roofRack: action.payload.options.roofRack,
+          parktronic: action.payload.options.parktronic
         },
         services: {
-          babySeat: action.payload.babySeat,
-          carDelivery: action.payload.carDelivery,
-          endInAnyPlace: action.payload.endInAnyPlace,
-          fullTank: action.payload.fullTank
+          babySeat: action.payload.services.babySeat,
+          carDelivery: action.payload.services.carDelivery,
+          endInAnyPlace: action.payload.services.endInAnyPlace,
+          fullTank: action.payload.services.fullTank
         }
       }
       : car);

@@ -8,6 +8,7 @@ import Header from '~/components/nav/Header';
 import CarCard from './CarCard/CarCard';
 
 import validateUser from "~/functions/validateUser";
+import getCarRandom12List from "~/functions/getCarRandom12List";
 
 import SClasse from '~/assets/img/rent_car_search_page/recommended_cars/merc.jpg'
 import SClasseOwner from '~/assets/img/rent_car_search_page/recommended_cars/owner.png'
@@ -15,8 +16,9 @@ import SClasseOwner from '~/assets/img/rent_car_search_page/recommended_cars/own
 import '~/styles/authed_user/rent_car_main.scss';
 
 export default function RentCarMain(props) {
+  const [carArray, setCarArray] = useState([]);
 
-  const [selectedCar, setSelectedCar] = useState("60ed97db4cab66e18a30954d");
+  const [selectedCar, setSelectedCar] = useState("");
   const [carChosen, setCarChosen] = useState(false);
 
   const [isLogined, setIsLogined] = useState(false);
@@ -26,6 +28,8 @@ export default function RentCarMain(props) {
     setLoading(true);
     const isValid = await validateUser();
     setIsLogined(isValid);
+    const random12Array = await getCarRandom12List();
+    setCarArray(random12Array);
     setLoading(false)
   }, [])
 
@@ -38,7 +42,7 @@ export default function RentCarMain(props) {
     setCarChosen(!isReturned);
   }
 
-  const carTemplate =
+  const carTemplate = () => (
   <div className="recommend_wrapper_car" onClick={carViewClickHandler}>
     <img className="recommend_wrapper_car_background_img" src={SClasse} alt="merc"/>
     <img className="recommend_wrapper_car_owner_img" src={SClasseOwner} alt="merc_owner"/>
@@ -46,7 +50,7 @@ export default function RentCarMain(props) {
       <p className="recommend_wrapper_car_desc_model">Mercedes S-classe, 2019</p>
       <p className="recommend_wrapper_car_desc_price">от 5 200 ₽/сутки</p>
     </div>
-  </div>;
+  </div>);
 
   return (
     <Loading loading={loading}>
@@ -61,18 +65,19 @@ export default function RentCarMain(props) {
             <section className="recommend">
                 <h3>Рекомендуем поблизости</h3>
                 <div className="recommend_wrapper">
-                  {carTemplate}
-                  {carTemplate}
-                  {carTemplate}
-                  {carTemplate}
-                  {carTemplate}
-                  {carTemplate}
-                  {carTemplate}
-                  {carTemplate}
-                  {carTemplate}
-                  {carTemplate}
-                  {carTemplate}
-                  {carTemplate}
+                  {}
+                  {carTemplate()}
+                  {carTemplate()}
+                  {carTemplate()}
+                  {carTemplate()}
+                  {carTemplate()}
+                  {carTemplate()}
+                  {carTemplate()}
+                  {carTemplate()}
+                  {carTemplate()}
+                  {carTemplate()}
+                  {carTemplate()}
+                  {carTemplate()}
                 </div>
             </section>
             <Footer />

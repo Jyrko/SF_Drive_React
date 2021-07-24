@@ -292,46 +292,48 @@
   }
 }
 
-.MuiPickersStaticWrapper-staticWrapperRoot {
-  min-width: 450px !important;
-}
-.MuiPickersDay-daySelected {
-  color: black !important;
-  background-color: white !important;
-}
-
-.MuiPickersCalendarHeader-switchHeader {
-  .MuiButtonBase-root {
-    display: none !important;
+.car_availability {
+  .MuiPickersStaticWrapper-staticWrapperRoot {
+    min-width: 450px !important;
+  }
+  .MuiPickersDay-daySelected {
+    color: black !important;
+    background-color: white !important;
   }
 
-  .MuiTypography-root {
-    margin-left: 10px;
-  }
-}
+  .MuiPickersCalendarHeader-switchHeader {
+    .MuiButtonBase-root {
+      display: none !important;
+    }
 
-.MuiPickersCalendarHeader-daysHeader {
-  .MuiTypography-root {
-    margin-right: 25px !important;
-    @media only screen and (max-width: 478px) {
-      margin-right: 7px !important;
+    .MuiTypography-root {
+      margin-left: 10px;
     }
   }
-}
 
-.MuiPickersCalendar-week {
-  .MuiButtonBase-root {
-    margin-right: 25px !important;
-    @media only screen and (max-width: 478px) {
-      margin-right: 7px !important;
+  .MuiPickersCalendarHeader-daysHeader {
+    .MuiTypography-root {
+      margin-right: 25px !important;
+      @media only screen and (max-width: 478px) {
+        margin-right: 7px !important;
+      }
     }
   }
-}
 
-.MuiPickersBasePicker-pickerView {
-  min-width: 450px !important;
+  .MuiPickersCalendar-week {
+    .MuiButtonBase-root {
+      margin-right: 25px !important;
+      @media only screen and (max-width: 478px) {
+        margin-right: 7px !important;
+      }
+    }
+  }
 
-  @media only screen and (max-width: 478px) {
-    min-width: 310px !important;
+  .MuiPickersBasePicker-pickerView {
+    min-width: 450px !important;
+
+    @media only screen and (max-width: 478px) {
+      min-width: 310px !important;
+    }
   }
 }
