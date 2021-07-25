@@ -13,7 +13,6 @@ import getCarRandom12List from "~/functions/getCarRandom12List";
 import { MOCK_CAR, HOSTNAME } from "~/constants";
 
 import SClasse from '~/assets/img/rent_car_search_page/recommended_cars/merc.jpg'
-import SClasseOwner from '~/assets/img/rent_car_search_page/recommended_cars/owner.png'
 
 import '~/styles/authed_user/rent_car_main.scss';
 

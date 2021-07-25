@@ -25,7 +25,11 @@ export default function MyCars(props) {
           <div className="my_cars_exists">
               <h2 className="my_cars_exists_title">Мои Автомобили</h2>
               <div className="my_cars_exists_wrapper">
+                {userCarsArray.map((car, index) => {
+                  return <CarCardSmall key={car._id} car={car}/>
+                })}
               </div>
+              <a href="/authed/my-cars/add-new">Добавить автомобиль</a>
             </div>
         : <div className="my_cars">
             <img src={car} alt="Earn Money Image"/>

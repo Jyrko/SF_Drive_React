@@ -84,7 +84,7 @@ export default function CarSearch(props) {
             <MenuItem value="0">Легковые</MenuItem>
           </Select>
         </FormControl>
-        <button type="submit">Найти</button>
+        <a href="/authed/car-search-results">Найти</a>
       </form>
     </section>
   )

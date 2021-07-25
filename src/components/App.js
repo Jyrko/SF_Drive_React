@@ -11,6 +11,7 @@ import RentCarMain from '~/components/authed_user/RentCarMain';
 import MyCars from "~/components/authed_user/MyCars";
 import AddNewCar from "~/components/authed_user/add_new_car/AddNewCar";
 import Messages from "~/components/authed_user/messages_page/Messages";
+import CarSearchResults from '~/components/authed_user/CarSearchResults';
 /////
 
 
@@ -26,6 +27,9 @@ const App = (props) => {
       <Switch>
         <Route path="/authed/my-cars/add-new">
           <AddNewCar />
+        </Route>
+        <Route path="/authed/car-search-results">
+          <CarSearchResults />
         </Route>
         <Route path="/authed/messages">
           <Messages />
