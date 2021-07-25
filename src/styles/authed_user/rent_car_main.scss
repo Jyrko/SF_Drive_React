@@ -18,8 +18,14 @@
     &_car {
       position: relative;
       max-height: 240px;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.14) 0%, rgba(0, 0, 0, 0.7) 100%);
+      border-radius: 10px;
       &_background_img {
         position: absolute;
+        height: 240px;
+        width: 330px;
+        object-fit: cover;
+        border-radius: 10px;
         z-index: -1;
       }
       &_owner_img {

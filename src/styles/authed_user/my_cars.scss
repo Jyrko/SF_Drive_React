@@ -24,3 +24,15 @@
     margin-top: 80px;
   }
 }
+
+.my_cars_exists {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  margin: 100px;
+  .my_cars_exists_title {
+    margin: 0;
+  }
+}

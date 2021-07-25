@@ -22,6 +22,7 @@ export const POST_HEADERS_AUTHED_FORMDATA = {
 
 //USER Info
 export const USER_FULLNAME_KEY = "userFullname";
+export const USER_ID_KEY = "userId";
 
 //MOCK CAR INFO
 export const MOCK_CAR = {
@@ -50,3 +51,6 @@ export const MOCK_CAR = {
         "fiveDayPlusRentPrice": "---"
     }
 };
+
+//MOCK IMAGES
+export const NO_IMAGE_AVAILABLE = `${HOSTNAME}/files/No_Image_Available.jpg`;

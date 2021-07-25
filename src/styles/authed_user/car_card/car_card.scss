@@ -52,6 +52,11 @@
         max-width: 710px;
         min-width: 350px;
 
+        &_image {
+          max-width: 677px;
+          min-width: 350px;
+        }
+
         &_show_slider_btn_mobile {
           display: none;
           @media only screen and (max-width: 1030px) {
@@ -77,6 +82,11 @@
       &_additional {
         &_image {
           margin-bottom: 15px;
+        }
+
+        img {
+          max-height: 328px;
+          max-width: 320px;
         }
 
         &_more {
@@ -158,6 +168,8 @@
           height: 84px;
           width: 84px;
           margin-bottom: 10px;
+          object-fit: cover;
+          border-radius: 50%;
         }
 
         &_name {

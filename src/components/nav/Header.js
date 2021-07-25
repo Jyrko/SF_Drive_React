@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import { ACCESS_TOKEN_KEY, NO_IMAGE_AVAILABLE, USER_ID_KEY, USER_FULLNAME_KEY } from "~/constants";
 
 import LoginForm from '../LoginForm';
 import Loading from '~/components/Loading';
+
 import validateUser from '~/functions/validateUser';
+import getUserImageById from '~/functions/getUserImageById';
+import editImagePathToCurrentHost from '~/functions/additional/editImagePathToCurrentHost';
 
 import logo from '~/assets/svg/Logo.svg';
 import profileImage from '~/assets/img/rent_car_search_page/recommended_cars/owner.png';
 
 const Header = (props) => {
+  const username = sessionStorage.getItem(USER_FULLNAME_KEY);
+  const [userImageUrl, setUserImageUrl] = useState(NO_IMAGE_AVAILABLE);
+
   const [loginFlag, setLoginFlag] = useState(false);
   const [burgerOpen, setBurgerOpen] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -16,7 +23,10 @@ const Header = (props) => {
   useEffect(async () => {
     setLoading(true);
     const isValidUser = await validateUser();
+    const userImage = await getUserImageById(sessionStorage.getItem(USER_ID_KEY));
+    console.log(userImage);
     setValidUser(isValidUser);
+    setUserImageUrl(editImagePathToCurrentHost(userImage.profileImage));
     setLoading(false)
   }, [])
 
@@ -45,7 +55,7 @@ const Header = (props) => {
           <li><a href="http://localhost:8080/authed" className="nav_default_link">Бронирования</a></li>
           <li><a href="http://localhost:8080/authed/my-cars" className="nav_default_link">Мои автомобили</a></li>
           <li><a href="http://localhost:8080/authed/messages" className="nav_default_link">Сообщения</a></li>
-          <img className="profile_image" src={profileImage}/>
+          <img className="profile_image" src={userImageUrl}/>
           </>
           :
           <>
@@ -83,8 +93,8 @@ const Header = (props) => {
             <a href="http://localhost:8080/authed/messages" className="mobile_navigation_nav_default_link">Сообщения</a>
         </nav>
         <div className="profile-container">
-          <img className="profile-image" src={profileImage}/>
-          <p className="user-fullname"></p>
+          <img className="profile_image" src={userImageUrl}/>
+          <p className="user-fullname">{username}</p>
         </div>
         </>
 

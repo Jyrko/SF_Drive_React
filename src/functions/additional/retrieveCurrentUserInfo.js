@@ -1,8 +1,8 @@
-import {ACCESS_TOKEN_KEY, HOSTNAME, POST_HEADERS, USER_FULLNAME_KEY, USER_ID_KEY} from '~/constants';
+import {ACCESS_TOKEN_KEY, HOSTNAME} from "~/constants";
 
-export default async function validateUser() {
+export default async function retrieveCurrentUserInfo() {
   const accessToken = sessionStorage.getItem(ACCESS_TOKEN_KEY);
-  if (!accessToken) return false;
+  if (!accessToken) return console.warn("Access token does not exist");
 
   const result = await fetch(`${HOSTNAME}/auth/user`, {
     method: 'POST',
@@ -18,11 +18,10 @@ export default async function validateUser() {
   .then(response => response.json())
   .then(data => data)
   .catch(err => console.log(err));
+  console.log(result)
 
-  console.log(result);
-  if (result.message !== "success") return false;
-
-  sessionStorage.setItem(USER_FULLNAME_KEY, result.name);
-  sessionStorage.setItem(USER_ID_KEY, result._id);
-  return true;
+  if (result) {
+    return result;
+  }
+  return "Server error on getting the user info";
 }

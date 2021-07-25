@@ -23,6 +23,10 @@ import DateFnsUtils from '@date-io/date-fns';
 import {availabilityTheme} from "~/styles/authed_user/car_card/car_card";
 
 
+import {HOSTNAME, NO_IMAGE_AVAILABLE} from '~/constants';
+import getUserBasicInfoById from "~/functions/getUserBasicInfoById";
+
+
 export default function CarCard({car, parentCallback}) {
   let currentDate = new Date();
   let nextMonthDate = new Date();
@@ -35,6 +39,11 @@ export default function CarCard({car, parentCallback}) {
   const [rentFor1Day, setRentFor1Day] = useState("3000");
   const [rentFor3Day, setRentFor3Day] = useState("3000");
   const [rentForMoreThan5Day, setRentMoreThanFor5Day] = useState("3000");
+
+  const [userProfileImage, setUserProfileImage] = useState(NO_IMAGE_AVAILABLE)
+  const [username, setUsername] = useState("Joe Down");
+
+  const [carImages, setCarImages] = useState([]);
 
   const [currentMonthDate, setCurrentMonthDate] = useState((new Date()).setDate((new Date()).getDate() + 31));
   const [lastMonthDate, setLastMonthDate] = useState((new Date()).setDate((new Date()).getDate() + 1));
@@ -57,12 +66,16 @@ export default function CarCard({car, parentCallback}) {
   ]
 
 
-  useEffect(() => {
+  useEffect(async () => {
     currentDate = currentDate.setDate(currentDate.getDate() - 1);
     nextMonthDate = nextMonthDate.setDate(nextMonthDate.getDate() + 31);
     console.log(car);
 
+    setCarImages(car.images);
     setCarName(`${car.specs.manufacturer} ${car.specs.model}, ${car.specs.yearOfProduction}`);
+    const userInfo = await getUserBasicInfoById(car.ownerId);
+    setUsername(userInfo ? userInfo.name : "Not Loaded");
+    setUserProfileImage(userInfo ? `${HOSTNAME}${userInfo.profileImage}` : NO_IMAGE_AVAILABLE);
   }, []);
 
   function lastMonthDatePickerHandler(date) {
@@ -93,7 +106,7 @@ export default function CarCard({car, parentCallback}) {
         <Header />
         {
           showMorePhotos
-          ? <ImageGallery parentCallback={showMorePhotosParentCallback} />
+          ? <ImageGallery images={car.images} parentCallback={showMorePhotosParentCallback} />
           : <></>
         }
         <div className="car_card">
@@ -111,12 +124,12 @@ export default function CarCard({car, parentCallback}) {
                     <path d="M20 14V2C20 1.46957 19.7893 0.960859 19.4142 0.585786C19.0391 0.210714 18.5304 0 18 0H6C5.46957 0 4.96086 0.210714 4.58579 0.585786C4.21071 0.960859 4 1.46957 4 2V14C4 14.5304 4.21071 15.0391 4.58579 15.4142C4.96086 15.7893 5.46957 16 6 16H18C18.5304 16 19.0391 15.7893 19.4142 15.4142C19.7893 15.0391 20 14.5304 20 14ZM9 10L11.03 12.71L14 9L18 14H6L9 10ZM0 4V18C0 18.5304 0.210714 19.0391 0.585786 19.4142C0.960859 19.7893 1.46957 20 2 20H16V18H2V4" fill="white"/>
                   </svg>
                 </button>
-                <img src={first} className="car_gallery_container_main_image" />
+                <img src={carImages[0]} className="car_gallery_container_main_image" />
               </div>
               <div className="car_gallery_container_additional">
-                <img src={second} className="car_gallery_container_additional_image" />
+                <img src={carImages[1]} className="car_gallery_container_additional_image" />
                 <div className="car_gallery_container_additional_more">
-                  <img src={third} className="car_gallery_container_additional_more_image" />
+                  <img src={carImages[2]} className="car_gallery_container_additional_more_image" />
                   <button className="car_gallery_container_additional_more_btn" onClick={onShowMorePhotosHandler}>Показать ещё фото</button>
                 </div>
               </div>
@@ -142,8 +155,8 @@ export default function CarCard({car, parentCallback}) {
               </div>
               <div className="car_and_owner_basic_info_owner">
                 <div className="car_and_owner_basic_info_owner_wrapper">
-                  <img src={owner} className="car_and_owner_basic_info_owner_wrapper_image"/>
-                  <p className="car_and_owner_basic_info_owner_wrapper_name">Name Doe</p>
+                  <img src={userProfileImage} className="car_and_owner_basic_info_owner_wrapper_image"/>
+                  <p className="car_and_owner_basic_info_owner_wrapper_name">{username}</p>
                   <p className="car_and_owner_basic_info_owner_wrapper_role">Владелец</p>
                   <a href="/"> Просмотреть профиль</a>
                 </div>

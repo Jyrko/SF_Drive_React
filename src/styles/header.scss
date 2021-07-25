@@ -126,8 +126,13 @@ nav a {
 }
 
 .profile_image {
-  border-radius: 15px;
+  width: 48px;
+  height: 48px;
+  margin-top: -8px;
+  border-radius: 50%;
+  cursor: pointer;
 }
+
 /* Template Header END */
 @media screen and (max-width: 768px) {
   .h1 {
@@ -217,4 +222,21 @@ nav a {
   margin-right: 20px;
   bottom: 20px;
   margin: 0 auto;
+}
+
+#mobile_navigation .profile-container {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: -20px;
+  bottom: 40px;
+}
+
+#mobile_navigation .profile-container .profile_image {
+  width: 74px;
+  height: 74px;
+  margin-right: 15px;
 }

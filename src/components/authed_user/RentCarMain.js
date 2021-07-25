@@ -10,7 +10,7 @@ import CarCard from './CarCard/CarCard';
 import validateUser from "~/functions/validateUser";
 import getCarRandom12List from "~/functions/getCarRandom12List";
 
-import { MOCK_CAR } from "~/constants";
+import { MOCK_CAR, HOSTNAME } from "~/constants";
 
 import SClasse from '~/assets/img/rent_car_search_page/recommended_cars/merc.jpg'
 import SClasseOwner from '~/assets/img/rent_car_search_page/recommended_cars/owner.png'
@@ -18,11 +18,14 @@ import SClasseOwner from '~/assets/img/rent_car_search_page/recommended_cars/own
 import '~/styles/authed_user/rent_car_main.scss';
 
 export default function RentCarMain(props) {
+
   const [carArray, setCarArray] = useState([]);
 
   const [selectedCar, setSelectedCar] = useState(MOCK_CAR);
   const [carChosen, setCarChosen] = useState(false);
   const [carUpdateFlag, setCarUpdateFlag] = useState(false);
+
+  const [userImages, setUserImages] = useState({});
 
   const [isLogined, setIsLogined] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -36,23 +39,20 @@ export default function RentCarMain(props) {
     setLoading(false)
   }, [])
 
-  useEffect(() => {
-    setCarChosen(true);
-  }, [carUpdateFlag])
-
   function carViewClickHandler(e, car) {
     setSelectedCar(car);
-    setCarUpdateFlag(!carUpdateFlag);
+    console.log("-------------------")
+    console.log(userImages);
+    setCarChosen(true);
   }
 
   function childReturnToHome(isReturned) {
-    setCarChosen(!isReturned);
+    setCarChosen(false);
   }
 
   const carTemplate = (car) => (
   <div className="recommend_wrapper_car" key={car._id} onClick={(e) => carViewClickHandler(e, car)}>
-    <img className="recommend_wrapper_car_background_img" src={SClasse} alt="merc"/>
-    <img className="recommend_wrapper_car_owner_img" src={SClasseOwner} alt="merc_owner"/>
+    <img className="recommend_wrapper_car_background_img" src={car.images[0]} alt="merc"/>
     <div className="recommend_wrapper_car_desc">
       <p className="recommend_wrapper_car_desc_model">{car.specs.manufacturer} {car.specs.model}, {car.specs.yearOfProduction}</p>
       <p className="recommend_wrapper_car_desc_price">от {car.rentInfo.fiveDayPlusRentPrice} ₽/сутки</p>

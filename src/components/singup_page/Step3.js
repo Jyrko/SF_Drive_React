@@ -39,9 +39,9 @@ const Step3 = ({parentCallback, addStep3, currentUser}) => {
     formedUser.append("passport", JSON.stringify(currentUser[0].passport));
     formedUser.append("license", JSON.stringify(currentUser[0].license));
     formedUser.append("profileImage", currentUser[0].profileImage);
-    for (let i = 0; i < currentUser[0].documentPhotos.length; i++) {
-      formedUser.append("documentPhotos", currentUser[0].documentPhotos[i]);
-    }
+    // for (let i = 0; i < currentUser[0].documentPhotos.length; i++) {
+    //   formedUser.append("documentPhotos", currentUser[0].documentPhotos[i]);
+    // }
 
     sendUser(formedUser);
   }
