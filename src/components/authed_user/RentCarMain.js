@@ -66,7 +66,7 @@ export default function RentCarMain(props) {
             <Header />
             <section className="rent_car_search">
               <h2>Арендуйте Автомобиль</h2>
-              <CarSearch />
+              <CarSearch searchType="main"/>
             </section>
             <section className="recommend">
                 <h3>Рекомендуем поблизости</h3>

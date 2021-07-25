@@ -1,0 +1,10 @@
+.return_to_home_div {
+  display: flex;
+  cursor: pointer;
+  &_title {
+    font-family: Roboto;
+    font-size: 14px;
+    color: #508E87;
+    margin-left: 14px;
+  }
+}

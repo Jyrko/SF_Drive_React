@@ -16,7 +16,7 @@ export default function MyCars(props) {
   useEffect(async () => {
     const userCars = await getUserCarsById(sessionStorage.getItem(USER_ID_KEY));
     setUserCarsArray(userCars);
-  })
+  }, [])
 
   return (
     <>

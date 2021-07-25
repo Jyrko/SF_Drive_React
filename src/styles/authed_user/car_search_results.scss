@@ -1,0 +1,36 @@
+@import "../mixins";
+
+.car_search_results {
+  padding-top: 60px;
+  max-width: 1050px;
+  margin: 0 auto;
+
+  &_cars {
+    &_wrapper {
+      display: flex;
+      flex-direction: column;
+      &_car {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .car_search_results_cars_wrapper_button {
+          @include general_button();
+          position: absolute;
+          right: 0px;
+          margin: 0;
+          color: #61A199;
+          background: rgba(97, 161, 153, 0.15);
+          padding: 12px 30px;
+
+          @media only screen and (max-width: 768px) {
+            display: none;
+          }
+        }
+      }
+      @media only screen and (max-width: 768px) {
+        align-items: center;
+      }
+    }
+  }
+}
