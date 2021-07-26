@@ -5,7 +5,7 @@ import ContinueDiv from "../../ContinueDiv";
 import ImageGallery from "../ImageGallery";
 import ReturnButton from "~/components/authed_user/ReturnButton"
 import CarOptions from "./CarOptions";
-import LeaseRegistration from "~/components/authed_user/LeaseRegistration";
+import LeaseRegistration from "~/components/authed_user/LeaseRegistration/LeaseRegistration";
 
 //tempfiles
 import first from "~/assets/img/tempfiles/1.jpg";
@@ -33,7 +33,7 @@ export default function CarCard({car, parentCallback}) {
   let currentDate = new Date();
   let nextMonthDate = new Date();
 
-  const [isRentChosen, setIsRentPageChosen] = useState(false);
+  const [isRentChosen, setIsRentPageChosen] = useState(true);
 
   const [showMorePhotos, setShowMorePhotos] = useState(false);
 

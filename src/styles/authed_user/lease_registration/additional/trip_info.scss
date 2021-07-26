@@ -1,0 +1,47 @@
+@import "../../../mixins";
+
+.trip-info {
+
+  p {
+    display: inline;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  &_container {
+    display: grid;
+    grid-template-columns: 140px 416px;
+    grid-column-gap: 60px;
+    grid-row-gap: 20px;
+
+    &_period_to_p_div, &_period_from_p_div {
+      display: flex;
+      align-items: center;
+    }
+
+    input {
+      @media only screen and (max-width: 768px) {
+        display: block;
+        width: 335px;
+        margin: 0 auto;
+      }
+    }
+
+    &_plans_input_div {
+      textarea {
+        @include general_textarea();
+        width: 416px;
+        height: 140px;
+
+        @media only screen and (max-width: 768px) {
+          display: block;
+          width: 311px;
+          margin: 0 auto;
+        }
+      }
+    }
+    @media only screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

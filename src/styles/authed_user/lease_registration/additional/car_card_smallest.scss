@@ -1,0 +1,59 @@
+.car-card-smallest {
+  display: flex;
+  flex-direction: row;
+
+  p {
+    display: inline;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  &_image_div {
+    img {
+      width: 152px;
+      height: 111px;
+      object-fit: cover;
+      border-radius: 10px;
+
+      @media only screen and (max-width: 768px) {
+        width: 98px;
+        height: 72px;
+      }
+    }
+  }
+
+  &_info_div {
+    margin-left: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &_rating {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 8px;
+
+      p {
+        font-size: 13px;
+        margin-left: 8px;
+        span {
+          color: #828282;
+        }
+      }
+    }
+
+    &_manufacturer_model {
+      margin-bottom: 10px;
+      p {
+        font-size: 18px;
+      }
+    }
+
+    &_price {
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}

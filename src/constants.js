@@ -24,6 +24,9 @@ export const POST_HEADERS_AUTHED_FORMDATA = {
 export const USER_FULLNAME_KEY = "userFullname";
 export const USER_ID_KEY = "userId";
 
+//MOCK IMAGES
+export const NO_IMAGE_AVAILABLE = `${HOSTNAME}/files/No_Image_Available.jpg`;
+
 //MOCK CAR INFO
 export const MOCK_CAR = {
     "_id": "60fbfb2bf8b6c9126dee46ad",
@@ -49,8 +52,31 @@ export const MOCK_CAR = {
         "regularPrice": "---",
         "threeDayRentPrice": "---",
         "fiveDayPlusRentPrice": "---"
-    }
+    },
+      "options": {
+      "airConditioner": true,
+      "airBags": true,
+      "bluetooth": true,
+      "cruiseControl": true,
+      "multimedia": true,
+      "navigationSys": false,
+      "IsofixFastening": true,
+      "heater": true,
+      "seatHeater": true,
+      "seatVent": false,
+      "rearCam": true,
+      "roofRack": false,
+      "parktronic": true
+    },
+    "services": {
+      "babySeat": true,
+      "carDelivery": true,
+      "endInAnyPlace": false,
+      "fullTank": false
+    },
+    "images": [
+      NO_IMAGE_AVAILABLE,
+      NO_IMAGE_AVAILABLE,
+      NO_IMAGE_AVAILABLE
+    ]
 };
-
-//MOCK IMAGES
-export const NO_IMAGE_AVAILABLE = `${HOSTNAME}/files/No_Image_Available.jpg`;
