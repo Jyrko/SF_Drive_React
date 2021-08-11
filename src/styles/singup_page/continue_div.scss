@@ -11,9 +11,10 @@
   }
   &_wrapper {
     margin: 0 auto;
-    max-width: 176px;
+    max-width: 300px;
 
     button[type=submit] {
+      width: 300px;
       @media only screen and (max-width: 468px) {
         width: 100%;
       }

@@ -18,7 +18,8 @@ export default async function getCarRandom12List() {
   .catch(err => console.log(err));
 
   if (Array.isArray(result)) {
-    return result;
+    const carListUpdated = editImagesToCurrentHost(result);
+    return carListUpdated;
   }
 
   return [];

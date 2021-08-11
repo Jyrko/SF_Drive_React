@@ -33,7 +33,7 @@ export default function CarCard({car, parentCallback}) {
   let currentDate = new Date();
   let nextMonthDate = new Date();
 
-  const [isRentChosen, setIsRentPageChosen] = useState(true);
+  const [isRentChosen, setIsRentPageChosen] = useState(false);
 
   const [showMorePhotos, setShowMorePhotos] = useState(false);
 

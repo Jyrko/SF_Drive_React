@@ -1,4 +1,70 @@
+@mixin title_value() {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .cheque {
-  padding: 20px;
+  padding: 30px;
+  max-width: 416px;
+  max-height: 341px;
   background: #F7F7F8;
+  margin-top: 60px;
+  border-radius: 10px;
+
+  p {
+    font-size: 16px;
+    display: inline;
+    margin: 0;
+  }
+
+  .cheque_title {
+    margin: 0 0 20px 0;
+    font-size: 24px !important;
+  }
+
+  &_rent_price {
+    margin-bottom: 24px;
+    .cheque_rent_price_with_discount {
+      @include title_value;
+    }
+    .cheque_rent_price_without_discount {
+      @include title_value;
+
+      p {
+        font-size: 12px;
+        color: #828282;
+      }
+
+      &_value {
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  &_additional_service {
+    margin-bottom: 24px;
+    @include title_value;
+  }
+
+  &_comission {
+    @include title_value;
+  }
+
+  &_summary {
+    hr {
+      margin: 30px 0;
+    }
+
+    p {
+      font-size: 18px;
+    }
+    &_info {
+      @include title_value;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    margin: 0 auto;
+  }
 }

@@ -6,15 +6,21 @@ import Header from '~/components/nav/Header';
 import Footer from '~/components/Footer';
 import CarSearch from '~/components/authed_user/CarSearch';
 import CarCardSmall from '~/components/authed_user/CarCard/CarCardSmall';
+import CarCard from "./CarCard/CarCard";
 
 import validateUser from "~/functions/validateUser";
 import getCarList from "~/functions/getCarList";
+
+import { MOCK_CAR } from "../../constants";
 
 import "~/styles/authed_user/car_search_results.scss";
 
 export default function CarSearchResults() {
   const [isLogined, setIsLogined] = useState(false);
   const [loading, setLoading] = useState(true);
+
+  const [isCardCardOpen, setIsCarCardOpen] = useState(false);
+  const [currentCar, setCurrentCar] = useState(MOCK_CAR);
 
   const [carListArray, setCarListArray] = useState([]);
   useEffect(async () => {
@@ -26,8 +32,16 @@ export default function CarSearchResults() {
     setLoading(false)
   }, [])
 
+  function parentCallback(childInfo) {
+    setIsCarCardOpen(!childInfo);
+  }
+
   return (
     <Loading loading={loading}>
+      { isCardCardOpen ?
+        <CarCard car={currentCar} parentCallback={parentCallback} />
+        :
+        <>
       <Header />
       { isLogined ?
         <>
@@ -42,7 +56,11 @@ export default function CarSearchResults() {
                     return (
                       <div key={car._id} className="car_search_results_cars_wrapper_car">
                         <CarCardSmall car={car} />
-                        <button className="car_search_results_cars_wrapper_button">Арендовать</button>
+                        <button onClick={(e) => {
+                            e.preventDefault();
+                            setIsCarCardOpen(true);
+                            setCurrentCar(car);
+                          }}className="car_search_results_cars_wrapper_button">Арендовать</button>
                       </div>
                     )
                 })}
@@ -53,6 +71,8 @@ export default function CarSearchResults() {
         : <Redirect to="/" />
       }
       <Footer />
+      </>
+    }
     </Loading>
   )
 }

@@ -12,6 +12,7 @@ import MyCars from "~/components/authed_user/MyCars";
 import AddNewCar from "~/components/authed_user/add_new_car/AddNewCar";
 import Messages from "~/components/authed_user/messages_page/Messages";
 import CarSearchResults from '~/components/authed_user/CarSearchResults';
+import LandLordProfile from "~/components/authed_user/profile/LandLordProfile"
 /////
 
 
@@ -30,6 +31,9 @@ const App = (props) => {
         </Route>
         <Route path="/authed/car-search-results">
           <CarSearchResults />
+        </Route>
+        <Route path="/authed/land-lord-profile">
+          <LandLordProfile />
         </Route>
         <Route path="/authed/messages">
           <Messages />

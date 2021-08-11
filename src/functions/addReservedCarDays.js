@@ -1,7 +1,7 @@
 import {ACCESS_TOKEN_KEY, HOSTNAME } from '~/constants';
-import editImagesToCurrentHost from "~/functions/additional/editImagesToCurrentHost";
 
-export default async function getCarRandom12List() {
+
+export function addReservedCarDays() {
   const accessToken = sessionStorage.getItem(ACCESS_TOKEN_KEY);
   if (!accessToken) return [];
 
@@ -16,11 +16,6 @@ export default async function getCarRandom12List() {
   .then(response => response.json())
   .then(data => data)
   .catch(err => console.log(err));
-
-  if (Array.isArray(result)) {
-    const carListUpdated = editImagesToCurrentHost(result);
-    return carListUpdated;
-  }
 
   return [];
 }

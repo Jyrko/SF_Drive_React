@@ -13,7 +13,10 @@ export default function CarCardSmall({car}) {
   const [carImage, setCarImage] = useState("");
 
   useEffect(() => {
-    setCarImage(editImagePathToCurrentHost(car.images[0]));
+    console.log(car);
+    if (car.images) {
+      setCarImage(car.images[0]);
+    }
   }, [])
 
   return (

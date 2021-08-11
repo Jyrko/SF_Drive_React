@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ACCESS_TOKEN_KEY, NO_IMAGE_AVAILABLE, USER_ID_KEY, USER_FULLNAME_KEY } from "~/constants";
+import { Link } from 'react-router-dom';
 
 import LoginForm from '../LoginForm';
 import Loading from '~/components/Loading';
@@ -55,7 +56,9 @@ const Header = (props) => {
           <li><a href="http://localhost:8080/authed" className="nav_default_link">Бронирования</a></li>
           <li><a href="http://localhost:8080/authed/my-cars" className="nav_default_link">Мои автомобили</a></li>
           <li><a href="http://localhost:8080/authed/messages" className="nav_default_link">Сообщения</a></li>
-          <img className="profile_image" src={userImageUrl}/>
+          <Link to="/authed/my-profile">
+            <img className="profile_image" src={userImageUrl}/>
+          </Link>
           </>
           :
           <>
@@ -92,10 +95,12 @@ const Header = (props) => {
             <hr />
             <a href="http://localhost:8080/authed/messages" className="mobile_navigation_nav_default_link">Сообщения</a>
         </nav>
-        <div className="profile-container">
-          <img className="profile_image" src={userImageUrl}/>
-          <p className="user-fullname">{username}</p>
-        </div>
+        <Link to="authed/my-profile">
+          <div className="profile-container">
+            <img className="profile_image" src={userImageUrl}/>
+            <p className="user-fullname">{username}</p>
+          </div>
+        </Link>
         </>
 
         :

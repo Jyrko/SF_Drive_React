@@ -21,7 +21,7 @@ export default function RentCarMain(props) {
   const [carArray, setCarArray] = useState([]);
 
   const [selectedCar, setSelectedCar] = useState(MOCK_CAR);
-  const [carChosen, setCarChosen] = useState(true);
+  const [carChosen, setCarChosen] = useState(false);
   const [carUpdateFlag, setCarUpdateFlag] = useState(false);
 
   const [userImages, setUserImages] = useState({});

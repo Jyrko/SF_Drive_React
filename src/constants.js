@@ -49,9 +49,9 @@ export const MOCK_CAR = {
         "stsSerial": "---"
     },
     "rentInfo": {
-        "regularPrice": "---",
-        "threeDayRentPrice": "---",
-        "fiveDayPlusRentPrice": "---"
+        "regularPrice": "1500",
+        "threeDayRentPrice": "1250",
+        "fiveDayPlusRentPrice": "1000"
     },
       "options": {
       "airConditioner": true,
