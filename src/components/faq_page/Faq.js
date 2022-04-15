@@ -42,34 +42,34 @@ const Faq = (props) => {
       <main>
         <section className="FAQ">
           <div className="FAQ_img_wrapper">
-            <img src={faq} alt="Часто задаваемые вопросы" />
+            <img src={faq} alt="FAQ" />
           </div>
-          <h1>Частые вопросы</h1>
-          <p>Отвечаем на все вопросы, которые у вас могут возникнуть</p>
+          <h1>FAQ</h1>
+          <p>We answer all questions you may have</p>
           <div className="FAQ_wrapper">
-            <button type="button" className="collapsible" onClick={collapse}>Могу ли я отменить бронь?</button>
+            <button type="button" className="collapsible" onClick={collapse}>Can I cancel my booking?</button>
             <div className="content">
-              <p>Данный вопрос обсуждается с собственником, но как правило автомобиль нужно  вернуть туда, где вы его получили.</p>
+              <p>This issue is discussed with the owner, but as a rule, the car must be returned to where you received it.</p>
             </div>
-            <button type="button" className="collapsible" onClick={collapse}>Могу ли я вернуть деньги, если не подошёл автомобиль?</button>
+            <button type="button" className="collapsible" onClick={collapse}>Can I get a refund if the car didn't fit?</button>
             <div className="content">
-              <p>Данный вопрос обсуждается с собственником, но как правило автомобиль нужно вернуть туда, где вы его получили.</p>
+              <p>This issue is discussed with the owner, but as a rule, the car must be returned to where you received it.</p>
             </div>
-            <button type="button" className="collapsible" onClick={collapse}>Что делать, если случилось ДТП?</button>
+            <button type="button" className="collapsible" onClick={collapse}>What to do if an accident happens?</button>
             <div className="content">
-              <p>Данный вопрос обсуждается с собственником, но как правило автомобиль нужно вернуть туда, где вы его получили.</p>
+              <p>This issue is discussed with the owner, but as a rule, the car must be returned to where you received it.</p>
             </div>
-            <button type="button" className="collapsible" onClick={collapse}>Могу ли я оставить автомобиль в удобном для меня месте?</button>
+            <button type="button" className="collapsible" onClick={collapse}>Can I leave my car in a convenient location?</button>
             <div className="content">
-              <p>Данный вопрос обсуждается с собственником, но как правило автомобиль нужно вернуть туда, где вы его получили.</p>
+              <p>This issue is discussed with the owner, but as a rule, the car must be returned to where you received it.</p>
             </div>
-            <button type="button" className="collapsible" onClick={collapse}>Что делать, если собственник просит заплатить ему напрямую?</button>
+            <button type="button" className="collapsible" onClick={collapse}>What if the owner asks to pay directly?</button>
             <div className="content">
-              <p>Данный вопрос обсуждается с собственником, но как правило автомобиль нужно вернуть туда, где вы его получили.</p>
+              <p>This issue is discussed with the owner, but as a rule, the car must be returned to where you received it.</p>
             </div>
-            <button type="button" className="collapsible" onClick={collapse}>Должен ли я заправлять автомобиль?</button>
+            <button type="button" className="collapsible" onClick={collapse}>Should I fill up the car?</button>
             <div className="content">
-              <p>Данный вопрос обсуждается с собственником, но как правило автомобиль нужно вернуть туда, где вы его получили.</p>
+              <p>This issue is discussed with the owner, but as a rule, the car must be returned to where you received it.</p>
             </div>
           </div>
         </section>

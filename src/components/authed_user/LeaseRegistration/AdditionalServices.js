@@ -35,7 +35,7 @@ export default function AdditionalServices({ carSelectedServices, onServiceChang
         </div>
 
         <div className="additional-services_wrapper_service_price_div">
-          <p className="additional-services_wrapper_service_price_div_price">{option.price} ₽</p>
+          <p className="additional-services_wrapper_service_price_div_price">{option.price} UAH</p>
         </div>
 
         <div className="additional-services_wrapper_service_switch">

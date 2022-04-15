@@ -34,98 +34,98 @@ const About = (props) => {
             <Header />
               <section id="about_us">
               <img src={aboutUs} className="about-us-img" alt="About us" />
-              <h1>О нас</h1>
-              <p>Это учебный проект, созданный с целью получения боевого опыта в разработке<br /> настоящего живого веб-приложения. Этот сервис имитирует работу каршеринга,<br /> в котором можно не только арендовать автомобили, но и сдавать их в аренду.</p>
+              <h1>About us</h1>
+              <p>This is a tutorial project designed to get hands-on experience in developing a<br />real live web application. This service imitates the work of carsharing</p>
             </section>
           <section id="contacts">
-            <h2>Контакты</h2>
+            <h2>Contacts</h2>
             <div className="wrapper_contacts">
               <div>
-                <p>Электронная почта</p>
-                <p>drive@skillfactory.com</p>
+                <p>Email</p>
+                <p>info@skilldrive.com</p>
               </div>
               <div>
                 <hr className="solid" />
               </div>
               <div>
-                <p>Телефон</p>
-                <p>+7 912 123-45-67</p>
+                <p>Phone</p>
+                <p>+380(99)-999-09-90</p>
               </div>
             </div>
           </section>
-          <section id="team">
+{/*          <section id="team">
             <h2>Команда</h2>
             <div className="wrapper_team_row">
                 <div>
                   <img className="teamworker_photo" src={ellipse9} alt="Иван Иванов" />
-                  <h3>Иван Иванов</h3>
+                  <h3>Ivan Ivanov</h3>
                   <div>CEO</div>
                 </div>
                 <div>
                   <img className="teamworker_photo" src={ellipse10} alt="Алексей Смирнов" />
-                  <h3>Алексей Смирнов</h3>
-                  <div>Frontend-разработчик</div>
+                  <h3>Alex Smirnechenko</h3>
+                  <div>Frontend-developer</div>
                 </div>
                 <div>
                   <img className="teamworker_photo" src={ellipse11} alt="Алексей Смирнов" />
-                  <h3>Денис Ярцев</h3>
-                  <div>Backend-разработчик</div>
+                  <h3>Den Yarchev</h3>
+                  <div>Backend-developer</div>
                 </div>
                 <div>
                   <img className="teamworker_photo" src={ellipse12} alt="Николай Морозов" />
-                  <h3>Николай Морозов</h3>
-                  <div>Дизайнер</div>
+                  <h3>Nikolay Moroz</h3>
+                  <div>Designer</div>
                 </div>
              </div>
 
              <div className="wrapper_team_row">
                 <div>
                   <img className="teamworker_photo" src={ellipse13} alt="Ирина Деева" />
-                  <h3>Ирина Деева</h3>
-                  <div>Копирайтер</div>
+                  <h3>Irina Avdeeva</h3>
+                  <div>Copyrighter</div>
                 </div>
                 <div>
                   <img className="teamworker_photo" src={ellipse14} alt="Мария Стрелкова" />
-                  <h3>Мария Стрелкова</h3>
+                  <h3>Maria Strekovko</h3>
                   <div>SMM</div>
                 </div>
               </div>
           </section>
           <section id="team_mobile">
-            <h2>Команда</h2>
+            <h2>Team</h2>
             <div className="wrapper_team_row">
                 <div>
                   <img className="teamworker_photo" src={ellipse9} alt="Иван Иванов" />
-                  <h3>Иван Иванов</h3>
+                  <h3>Ivan Ivanov</h3>
                   <div>CEO</div>
                 </div>
                 <div>
                   <img className="teamworker_photo" src={ellipse10} alt="Алексей Смирнов" />
-                  <h3>Алексей Смирнов</h3>
-                  <div>Frontend-разработчик</div>
+                  <h3>Alex Smirnechenko</h3>
+                  <div>Frontend-developer</div>
                 </div>
                 <div>
                   <img className="teamworker_photo" src={ellipse11} alt="Алексей Смирнов" />
-                  <h3>Денис Ярцев</h3>
-                  <div>Backend-разработчик</div>
+                  <h3>Den Yarchev</h3>
+                  <div>Backend-developer</div>
                 </div>
                 <div>
                   <img className="teamworker_photo" src={ellipse12} alt="Николай Морозов"/>
-                  <h3>Николай Морозов</h3>
-                  <div>Дизайнер</div>
+                  <h3>Nikolay Moroz</h3>
+                  <div>Designer</div>
                 </div>
                 <div>
                   <img className="teamworker_photo" src={ellipse13} alt="Ирина Деева" />
-                  <h3>Ирина Деева</h3>
-                  <div>Копирайтер</div>
+                  <h3>Irina Avdeeva</h3>
+                  <div>Copyrighter</div>
                 </div>
                 <div>
                   <img className="teamworker_photo" src={ellipse14} alt="Мария Стрелкова" />
-                  <h3>Мария Стрелкова</h3>
+                  <h3>Maria Strekovko</h3>
                   <div>SMM</div>
                 </div>
               </div>
-          </section>
+          </section>*/}
             <Footer />
           </div>
       </>

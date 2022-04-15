@@ -63,8 +63,8 @@ const Step3 = ({parentCallback, addStep3, currentUser}) => {
 
   return (
     <>
-      <h2>Загрузите документы</h2>
-      <p>Разворот паспорта и страницу с пропиской, а также водительское удостоверение с двух сторон</p>
+      <h2>Upload documents</h2>
+       <p>Passport spread and registration page, as well as a driver's license on both sides</p>
       <FileUploader accept=".jpg,.png,.jpeg" multiple updateFilesCb={updateUploadedFiles}/>
       <ContinueSingUp isValid={ newUserInfo.length ? "true" : "false"} isFinal="true" callback={callbackFunction}/>
     </>

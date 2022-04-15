@@ -22,10 +22,10 @@ const ContinueSingUp = (props) => {
     <div className="continue_div">
       <hr />
       <div className="continue_div_wrapper">
-        { props.isValid === "true"?
-        <button type="submit" onClick={onClickSubmit} form="step1" className="active">Продолжить</button>
-        : <button type="submit" onClick={onClickSubmit} form="step1" className="notActive">Продолжить</button>
-        }
+      { props.isValid === "true"?
+         <button type="submit" onClick={onClickSubmit} form="step1" className="active">Continue</button>
+         : <button type="submit" onClick={onClickSubmit} form="step1" className="notActive">Continue</button>
+         }
       </div>
     </div>
   )

@@ -17,71 +17,71 @@ export const CAR_OPTIONS_ARRAY = [
     {
       title: "airConditioner",
       icon: airConditioner,
-      text: "Кондиционер"
+      text: "Air Conditioner"
     },
     {
       title: "airBags",
       icon: airBags,
-      text: "Подушки безопасности"
+      text: "Air Bags"
     },
     {
       title: "aux",
       icon: aux,
-      text: "AUX-кабель"
+      text: "AUX-cable"
     },
     {
       title: "bluetooth",
       icon: bluetooth,
-      text: "Поддержка Bluetooth"
+      text: "Support Bluetooth"
     },
     {
       title: "cruiseControl",
       icon: cruiseControl,
-      text: "Круиз-контроль"
+      text: "Cruise Control"
     },
     {
       title: "multimedia",
       icon: multimedia,
-      text: "Мультимедия"
+      text: "Multimedia"
     },
     {
       title: "navigationSys",
       icon: navigationSys,
-      text: "Навигация"
+      text: "Navigation System"
     },
     {
       title: "IsofixFastening",
       icon: IsofixFastening,
-      text: "Крепления Isofix"
+      text: "Isofix Fastening"
     },
     {
       title: "heater",
       icon: heater,
-      text: "Автономный подогреватель"
+      text: "Heater"
     },
     {
       title: "seatHeater",
       icon: seatHeater,
-      text: "Подогрев сидений"
+      text: "Seat Heater"
     },
     {
       title: "seatVent",
       icon: seatVent,
-      text: "Вентиляция сидений"
+      text: "Seat Vent"
     },
     {
       title: "rearCam",
       icon: rearCam,
-      text: "Камера заднего вида"
+      text: "Rear Camera"
     },
     {
       title: "roofRack",
       icon: roofRack,
-      text: "Багажник на крыше"
+      text: "Roof Rack"
     },
     {
       title: "parktronic",
       icon: parktronic,
-      text: "Парктроники"
+      text: "Parktronic"
     },
 ]

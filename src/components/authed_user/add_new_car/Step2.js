@@ -172,7 +172,7 @@ export default function Step2(props) {
   return (
     <>
       <form id="step_2">
-        <h3>Опции автомобиля</h3>
+        <h3>Vehicle options</h3>
         <div className="form_wrapper_options">
           {CAR_OPTIONS_ARRAY.map((option, index) => {
             return (
@@ -186,16 +186,16 @@ export default function Step2(props) {
             )
           })}
         </div>
-        <h3>Дополнительные услуги</h3>
+        <h3>Additional services</h3>
         <div className="form_wrapper_additional_services">
           <div className="form_wrapper_additional_services_service">
             <div className="form_wrapper_additional_services_service_info">
-              <p className="form_wrapper_additional_services_service_info_title">Детское кресло</p>
-              <p className="form_wrapper_additional_services_service_info_desc">Сдавайте кресло в аренду и получайте дополнительный заработок</p>
+              <p className="form_wrapper_additional_services_service_info_title">Child Seat</p>
+              <p className="form_wrapper_additional_services_service_info_desc">Rent a chair and earn extra money</p>
             </div>
 
             <div className="form_wrapper_additional_services_service_price_div">
-              <p className="form_wrapper_additional_services_service_price_div_price">1 000 ₽</p>
+              <p className="form_wrapper_additional_services_service_price_div_price">1 000 UAH</p>
             </div>
 
             <div className="form_wrapper_additional_services_service_switch">
@@ -210,12 +210,12 @@ export default function Step2(props) {
 
           <div className="form_wrapper_additional_services_service">
             <div className="form_wrapper_additional_services_service_info">
-              <p className="form_wrapper_additional_services_service_info_title">Доставка автомобиля</p>
-              <p className="form_wrapper_additional_services_service_info_desc">Привезите автомобиль в удобное для арендатора место и получите доход</p>
+              <p className="form_wrapper_additional_services_service_info_title">Vehicle Delivery</p>
+              <p className="form_wrapper_additional_services_service_info_desc">Take the car to a location convenient for the renter and earn income</p>
             </div>
 
             <div className="form_wrapper_additional_services_service_price_div">
-              <p className="form_wrapper_additional_services_service_price_div_price">1 000 ₽</p>
+              <p className="form_wrapper_additional_services_service_price_div_price">1 000 UAH</p>
             </div>
 
             <div className="form_wrapper_additional_services_service_switch">
@@ -230,12 +230,12 @@ export default function Step2(props) {
 
           <div className="form_wrapper_additional_services_service">
             <div className="form_wrapper_additional_services_service_info">
-              <p className="form_wrapper_additional_services_service_info_title">Завершение аренды в любом месте</p>
-              <p className="form_wrapper_additional_services_service_info_desc">Заберите автомобиль в удобном для арендатора месте за доп. доход</p>
+              <p className="form_wrapper_additional_services_service_info_title">End lease anywhere</p>
+              <p className="form_wrapper_additional_services_service_info_desc">Pick up the car at a convenient location for the tenant for an extra charge. income</p>
             </div>
 
             <div className="form_wrapper_additional_services_service_price_div">
-              <p className="form_wrapper_additional_services_service_price_div_price">1 000 ₽</p>
+              <p className="form_wrapper_additional_services_service_price_div_price">1 000 UAH</p>
             </div>
 
             <div className="form_wrapper_additional_services_service_switch">
@@ -250,12 +250,12 @@ export default function Step2(props) {
 
           <div className="form_wrapper_additional_services_service">
             <div className="form_wrapper_additional_services_service_info">
-              <p className="form_wrapper_additional_services_service_info_title">Полный бак</p>
-              <p className="form_wrapper_additional_services_service_info_desc">Заправьте полный бак перед сдачей в аренду</p>
+              <p className="form_wrapper_additional_services_service_info_title">Full tank</p>
+              <p className="form_wrapper_additional_services_service_info_desc">Fill a full tank before renting out</p>
             </div>
 
             <div className="form_wrapper_additional_services_service_price_div">
-              <p className="form_wrapper_additional_services_service_price_div_price">1 000 ₽</p>
+              <p className="form_wrapper_additional_services_service_price_div_price">1 000 UAH</p>
             </div>
 
             <div className="form_wrapper_additional_services_service_switch">
@@ -269,7 +269,7 @@ export default function Step2(props) {
           </div>
         </div>
       </form>
-      <ContinueDiv isValid="true" buttonName="Продолжить" parentCallback={childsParentCallback} />
+      <ContinueDiv isValid="true" buttonName="Continue" parentCallback={childsParentCallback} />
     </>
   )
 }

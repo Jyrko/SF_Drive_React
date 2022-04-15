@@ -60,7 +60,7 @@ export default function CarSearchResults() {
                             e.preventDefault();
                             setIsCarCardOpen(true);
                             setCurrentCar(car);
-                          }}className="car_search_results_cars_wrapper_button">Арендовать</button>
+                          }}className="car_search_results_cars_wrapper_button">Rent</button>
                       </div>
                     )
                 })}

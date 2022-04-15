@@ -23,9 +23,9 @@ export default function Step3(props) {
 
   return (
     <>
-      <p className="uploader_description">Чем больше качественных фотографий вы загрузите, тем выше шанс того, что выберут ваш автомобиль.</p>
+      <p className="uploader_description">The more high-quality photos you upload, the higher the chance that your car will be selected.</p>
       <FileUploader accept=".jpg,.png,.jpeg" multiple updateFilesCb={updateUploadedFiles}/>
-      <ContinueDiv buttonName="Продолжить" isValid={ newCarInfo.length ? "true" : "false"} parentCallback={childsParentCallback} />
+      <ContinueDiv buttonName="Continue" isValid={ newCarInfo.length ? "true" : "false"} parentCallback={childsParentCallback} />
     </>
   )
 }

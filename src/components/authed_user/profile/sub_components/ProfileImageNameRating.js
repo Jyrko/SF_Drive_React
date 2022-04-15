@@ -15,7 +15,7 @@ export default function ProfileImageNameRating({ userId }) {
         <img src={star} />
         <img src={star} />
       </div>
-      <button className="profile_image_name_rating_wrapper_write">Написать в чат</button>
+      <button className="profile_image_name_rating_wrapper_write">Write to chat</button>
     </div>
   )
 }

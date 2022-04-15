@@ -13,14 +13,14 @@ function Confirmation({currentUser}) {
         <img src={logo}/>
       </header>
       <section className="section_wrapper">
-        <img src={confirmation} />
-        <h2>Успех!</h2>
-        <p>Вы успешно зарегистрировались. Дождитесь проверки
-        документов и начните пользоваться сервисом.</p>
-        <Link to="/">
-          <button id="return-main-page">Перейти на главную</button>
-        </Link>
-      </section>
+         <img src={confirmation} />
+         <h2>Success!</h2>
+         <p>You have successfully registered. Wait for verification
+         documents and start using the service.</p>
+         <Link to="/">
+           <button id="return-main-page">Go to main page</button>
+         </Link>
+       </section>
     </>
   )
 }

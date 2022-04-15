@@ -33,8 +33,8 @@ const Step2 = ({parentCallback, addStep2}) => {
 
   return (
     <>
-      <h2>Зашрузите Селфи</h2>
-      <p>Смотрите прямо в камеру, без солнцезащитных очков и головных уборов.</p>
+      <h2>Upload Selfie</h2>
+      <p>Look directly at the camera, without sunglasses or hats.</p>
       <div className="step2_div">
         <input ref={inputFile} type="file" accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*" id="selfie" name="selfie" onChange={handleFile}/>
         <div className="step2_div_wrapper">

@@ -23,7 +23,8 @@ export default function Messages() {
         <>
         <Header />
         <section className="messages_section">
-          <h2>Сообщения</h2>
+          <h2>Messages</h2>
+          <h4>In development...</h4>
         </section>
         </>
         : <Redirect to="/" />

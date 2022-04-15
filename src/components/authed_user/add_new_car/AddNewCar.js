@@ -38,17 +38,17 @@ const AddNewCar = (props) => {
 
   function currentStepH2(numOfStep) {
     switch (numOfStep) {
-      case 0:
-        return <h2>Новый автомобиль</h2>
-      case 1:
-        return <h2>Дополнительно</h2>
-      case 2:
-        return <h2>Фото автомобиля</h2>
-      case 3:
-        return <h2>Фото документов</h2>
-      default:
-        return <div/>
-    }
+       case 0:
+         return <h2>New car</h2>
+       case 1:
+         return <h2>Optional</h2>
+       case 2:
+         return <h2>Car photo</h2>
+       case 3:
+         return <h2>Photos of documents</h2>
+       default:
+         return<div/>
+     }
   }
 
   function currentStep(numOfStep) {
@@ -73,7 +73,7 @@ const AddNewCar = (props) => {
             (step < 4)
             ? <>
             <Header />
-            <p className="step_p">Шаг {step+1} из 4</p>
+            <p className="step_p">Step {step+1} from 4</p>
             {currentStepH2(step)}
             </>
             : <Confirmation />

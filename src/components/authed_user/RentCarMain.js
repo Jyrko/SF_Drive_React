@@ -54,7 +54,7 @@ export default function RentCarMain(props) {
     <img className="recommend_wrapper_car_background_img" src={car.images[0]} alt="merc"/>
     <div className="recommend_wrapper_car_desc">
       <p className="recommend_wrapper_car_desc_model">{car.specs.manufacturer} {car.specs.model}, {car.specs.yearOfProduction}</p>
-      <p className="recommend_wrapper_car_desc_price">от {car.rentInfo.fiveDayPlusRentPrice} ₽/сутки</p>
+      <p className="recommend_wrapper_car_desc_price">from {car.rentInfo.fiveDayPlusRentPrice} UAH/day</p>
     </div>
   </div>);
 
@@ -65,11 +65,11 @@ export default function RentCarMain(props) {
           <>
             <Header />
             <section className="rent_car_search">
-              <h2>Арендуйте Автомобиль</h2>
+              <h2>Rent a Car</h2>
               <CarSearch searchType="main"/>
             </section>
             <section className="recommend">
-                <h3>Рекомендуем поблизости</h3>
+                <h3>Recommended nearby</h3>
                 <div className="recommend_wrapper">
 
                   {carArray.map((car, index) => {

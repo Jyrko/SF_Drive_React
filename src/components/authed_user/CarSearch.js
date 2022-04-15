@@ -18,7 +18,7 @@ import { searchTheme } from '~/styles/authed_user/car_search';
 export default function CarSearch(props) {
   const [selectedStartDate, setSelectedStartDate] = useState(new Date());
   const [selectedEndDate, setSelectedEndDate] = useState(new Date());
-  const [selectedCity, setSelectedCity] = useState("Санкт-Петербург");
+  const [selectedCity, setSelectedCity] = useState("Kyiv");
 
   function onStartDatePicker(date) {
     setSelectedStartDate(date);
@@ -38,7 +38,7 @@ export default function CarSearch(props) {
         <TextField
           className="rent_car_search_form_text_input"
           variant="outlined"
-          label="Местоположение"
+          label="Location"
           value={selectedCity}
           onChange={onCityChange}
         />
@@ -52,7 +52,7 @@ export default function CarSearch(props) {
               format="MM/dd/yyyy"
               margin="normal"
               id="date-picker-inline"
-              label="Дата начала аренды"
+              label="Rental start date"
               onChange={onStartDatePicker}
               value={selectedStartDate}
               className="rent_car_search_form_date_picker"
@@ -68,7 +68,7 @@ export default function CarSearch(props) {
               format="MM/dd/yyyy"
               margin="normal"
               id="date-picker-inline"
-              label="Дата конца аренды"
+              label="End date of the lease"
               onChange={onEndDatePicker}
               value={selectedEndDate}
               className="rent_car_search_form_date_picker"
@@ -79,12 +79,12 @@ export default function CarSearch(props) {
           </MuiPickersUtilsProvider>
         </ThemeProvider>
         <FormControl variant="outlined">
-          <InputLabel id="category-select">Категория</InputLabel>
-          <Select labelId="category-select" label="Категория" defaultValue="0" variant="outlined">
-            <MenuItem value="0">Легковые</MenuItem>
+          <InputLabel id="category-select">Category</InputLabel>
+          <Select labelId="category-select" label="Category" defaultValue="0" variant="outlined">
+            <MenuItem value="0">Cars</MenuItem>
           </Select>
         </FormControl>
-        <a href="/authed/car-search-results">Найти</a>
+        <a href="/authed/car-search-results">Find</a>
       </form>
     </section>
   )

@@ -23,20 +23,20 @@ export default function MyCars(props) {
         <Header />
         { userCarsArray.length ?
           <div className="my_cars_exists">
-              <h2 className="my_cars_exists_title">Мои Автомобили</h2>
+              <h2 className="my_cars_exists_title">My cars</h2>
               <div className="my_cars_exists_wrapper">
                 {userCarsArray.map((car, index) => {
                   return <CarCardSmall key={car._id} car={car}/>
                 })}
               </div>
-              <a href="/authed/my-cars/add-new">Добавить автомобиль</a>
+              <a href="/authed/my-cars/add-new">Add a car</a>
             </div>
         : <div className="my_cars">
-            <img src={car} alt="Earn Money Image"/>
-            <h2>Зарабатывайте на своём автомобиле</h2>
-            <p>Сдавайте автомобиль в аренду и получайте заработок.</p>
-            <a href="/authed/my-cars/add-new">Добавить автомобиль</a>
-          </div>
+             <img src={car} alt="Earn Money Image"/>
+             <h2>Make money on your car</h2>
+             <p>Rent a car and earn money.</p>
+             <a href="/authed/my-cars/add-new">Add a car</a>
+           </div>
         }
     </>
   )

@@ -14,12 +14,12 @@ export default function Confirmation() {
       </header>
       <section className="section_wrapper">
         <img src={confirmation} />
-        <h2>Успех!</h2>
-        <p>Автомобиль добавлен. Дождитесь, когда указанная вами информация
-        пройдёт проверку модераторами.</p>
-        <Link to="/authed">
-          <button id="return-main-page">Перейти на главную</button>
-        </Link>
+        <h2>Success!</h2>
+         <p>The car has been added. Wait until the information you entered
+         will be checked by moderators.</p>
+         <Link to="/authenticated">
+           <button id="return-main-page">Go to main page</button>
+         </Link>
       </section>
     </>
   )

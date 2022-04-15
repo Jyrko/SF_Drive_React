@@ -184,27 +184,27 @@ export default function LeaseRegistration({ car, parentCallback}) {
       { showSuccessPage
         ?
           <SuccessPage
-            description="Вы успешно забронировали автомобиль. Дождитесь подтверждения бронирования от владельца"
+            description="You have successfully booked a car. Wait for booking confirmation from the owner"
             linkTo="/"
             image={successSvg} />
         :
         <>
           <section className="lease_registration">
             <ReturnButton onClick={onParentClickHandler} />
-            <h2>Оформление аренды</h2>
+            <h2>Registration of rent</h2>
             <div className="lease_registration_container">
               <div className="lease_registration_container_order">
                <div className="lease_registration_container_order_list">
-                  <h3 className="lease_registration_container_order_list_title">Состав заказа</h3>
+                  <h3 className="lease_registration_container_order_list_title">Order list</h3>
                   <CarCardSmallest car={car} />
                 </div>
                 <div className="lease_registration_container_order_trip_info">
-                  <h3 className="lease_registration_container_order_list_title">Информация о поездке</h3>
+                  <h3 className="lease_registration_container_order_list_title">Trip info</h3>
                   <TripInfo onChange={onTripInfoChange} tripInfo={tripInfo} minPeriodFrom={formatYmd(todayDate)} minPeriodTo={formatYmd(tommorowDate())}/>
                 </div>
 
                 <div className="lease_registration_container_order_additional_services">
-                  <h3 className="lease_registration_container_order_additional_services_title">Дополнительные услуги</h3>
+                  <h3 className="lease_registration_container_order_additional_services_title">Additional services</h3>
                   <AdditionalServices carSelectedServices={car.services} onServiceChange={onAdditionalServicesChange} />
                 </div>
                </div>
@@ -214,7 +214,7 @@ export default function LeaseRegistration({ car, parentCallback}) {
               </div>
             </div>
           </section>
-          <ContinueDiv buttonName="Перейти к оплате" isValid={isValid ? "true" : "false"} parentCallback={onChildsParentClickHandler}/>
+          <ContinueDiv buttonName="Go to the payment" isValid={isValid ? "true" : "false"} parentCallback={onChildsParentClickHandler}/>
         </>
       }
     </>

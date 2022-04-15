@@ -1,45 +1,45 @@
 export const CAR_COLORS_ARRAY = [
-  "Белый",
-  "Черный",
-  "Серый",
-  "Серебристый",
-  "Синий",
-  "Красный",
-  "Коричневый",
-  "Желтый",
-  "Зеленый"
+  "White",
+   "Black",
+   "Grey",
+   "Silver",
+   "Blue",
+   "Red",
+   "Brown",
+   "Yellow",
+   "Green"
 ]
 
 export const CAR_ENGINE_TYPE_ARRAY = [
-  "Бензин",
-  "Дизель",
-  "Газ/бензин",
-  "Электро",
-  "Пушка"
+  "Petrol",
+   "Diesel",
+   "Gas/gasoline",
+   "Electro",
+   "A gun"
 ]
 
 export const CAR_TRANSMISSION_ARRAY = [
-  "Автоматическая",
-  "Механическая",
-  "Нет"
+  "Automatic",
+  "Mechanical",
+  "No"
 ]
 
 export const CAR_VEHICLE_TYPE_ARRAY = [
-  "Седан",
-  "Универсал",
-  "Хэтчбек",
-  "Минивен",
-  "Внедорожник",
-  "Купе",
-  "Кабриолет",
-  "Пикап",
-  "Лифтбэк"
+   "Sedan",
+   "Universal",
+   "hatchback",
+   "Minivan",
+   "SUV",
+   "Coupe",
+   "Cabriolet",
+   "Pickup",
+   "Liftback"
 ]
 
 export const CAR_WHEEL_DRIVE_ARRAY = [
-  "Передний",
-  "Задний",
-  "Полный"
+  "Front",
+   "Rear",
+   "Full"
 ]
 
 

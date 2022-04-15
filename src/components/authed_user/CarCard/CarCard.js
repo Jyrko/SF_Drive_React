@@ -137,7 +137,7 @@ export default function CarCard({car, parentCallback}) {
                   <img src={carImages[1]} className="car_gallery_container_additional_image" />
                   <div className="car_gallery_container_additional_more">
                     <img src={carImages[2]} className="car_gallery_container_additional_more_image" />
-                    <button className="car_gallery_container_additional_more_btn" onClick={onShowMorePhotosHandler}>Показать ещё фото</button>
+                    <button className="car_gallery_container_additional_more_btn" onClick={onShowMorePhotosHandler}>Show more photos</button>
                   </div>
                 </div>
               </div>
@@ -148,48 +148,48 @@ export default function CarCard({car, parentCallback}) {
                 <h2 className="car_and_owner_basic_info_car_title">{`${car.specs.manufacturer} ${car.specs.model}, ${car.specs.yearOfProduction}`}</h2>
                 <div className="car_and_owner_basic_info_car_prices">
                   <div className="car_and_owner_basic_info_car_prices_price">
-                    <p className="car_and_owner_basic_info_car_prices_price_value">{car.rentInfo.regularPrice} ₽/сут.</p>
-                    <p className="car_and_owner_basic_info_car_prices_price_desc">обычная аренда</p>
+                    <p className="car_and_owner_basic_info_car_prices_price_value">{car.rentInfo.regularPrice} UAH/day</p>
+                    <p className="car_and_owner_basic_info_car_prices_price_desc">regular rent</p>
                   </div>
                   <div className="car_and_owner_basic_info_car_prices_price">
-                    <p className="car_and_owner_basic_info_car_prices_price_value">{car.rentInfo.threeDayRentPrice} ₽/сут.</p>
-                    <p className="car_and_owner_basic_info_car_prices_price_desc">при аренде за 3 дня</p>
+                    <p className="car_and_owner_basic_info_car_prices_price_value">{car.rentInfo.threeDayRentPrice} UAH/day</p>
+                    <p className="car_and_owner_basic_info_car_prices_price_desc">when renting for 3 days</p>
                   </div>
                   <div className="car_and_owner_basic_info_car_prices_price">
-                    <p className="car_and_owner_basic_info_car_prices_price_value">{car.rentInfo.fiveDayPlusRentPrice} ₽/сут.</p>
-                    <p className="car_and_owner_basic_info_car_prices_price_desc">при аренде более 5 дней</p>
+                    <p className="car_and_owner_basic_info_car_prices_price_value">{car.rentInfo.fiveDayPlusRentPrice} UAH/day</p>
+                    <p className="car_and_owner_basic_info_car_prices_price_desc">when renting more than 5 days</p>
                   </div>
                 </div>
                 <div className="car_and_owner_basic_info_owner">
                   <div className="car_and_owner_basic_info_owner_wrapper">
                     <img src={userProfileImage} className="car_and_owner_basic_info_owner_wrapper_image"/>
                     <p className="car_and_owner_basic_info_owner_wrapper_name">{username}</p>
-                    <p className="car_and_owner_basic_info_owner_wrapper_role">Владелец</p>
-                    <a href="/"> Просмотреть профиль</a>
+                    <p className="car_and_owner_basic_info_owner_wrapper_role">Owner</p>
+                    <a href="/"> View Profile</a>
                   </div>
                 </div>
               </div>
             </section>
 
             <section className="car_detailed_specs">
-              <h3 className="car_detailed_specs_title">Характеристики</h3>
+              <h3 className="car_detailed_specs_title">Characteristics</h3>
               <div className="car_detailed_specs_wrapper">
-                <p className="car_detailed_specs_wrapper_name">Год выпуска</p>
+                <p className="car_detailed_specs_wrapper_name">Year Of Production</p>
                 <p className="car_detailed_specs_wrapper_value">{car.specs.yearOfProduction}</p>
 
-                <p className="car_detailed_specs_wrapper_name">Кузов</p>
+                <p className="car_detailed_specs_wrapper_name">Vehicle Type</p>
                 <p className="car_detailed_specs_wrapper_value">{car.specs.vehicleType}</p>
 
-                <p className="car_detailed_specs_wrapper_name">Двигатель</p>
+                <p className="car_detailed_specs_wrapper_name">Engine</p>
                 <p className="car_detailed_specs_wrapper_value">{car.specs.engineDisplacement} л / {car.specs.engineHp} л.с. / {car.specs.engineType}</p>
 
-                <p className="car_detailed_specs_wrapper_name">Трансмиссия</p>
+                <p className="car_detailed_specs_wrapper_name">Translation Type</p>
                 <p className="car_detailed_specs_wrapper_value">{car.specs.transmissionType}</p>
 
-                <p className="car_detailed_specs_wrapper_name">Привод</p>
+                <p className="car_detailed_specs_wrapper_name">Wheel Drive</p>
                 <p className="car_detailed_specs_wrapper_value">{car.specs.wheelDrive}</p>
 
-                <p className="car_detailed_specs_wrapper_name">Пробег</p>
+                <p className="car_detailed_specs_wrapper_name">Mileage</p>
                 <p className="car_detailed_specs_wrapper_value">{car.specs.mileage} км</p>
               </div>
 
@@ -197,13 +197,13 @@ export default function CarCard({car, parentCallback}) {
             </section>
 
             <section className="car_options">
-              <h3 className="car_options_title">Опции</h3>
+              <h3 className="car_options_title">Options</h3>
               <CarOptions options={options_template}/>
               <img className="car_card_separator" src={separator} />
             </section>
 
             <section className="car_availability">
-              <h3 className="car_availability_title">Доступность</h3>
+              <h3 className="car_availability_title">Availability</h3>
               <div className="car_availability_pickers">
                 <ThemeProvider theme={availabilityTheme}>
                   <MuiPickersUtilsProvider utils={DateFnsUtils} locale={ruLocale} >
@@ -237,11 +237,11 @@ export default function CarCard({car, parentCallback}) {
             </section>
 
             <section className="car_reviews">
-              <h3 className="car_reviews_title">Отзывы</h3>
+              <h3 className="car_reviews_title">Reviews</h3>
               <div className="car_reviews_summary">
                 <img className="car_reviews_summary_star" src={star}/>
                 <p className="car_reviews_summary_score">4,5</p>
-                <p className="car_reviews_summary_reviews_count"> (4 отзыва)</p>
+                <p className="car_reviews_summary_reviews_count"> (4 reviews)</p>
               </div>
 
               <div className="car_reviews_wrapper">
@@ -254,13 +254,13 @@ export default function CarCard({car, parentCallback}) {
                       </div>
                     </div>
                     <div className="car_reviews_wrapper_review_content">
-                      <p>Отличный автомобиль за эти деньги. Динамики для города достаточно, расход также небольшой, не зряСолярис берут таксисты. Владелец общительный,показал и рассказал все об автомобиле. Договорились, что передадим ему машину в другом районе города! Рекомендую!</p>
+                      <p>Great car for the money. There are enough dynamics for the city, the consumption is also small, it’s not in vain that taxi drivers take Solaris. The owner is sociable, showed and told everything about the car. We agreed that we would give him a car in another area of the city! Recommend!</p>
                     </div>
                   </div>
               </div>
             </section>
           </div>
-          <ContinueDiv isValid="true" buttonName="Арендовать" parentCallback={rentCarCallback}/>
+          <ContinueDiv isValid="true" buttonName="Rent" parentCallback={rentCarCallback}/>
         </>
       }
     </>

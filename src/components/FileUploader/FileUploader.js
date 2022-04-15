@@ -135,8 +135,8 @@ const FileUploader = ({
           <label>{label}</label>
           <div ref={fileUploadArea} className="file-uploader_wrapper">
             <button className="uploader" onClick={handleUploadBtnClick}></button>
-            <p id="choose-file">Перетащите или <span>выберите {otherProps.multiple ? "файлы" : "файл"}</span></p>
-            <p id="file-restrictions">JPG или PNG, не более 30 мб</p>
+            <p id="choose-file">Drag or <span>select {otherProps.multiple ? "files" : "file"}</span></p>
+            <p id="file-restrictions">JPG or PNG, no more than 30mb</p>
           </div>
           <input type="file" ref={fileInput} title="" onChange={handleNewFileUpload} value="" {...otherProps}/>
         </section>

@@ -34,33 +34,33 @@ export default function CarOptions({ options }) {
         {options.map((option, index) => {
               switch(option) {
                 case "airConditioner":
-                  return optionCreator(airConditioner, "Кондиционер", index);
+                  return optionCreator(airConditioner, "Air Conditioner", index);
                 case "airBags":
-                  return optionCreator(airBags, "Подушки безопасности", index);
+                  return optionCreator(airBags, "Air Bags", index);
                 case "aux":
-                  return optionCreator(aux, "AUX-кабель", index);
+                  return optionCreator(aux, "AUX-cable", index);
                 case "bluetooth":
-                  return optionCreator(bluetooth, "Поддержка Bluetooth", index);
+                  return optionCreator(bluetooth, "Support Bluetooth", index);
                 case "cruiseControl":
-                  return optionCreator(cruiseControl, "Круиз-контроль", index);
+                  return optionCreator(cruiseControl, "Cruise Control", index);
                 case "multimedia":
-                  return optionCreator(multimedia, "Мультимедия", index);
+                  return optionCreator(multimedia, "Multimedia", index);
                 case "navigationSys":
-                  return optionCreator(navigationSys, "Навигация", index);
+                  return optionCreator(navigationSys, "Navigation System", index);
                 case "losfixFastening":
-                  return optionCreator(IsofixFastening, "Крепления Isofix", index);
+                  return optionCreator(IsofixFastening, "Isofix Fastening", index);
                 case "heater":
-                  return optionCreator(heater, "Автономный подогреватель", index);
+                  return optionCreator(heater, "Heater", index);
                 case "seatHeater":
-                  return optionCreator(seatHeater, "Подогрев сидений", index);
+                  return optionCreator(seatHeater, "Seat Heater", index);
                 case "seatVent":
-                  return optionCreator(seatVent, "Вентиляция сидений", index);
+                  return optionCreator(seatVent, "Seat Vent", index);
                 case "rearCam":
-                  return optionCreator(rearCam, "Камера заднего вида", index);
+                  return optionCreator(rearCam, "Rear Camera", index);
                 case "roofRack":
-                  return optionCreator(roofRack, "Багажник на крыше", index);
+                  return optionCreator(roofRack, "Roof Rack", index);
                 case "parktronic":
-                  return optionCreator(parktronic, "Парктроники", index);
+                  return optionCreator(parktronic, "Parktronic", index);
                 default:
                   return <></>
               }

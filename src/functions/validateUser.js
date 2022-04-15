@@ -2,6 +2,7 @@ import {ACCESS_TOKEN_KEY, HOSTNAME, POST_HEADERS, USER_FULLNAME_KEY, USER_ID_KEY
 
 export default async function validateUser() {
   const accessToken = sessionStorage.getItem(ACCESS_TOKEN_KEY);
+  console.log(accessToken);
   if (!accessToken) return false;
 
   const result = await fetch(`${HOSTNAME}/auth/user`, {

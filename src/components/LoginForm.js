@@ -88,20 +88,20 @@ function LoginForm(props) {
 
         { isLoginWindow
           ?
-        <div className="login_form_main_wrapper">
-          <img src={authImg}/>
-          <h2 className="login_form_main_wrapper_title">Авторизация</h2>
-          <form className="login_form_main_wrapper_form" onSubmit={onLoginFormSubmit}>
-            <input type="email" placeholder="Электронная почта" onChange={(e) => setEmail(e.target.value)}></input>
-            <div className="login_form_main_wrapper_form_password_field_div">
-              <input type="password" placeholder="Пароль" onChange={(e) => setPassword(e.target.value)}></input>
-              <button onClick={onForgotPassClick} className="forgot-pass">Забыли пароль?</button>
-            </div>
-            <button type="submit" className={isLoginActive ? "submit-btn" : "submit-btn is-inactive"}>Войти</button>
-          </form>
-          <hr />
-          <a className="login_form_main_wrapper_singup_btn"href="http://localhost:8080/singup">Зарегестрироваться</a>
-        </div>
+          <div className="login_form_main_wrapper">
+            <img src={authImg}/>
+            <h2 className="login_form_main_wrapper_title">Login</h2>
+            <form className="login_form_main_wrapper_form" onSubmit={onLoginFormSubmit}>
+              <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)}></input>
+              <div className="login_form_main_wrapper_form_password_field_div">
+                <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}></input>
+                <button onClick={onForgotPassClick} className="forgot-pass">Forgot your password?</button>
+              </div>
+              <button type="submit" className={isLoginActive ? "submit-btn" : "submit-btn is-inactive"}>Sign in</button>
+            </form>
+            <hr />
+            <a className="login_form_main_wrapper_singup_btn"href="http://localhost:8080/singup">Sign Up</a>
+          </div>
         :
         isRecoveryWindow
         ?
@@ -110,21 +110,21 @@ function LoginForm(props) {
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.0002 6.99996V8.99996H4.00016L9.50016 14.5L8.08016 15.92L0.160156 7.99996L8.08016 0.0799561L9.50016 1.49996L4.00016 6.99996H16.0002Z" fill="#1B1B1B"/></svg>
           </div>
           <div className="login_form_main_restore_wrapper">
-            <img src={recoveryImg} />
-            <h2 className="login_form_main_restore_wrapper_title">Восстановление Пароля</h2>
-            <p className="login_form_main_restore_wrapper_description">Мы отправим ссылку для восстановления пароля <br />на вашу электронную почту</p>
-            <form className="login_form_main_wrapper_form">
-              <input type="email" placeholder="Электронная почта" onChange={(e) => setEmail(e.target.value)}></input>
-              <button type="submit" className={isRecoveryActive ? "submit-btn" : "submit-btn is-inactive"} onClick={onRecoverySubmitClick}>Отправить</button>
-            </form>
-          </div>
+           <img src={recoveryImg} />
+           <h2 className="login_form_main_restore_wrapper_title">Password Recovery</h2>
+           <p className="login_form_main_restore_wrapper_description">We will send a password recovery link <br />to your email</p>
+           <form className="login_form_main_wrapper_form">
+             <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)}></input>
+             <button type="submit" className={isRecoveryActive ? "submit-btn" : "submit-btn is-inactive"} onClick={onRecoverySubmitClick}>Submit</button>
+           </form>
+         </div>
         </>
         :
         <div className="login_form_main_recovery_sent_wrapper">
-          <img src={checkEmailImg} />
-          <h2 className="login_form_main_recovery_sent_wrapper_title">Проверьте почту</h2>
-          <p className="login_form_main_recovery_sent_wrapper_description">Мы отправили письмо на вашу почту, пройдите по ссылке,<br />которую мы отправили и измените пароль.</p>
-         </div>
+         <img src={checkEmailImg} />
+         <h2 className="login_form_main_recovery_sent_wrapper_title">Check your email</h2>
+         <p className="login_form_main_recovery_sent_wrapper_description">We have sent an email to your email, please follow the link<br />that we have sent and change your password.</p>
+        </div>
       }
       </div>
     </div>

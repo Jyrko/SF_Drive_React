@@ -15,29 +15,29 @@ export default function Cheque({chequeSummary, tripInfo}) {
       <div className="cheque_rent_price">
         <div className="cheque_rent_price_with_discount">
           <p className="cheque_rent_price_with_discount_title">Стоимость Аренды</p>
-          <p className="cheque_rent_price_with_discount_value">{chequeSummary.rentPriceWithDiscount} ₽</p>
+          <p className="cheque_rent_price_with_discount_value">{chequeSummary.rentPriceWithDiscount} UAH</p>
         </div>
         <div className="cheque_rent_price_without_discount">
           <p className="cheque_rent_price_without_discount_title">{tripInfo.period_from} – {tripInfo.period_to} </p>
-          <p className="cheque_rent_price_without_discount_value">{chequeSummary.rentPriceWithoutDiscount} ₽</p>
+          <p className="cheque_rent_price_without_discount_value">{chequeSummary.rentPriceWithoutDiscount} UAH</p>
         </div>
       </div>
 
       <div className="cheque_additional_service">
         <p className="cheque_additional_service_title">Доп услуги</p>
-        <p className="cheque_additional_service_value">{chequeSummary.additionalServicesPrice} ₽</p>
+        <p className="cheque_additional_service_value">{chequeSummary.additionalServicesPrice} UAH</p>
       </div>
 
       <div className="cheque_comission">
         <p className="cheque_comission_title">Комиссия сервиса</p>
-        <p className="cheque_comission_value">1 000 ₽</p>
+        <p className="cheque_comission_value">1 000 UAH</p>
       </div>
 
       <div className="cheque_summary">
         <hr />
         <div className="cheque_summary_info">
           <p className="cheque_summary_info_title">К оплате</p>
-          <p className="cheque_summary_info_value">{chequeSummary.summary} ₽</p>
+          <p className="cheque_summary_info_value">{chequeSummary.summary} UAH</p>
         </div>
       </div>
 

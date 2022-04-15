@@ -65,9 +65,9 @@ export default function Step4(props) {
 
   return (
     <>
-      <p className="uploader_description">СТС или ПТС автомобиля, полис ОСАГО, <br />полис КАСКО (если есть)</p>
+      <p className="uploader_description">STS or PTS of the car, OSAGO policy, <br /> CASCO policy (if any)</p>
       <FileUploader accept=".jpg,.png,.jpeg" multiple updateFilesCb={updateUploadedFiles}/>
-      <ContinueDiv buttonName="Продолжить" isValid={ newCarInfo.length ? "true" : "false"} parentCallback={childsParentCallback} />
+      <ContinueDiv buttonName="Continue" isValid={ newCarInfo.length ? "true" : "false"} parentCallback={childsParentCallback} />
     </>
   )
 }

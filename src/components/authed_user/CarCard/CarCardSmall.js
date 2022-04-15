@@ -39,7 +39,7 @@ export default function CarCardSmall({car}) {
             <div className="car_card_small_wrapper_car_info_specs">
               <div className="car_card_small_wrapper_car_info_specs_engine">
                 <img src={engineIcon} alt="Engine Icon"/>
-                <p>{car.specs.engineDisplacement} л / {car.specs.engineHp} л.с. / {car.specs.engineType}</p>
+                <p>{car.specs.engineDisplacement} litr / {car.specs.engineHp} h.p. / {car.specs.engineType}</p>
               </div>
               <div className="car_card_small_wrapper_car_info_specs_gearbox">
                 <img src={gearboxIcon} alt="gearbox Icon"/>
@@ -47,7 +47,7 @@ export default function CarCardSmall({car}) {
               </div>
             </div>
             <div className="car_card_small_wrapper_car_info_price">
-              <p>{car.rentInfo.regularPrice} ₽ в сутки</p>
+              <p>{car.rentInfo.regularPrice} UAH per day</p>
             </div>
           </div>
 

@@ -64,7 +64,7 @@ export default function Step1(props) {
   const CAR_MANUFACTURER_REGEX = /^[a-zA-z -]{3,30}$/;
   const CAR_MODEL_REGEX = /^[0-9a-zA-z -\.]{2,30}$/;
   const YEAR_OF_PROUCTION_REGEX = /^[2][0][0-2][0-9]$/;
-  const LICENSE_PLATE_REGEX = /^[АВЕКМНОРСТУХ]\d{3}(?<!000)[АВЕКМНОРСТУХ]{2}\d{2,3}$/ui;
+  const LICENSE_PLATE_REGEX = /[^]*/;
   const VIN_REGEX = /^[A-HJ-NPR-Z0-9]{17}$/i;
   const COLOR_REGEX = /^[а-яА-Я-]{3,15}$/;
 
@@ -170,91 +170,91 @@ export default function Step1(props) {
   return (
     <>
       <form id="step1">
-        <h3 className="car_info">Информация об автомобиле</h3>
+      <h3 className="car_info">Car information</h3>
         <div className="form_wrapper">
           <div className="form_wrapper_container">
-            <label className="form_wrapper_container_label" htmlFor="manufactor">Марка</label>
+            <label className="form_wrapper_container_label" htmlFor="manufactor">Label</label>
             <SelectInput key="manufactor" customId="manufactor" listData={listData.CAR_MANUFACTURERS_ARRAY} onChange={(e) => onChangePattern(e, setCarManufacturer, CAR_MANUFACTURER_REGEX, setIsValidCarManufacturer)} />
 
-            <label className="form_wrapper_container_label" htmlFor="model">Модель</label>
+            <label className="form_wrapper_container_label" htmlFor="model">Model</label>
             <SelectInput key="model" customId="model" listData={carManufacturerModels} onChange={(e) => onChangePattern(e, setCarManufacturerModel, CAR_MODEL_REGEX, setIsValidCarManufacturerModel)} />
 
-            <label className="form_wrapper_container_label" htmlFor="year_of_production">Год выпуска</label>
+            <label className="form_wrapper_container_label" htmlFor="year_of_production">Year of production</label>
             <input className="form_wrapper_container_input_small" type="text" id="year_of_production" placeholder="0000" onChange={(e) => onChangePattern(e, setYearOfProduction, YEAR_OF_PROUCTION_REGEX, setIsValidYearOfProduction)} />
 
-            <label className="form_wrapper_container_label" className="form_wrapper_container_label" htmlFor="license_plate">Гос. номер</label>
+            <label className="form_wrapper_container_label" className="form_wrapper_container_label" htmlFor="license_plate">Reg. number</label>
             <input className="form_wrapper_container_input_small" type="text" id="license_plate" placeholder="A000AA000" onChange={(e) => onChangePattern(e, setLicensePlate, LICENSE_PLATE_REGEX, setIsValidLicensePlate)}/>
 
             <label className="form_wrapper_container_label" htmlFor="vin">VIN</label>
             <input className="form_wrapper_container_input_large" type="text" id="vin" placeholder="ABCD1234567890" onChange={(e) => onChangePattern(e, setVin, VIN_REGEX, setIsValidVin)}/>
 
-            <label className="form_wrapper_container_label" htmlFor="car_color">Цвет</label>
+            <label className="form_wrapper_container_label" htmlFor="car_color">Color</label>
             <SelectInput key="car_color" customId="car_color" listData={listData.CAR_COLORS_ARRAY} onChange={(e) => onChangePattern(e, setColor, COLOR_REGEX, setIsValidColor)} />
           </div>
         </div>
 
         <div className="form_wrapper">
           <div className="form_wrapper_container">
-            <label className="form_wrapper_container_label" htmlFor="engine_type">Тип двигателя</label>
+            <label className="form_wrapper_container_label" htmlFor="engine_type">Engine type</label>
             <SelectInput key="engine_type" customId="engine_type" listData={listData.CAR_ENGINE_TYPE_ARRAY} onChange={(e) => onChangePattern(e, setEngineType, ENGINE_TYPE_REGEX, setIsValidEngineType)} />
 
-            <label className="form_wrapper_container_label" htmlFor="engine_volume">Объем (л)</label>
-            <input className="form_wrapper_container_input_small" type="text" id="engine_volume" placeholder="1,0л" onChange={(e) => onChangePattern(e, setEngineVolume, ENGINE_VOLUME_REGEX, setIsValidEngineVolume)}/>
+            <label className="form_wrapper_container_label" htmlFor="engine_volume">Volume (L)</label>
+            <input className="form_wrapper_container_input_small" type="text" id="engine_volume" placeholder="1.0l" onChange={(e) => onChangePattern(e, setEngineVolume, ENGINE_VOLUME_REGEX, setIsValidEngineVolume)}/>
 
-            <label className="form_wrapper_container_label" htmlFor="engine_hp">Мощность (л.с)</label>
-            <input className="form_wrapper_container_input_small" type="text" id="engine_hp" placeholder="100 л.c." onChange={(e) => onChangePattern(e, setEngineHP, ENGINE_HP_REGEX, setIsValidEngineHP)}/>
+            <label className="form_wrapper_container_label" htmlFor="engine_hp">Power (hp)</label>
+            <input className="form_wrapper_container_input_small" type="text" id="engine_hp" placeholder="100 HP" onChange={(e) => onChangePattern(e, setEngineHP, ENGINE_HP_REGEX, setIsValidEngineHP)}/>
 
-            <label className="form_wrapper_container_label" htmlFor="transmission">Трансмиссия</label>
+            <label className="form_wrapper_container_label" htmlFor="transmission">Transmission</label>
             <SelectInput key="transmission" customId="transmission" listData={listData.CAR_TRANSMISSION_ARRAY} onChange={(e) => onChangePattern(e, setTransmisson, COLOR_REGEX, setIsValidTransmisson)} />
 
-            <label className="form_wrapper_container_label" htmlFor="wheel_drive">Привод</label>
+            <label className="form_wrapper_container_label" htmlFor="wheel_drive">Drive</label>
             <SelectInput key="wheel_drive" customId="wheel_drive" listData={listData.CAR_WHEEL_DRIVE_ARRAY} onChange={(e) => onChangePattern(e, setWheelDrive, WHEEL_DRIVE_REGEX, setIsValidWheelDrive)}/>
 
-            <label className="form_wrapper_container_label" htmlFor="vehicle_type">Тип кузова</label>
+            <label className="form_wrapper_container_label" htmlFor="vehicle_type">Body Type</label>
             <SelectInput key="vehicle_type" customId="vehicle_type" listData={listData.CAR_VEHICLE_TYPE_ARRAY} onChange={(e) => onChangePattern(e, setVehicleType, VEHICLE_TYPE_REGEX, setIsValidVehicleType)} />
           </div>
         </div>
 
         <div className="form_wrapper">
           <div className="form_wrapper_container">
-            <label className="form_wrapper_container_label" htmlFor="milage">Пробег (км)</label>
-            <input className="form_wrapper_container_input_small" type="text" id="milage" placeholder="10 000км" onChange={(e) => onChangePattern(e, setMileage, MILEAGE_REGEX, setIsValidMileage)}/>
+            <label className="form_wrapper_container_label" htmlFor="milage">Mileage (km)</label>
+            <input className="form_wrapper_container_input_small" type="text" id="milage" placeholder="10,000km" onChange={(e) => onChangePattern(e, setMileage, MILEAGE_REGEX, setIsValidMileage)}/>
 
-            <label className="form_wrapper_container_label" htmlFor="pts_serial">Серия и номер ПТС</label>
-            <input className="form_wrapper_container_input_large" type="text" id="pts_serial" placeholder="00 АА 000000" onChange={(e) => onChangePattern(e, setPtsSerial, PTS_STS_OSAGO_KASKO_REGEX, setIsValidPtsSerial)}/>
+            <label className="form_wrapper_container_label" htmlFor="pts_serial">PTS series and number</label>
+            <input className="form_wrapper_container_input_large" type="text" id="pts_serial" placeholder="00 AA 000000" onChange={(e) => onChangePattern(e, setPtsSerial, PTS_STS_OSAGO_KASKO_REGEX, setIsValidPtsSerial)}/>
 
-            <label className="form_wrapper_container_label" htmlFor="sts_serial">Серия и номер СТС</label>
-            <input className="form_wrapper_container_input_large" type="text" id="sts_serial" placeholder="00 АА 000000" onChange={(e) => onChangePattern(e, setStsSerial, PTS_STS_OSAGO_KASKO_REGEX, setIsValidStsSerial)}/>
+            <label className="form_wrapper_container_label" htmlFor="sts_serial">CTS series and number</label>
+            <input className="form_wrapper_container_input_large" type="text" id="sts_serial" placeholder="00 AA 000000" onChange={(e) => onChangePattern(e, setStsSerial, PTS_STS_OSAGO_KASKO_REGEX, setIsValidStsSerial)}/>
           </div>
         </div>
 
-        <h3 className="rent_price">Стоимость аренды</h3>
+        <h3 className="rent_price">Rent price</h3>
         <div className="form_wrapper form_wrapper_custom">
           <div className="form_wrapper_container form_wrapper_container_custom">
-            <label className="form_wrapper_container_label" htmlFor="regular_price">Обычная цена (₽/сутки)</label>
-            <input className="form_wrapper_container_input_small" type="text" id="regular_price" placeholder="1 500 ₽/сутки" onChange={(e) => onChangePattern(e, setRegularPrice, RENT_PRICE_REGEX, setIsValidRegularPrice)} />
+            <label className="form_wrapper_container_label" htmlFor="regular_price">Regular price (UAH/night)</label>
+            <input className="form_wrapper_container_input_small" type="text" id="regular_price" placeholder="1 500 UAH/day" onChange={(e) => onChangePattern(e, setRegularPrice, RENT_PRICE_REGEX, setIsValidRegularPrice)} />
 
-            <label className="form_wrapper_container_label" htmlFor="3day_price">Цена при аренде на 3 дня (₽/сутки)</label>
-            <input className="form_wrapper_container_input_small" type="text" id="3day_price" placeholder="1 400 ₽/сутки" onChange={(e) => onChangePattern(e, setThreedayRentPrice, RENT_PRICE_REGEX, setIsValidThreedayRentPrice)} />
+            <label className="form_wrapper_container_label" htmlFor="3day_price">Rent price for 3 days (UAH/day)</label>
+            <input className="form_wrapper_container_input_small" type="text" id="3day_price" placeholder="1 400 UAH/day" onChange={(e) => onChangePattern(e, setThreedayRentPrice, RENT_PRICE_REGEX, setIsValidThreedayRentPrice)} />
 
-            <label className="form_wrapper_container_label" htmlFor="5plus_price">Цена при аренде более 5 дней (₽/сутки)</label>
-            <input className="form_wrapper_container_input_small" type="text" id="5plus_price" placeholder="1 300 ₽/сутки" onChange={(e) => onChangePattern(e, setFiveDayRentPrice, RENT_PRICE_REGEX, setIsValidFiveDayRentPrice)} />
+            <label className="form_wrapper_container_label" htmlFor="5plus_price">Price for renting more than 5 days (UAH/day)</label>
+            <input className="form_wrapper_container_input_small" type="text" id="5plus_price" placeholder="1 300 UAH/day" onChange={(e) => onChangePattern(e, setFiveDayRentPrice, RENT_PRICE_REGEX, setIsValidFiveDayRentPrice)} />
           </div>
         </div>
 
-        <h3 className="car_insurance">Страхование</h3>
-        <div className="form_wrapper">
-          <div className="form_wrapper_container">
-            <label className="form_wrapper_container_label" htmlFor="osago">Полис ОСАГО</label>
-            <input className="form_wrapper_container_input_large" type="text" id="osago" placeholder="XXX 000000000" onChange={(e) => onChangePattern(e, setOsago, PTS_STS_OSAGO_KASKO_REGEX, setIsValidOsago)}/>
+        <h3 className="car_insurance">Insurance</h3>
+         <div className="form_wrapper">
+           <div className="form_wrapper_container">
+             <label className="form_wrapper_container_label" htmlFor="osago">OSAGO Policy</label>
+             <input className="form_wrapper_container_input_large" type="text" id="osago" placeholder="XXX 000000000" onChange={(e) => onChangePattern(e, setOsago, PTS_STS_OSAGO_KASKO_REGEX, setIsValidOsago)}/>
 
-            <label className="form_wrapper_container_label" htmlFor="kasko">Полис КАСКО (если есть)</label>
-            <input className="form_wrapper_container_input_large" type="text" id="kasko" placeholder="XXX 000000000" onChange={(e) => onChangePattern(e, setKasko, PTS_STS_OSAGO_KASKO_REGEX, setIsValidKasko)}/>
-          </div>
-        </div>
-      </form>
+             <label className="form_wrapper_container_label" htmlFor="kasko">KASKO policy (if any)</label>
+             <input className="form_wrapper_container_input_large" type="text" id="kasko" placeholder="XXX 000000000" onChange={(e) => onChangePattern(e, setKasko, PTS_STS_OSAGO_KASKO_REGEX, setIsValidKasko)}/>
+           </div>
+         </div>
+       </form>
       { checkIfValidStep1() ?
-        <ContinueDiv isValid="true" buttonName="Продолжить" parentCallback={childsParentCallback}/> : <ContinueDiv buttonName="Продолжить" isValid="false"/> }
+        <ContinueDiv isValid="true" buttonName="Continue" parentCallback={childsParentCallback}/> : <ContinueDiv buttonName="Continue" isValid="false"/> }
     </>
   )
 }

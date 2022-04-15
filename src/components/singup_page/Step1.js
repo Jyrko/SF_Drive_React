@@ -121,61 +121,61 @@ const Step1 = ({parentCallback, addStep1}) => {
   return (
     <>
     <form id="step1_singup">
-      <h3>Информация о вас</h3>
-      <div className="form_wrapper_singup">
-        <div>
-          <label htmlFor="fullname">ФИО</label>
-          <label htmlFor="birthday">Дата рождения</label>
-          <label htmlFor="email">Электронная почта</label>
-          <label htmlFor="phone">Телефон</label>
-        </div>
+      <h3>Information about you</h3>
+         <div className="form_wrapper_singup">
+           <div>
+             <label htmlFor="fullname">Name</label>
+             <label htmlFor="birthday">Date of birth</label>
+             <label htmlFor="email">Email</label>
+             <label htmlFor="phone">Phone</label>
+           </div>
 
-        <div>
-          <input type="text" id="fullname" name="fullname" onChange={(e) => onChangePattern(e, setFullname, FULLNAME_REGEX, setIsValidFullname)} placeholder="ФИО полностью" />
-          <input type="date" id="birthday" name="birthday" onChange={(e) => onBirthdayDateChange(e)} value={birthday} />
-          <input type="email" id="email" name="email" onChange={(e) => onChangePattern(e, setEmail, EMAIL_REGEX, setIsValidEmail)} placeholder="mail@example.com" />
-          <input type="tel" id="phone" name="phone" onChange={(e) => onChangePattern(e, setPhone, PHONE_REGEX, setIsValidPhone)} placeholder="+38 000 000 00 00" />
-        </div>
+         <div>
+            <input type="text" id="fullname" name="fullname" onChange={(e) => onChangePattern(e, setFullname, FULLNAME_REGEX, setIsValidFullname)} placeholder="Full name" />
+            <input type="date" id="birthday" name="birthday" onChange={(e) => onBirthdayDateChange(e)} value={birthday} />
+            <input type="email" id="email" name="email" onChange={(e) => onChangePattern(e, setEmail, EMAIL_REGEX, setIsValidEmail)} placeholder="mail@example.com" />
+            <input type="tel" id="phone" name="phone" onChange={(e) => onChangePattern(e, setPhone, PHONE_REGEX, setIsValidPhone)} placeholder="+38 000 000 00 00" />
+          </div>
       </div>
 
-      <h3>Паспорт</h3>
+      <h3>Passport</h3>
       <div className="form_wrapper_singup">
-        <div>
-          <label htmlFor="serial-passport">Серия и номер</label>
-          <label htmlFor="date-of-issue-passport">Дата выдачи</label>
-          <label htmlFor="issuing-authority">Кем выдан</label>
+         <div>
+           <label htmlFor="serial-passport">Serial and number</label>
+           <label htmlFor="date-of-issue-passport">Date of issue</label>
+           <label htmlFor="issuing-authority">Issued By</label>
+         </div>
+
+         <div>
+           <input type="text" id="serial-passport" name="serial-passport" onChange={(e) => onChangePattern(e, setSerialPassport, SERIAL_REGEX, setIsValidSerialPassport)} placeholder="000 000000" />
+           <input type="date" id="date-of-issue-passport" name="date-of-issue-passport" onChange={(e) => setDateOfIssuePassport(e.target.value)} value={dateOfIssuePassport } />
+           <input type="text" id="issuing-authority" name="issuing-authority" onChange={(e) => onChangePattern(e, setIssuingAuthority, ISSUING_AUTHORITY_REGEX, setIsValidIssuingAuthority)} placeholder="Issuing Authority" />
+         </div>
+       </div>
+
+       <h3>Driver's license</h3>
+        <div className="form_wrapper_singup">
+          <div>
+            <label htmlFor="serial-license">Serial and number</label>
+            <label htmlFor="date-of-issue-license">Issue date</label>
+          </div>
+          <div>
+            <input type="text" id="serial-license" name="serial-license" onChange={(e) => onChangePattern(e, setSerialLicense, SERIAL_REGEX, setIsValidSerialLicense)} placeholder="000 000000" />
+            <input type="date" id="date-of-issue-license" name="date-of-issue-license" onChange={(e) => setDateOfIssueLicense(e.target.value)} value={dateOfIssueLicense } />
+          </div>
         </div>
 
-        <div>
-          <input type="text" id="serial-passport" name="serial-passport" onChange={(e) => onChangePattern(e, setSerialPassport, SERIAL_REGEX, setIsValidSerialPassport)} placeholder="000 000000" />
-          <input type="date" id="date-of-issue-passport" name="date-of-issue-passport" onChange={(e) => setDateOfIssuePassport(e.target.value)} value={dateOfIssuePassport} />
-          <input type="text" id="issuing-authority" name="issuing-authority" onChange={(e) => onChangePattern(e, setIssuingAuthority, ISSUING_AUTHORITY_REGEX, setIsValidIssuingAuthority)} placeholder="Название органа выдавшего паспорт" />
-        </div>
-      </div>
-
-      <h3>Водительское удостоверение</h3>
-      <div className="form_wrapper_singup">
-        <div>
-          <label htmlFor="serial-license">Серия и номер</label>
-          <label htmlFor="date-of-issue-license">Дата выдачи</label>
-        </div>
-        <div>
-          <input type="text" id="serial-license" name="serial-license" onChange={(e) => onChangePattern(e, setSerialLicense, SERIAL_REGEX, setIsValidSerialLicense)} placeholder="000 000000" />
-          <input type="date" id="date-of-issue-license" name="date-of-issue-license" onChange={(e) => setDateOfIssueLicense(e.target.value)} value={dateOfIssueLicense} />
-        </div>
-      </div>
-
-      <h3>Пароль</h3>
-      <div className="form_wrapper_singup">
-        <div>
-          <label htmlFor="password">Придумайте пароль</label>
-          <label htmlFor="password-reapeat">Повторить пароль</label>
-        </div>
-        <div className="form_wrapper_password">
-          <input type="password" id="password" name="password" onChange={(e) => onChangePattern(e, setPassword, PASSWORD_REGEX, setIsValidPassword)} placeholder="••••••••••••••••••••••••" autoComplete="on"/>
-          <input type="password" id="password-reapeat" name="password-reapeat" onChange={(e) => onPasswordRepeatChange(e)} placeholder="••••••••••••••••••••••••" autoComplete="on"/>
-        </div>
-      </div>
+        <h3>Password</h3>
+         <div className="form_wrapper_singup">
+           <div>
+             <label htmlFor="password">Create a password</label>
+             <label htmlFor="password-reapeat">Repeat Password</label>
+           </div>
+           <div className="form_wrapper_password">
+             <input type="password" id="password" name="password" onChange={(e) => onChangePattern(e, setPassword, PASSWORD_REGEX, setIsValidPassword)} placeholder="••••••••••• •••••••••••••" autoComplete="on"/>
+             <input type="password" id="password-reapeat" name="password-reapeat" onChange={(e) => onPasswordRepeatChange(e)} placeholder="••••••••••••• •••••••••••" autoComplete="on"/>
+           </div>
+         </div>
     </form>
     { validateData() ?
       <ContinueSingUp isValid="true" form="step1" callback={callbackFunction}/> : <ContinueSingUp isValid="false"/>}

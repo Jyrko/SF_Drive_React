@@ -8,10 +8,10 @@ function SuccessPage({description, image, linkTo}) {
     <>
       <section className="section_wrapper">
         <img src={image} />
-        <h2>Успех!</h2>
+        <h2>Success!</h2>
         <p>{description}</p>
         <Link to={linkTo}>
-          <button id="return-main-page">Перейти на главную</button>
+          <button id="return-main-page">Go to main page</button>
         </Link>
       </section>
     </>

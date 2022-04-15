@@ -20,7 +20,7 @@ export default function CarCardSmallest({car}) {
           <p>{car.specs.manufacturer} {car.specs.model}, {car.specs.yearOfProduction}</p>
         </div>
         <div className="car-card-smallest_info_div_price">
-          <p>{car.rentInfo.regularPrice} ₽ в сутки</p>
+          <p>{car.rentInfo.regularPrice} UAH в сутки</p>
         </div>
       </div>
     </div>
