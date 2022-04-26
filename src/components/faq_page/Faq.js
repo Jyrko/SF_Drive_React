@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import faq from "~/assets/svg/FAQ.svg";
 
@@ -35,7 +35,7 @@ const Faq = (props) => {
   return (
     <>
     { isLogined ?
-      <Redirect to="/authed" />
+      <Route path="*" element={<Navigate replace to="/authed" />} />
       :
       <>
       <Header />

@@ -53,18 +53,18 @@ const Header = (props) => {
       <ul>
         { validUser ?
           <>
-         <li><a href="http://localhost:8080/authed" className="nav_default_link">Reservations</a></li>
-         <li><a href="http://localhost:8080/authed/my-cars" className="nav_default_link">My Cars</a></li>
-         <li><a href="http://localhost:8080/authed/messages" className="nav_default_link">Messages</a></li>
+         <li><a href="/authed" className="nav_default_link">Reservations</a></li>
+         <li><a href="/authed/my-cars" className="nav_default_link">My Cars</a></li>
+         <li><a href="/authed/messages" className="nav_default_link">Messages</a></li>
          <Link to="/authed/my-profile">
            <img className="profile_image" src={userImageUrl}/>
          </Link>
          </>
          :
          <>
-         <li><a href="http://localhost:8080/" className="nav_default_link">About Us</a></li>
-         <li><a href="http://localhost:8080/home" className="nav_default_link">Conditions</a></li>
-         <li><a href="http://localhost:8080/faq" className="nav_default_link">FAQ</a></li>
+         <li><a href="/" className="nav_default_link">About Us</a></li>
+         <li><a href="/home" className="nav_default_link">Conditions</a></li>
+         <li><a href="/faq" className="nav_default_link">FAQ</a></li>
          <button id="login_button" onClick={onLoginButtonCLick}>Login</button>
          </>
 
@@ -89,11 +89,11 @@ const Header = (props) => {
         validUser ?
         <>
           <nav>
-              <a href="http://localhost:8080/authed" className="mobile_navigation_nav_default_link">Reservations</a>
+              <a href="/authed" className="mobile_navigation_nav_default_link">Reservations</a>
               <hr />
-              <a href="http://localhost:8080/authed/my-cars" className="mobile_navigation_nav_default_link">My Cars</a>
+              <a href="/authed/my-cars" className="mobile_navigation_nav_default_link">My Cars</a>
               <hr />
-              <a href="http://localhost:8080/authed/messages" className="mobile_navigation_nav_default_link">Messages</a>
+              <a href="/authed/messages" className="mobile_navigation_nav_default_link">Messages</a>
           </nav>
           <Link to="authed/my-profile">
             <div className="profile-container">
@@ -106,11 +106,11 @@ const Header = (props) => {
           :
           <>
           <nav>
-              <a href="http://localhost:8080/" className="mobile_navigation_nav_default_link">About us</a>
+              <a href="/" className="mobile_navigation_nav_default_link">About us</a>
               <hr />
-              <a href="http://localhost:8080/home" className="mobile_navigation_nav_default_link">Conditions</a>
+              <a href="/home" className="mobile_navigation_nav_default_link">Conditions</a>
               <hr />
-              <a href="http://localhost:8080/faq" className="mobile_navigation_nav_default_link">FAQ</a>
+              <a href="/faq" className="mobile_navigation_nav_default_link">FAQ</a>
           </nav>
           <button id="login_button" onClick={onLoginButtonCLick}>Login</button>
           </>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import Loading from '~/components/Loading';
 import CarSearch from './CarSearch';
@@ -81,7 +81,7 @@ export default function RentCarMain(props) {
             <Footer />
           </>
           : <CarCard car={selectedCar} parentCallback={childReturnToHome}/>
-      : <Redirect to="/" />
+      : <Route path="*" element={<Navigate replace to="/" />} />
     }
     </Loading>
   )

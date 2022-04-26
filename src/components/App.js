@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Switch} from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import About from './about_us_page/About';
 import Faq from './faq_page/Faq';
@@ -25,41 +25,20 @@ const App = (props) => {
 
   return (
     <div className="App">
-      <Switch>
-        <Route path="/authed/my-cars/add-new">
-          <AddNewCar />
-        </Route>
-        <Route path="/authed/car-search-results">
-          <CarSearchResults />
-        </Route>
-        <Route path="/authed/land-lord-profile">
-          <LandLordProfile />
-        </Route>
-        <Route path="/authed/messages">
-          <Messages />
-        </Route>
-        <Route path="/authed/my-cars">
-          <MyCars />
-        </Route>
-        <Route path="/authed">
-          <RentCarMain />
-        </Route>
-        <Route path="/singup">
-          <Singup />
-        </Route>
-        <Route path="/faq">
-          <Faq />
-        </Route>
-        <Route path="/home">
-          <Home />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/">
-          <About />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/authed/my-cars/add-new" element={<AddNewCar />} />
+        <Route path="/authed/car-search-results" element={<CarSearchResults />} />
+        <Route path="/authed/land-lord-profile" element={<LandLordProfile />} />
+        <Route path="/authed/messages" element={<Messages/>} />
+        <Route path="/authed/my-cars" element={<MyCars />} />
+        <Route path="/authed" element={<RentCarMain />} />
+        <Route path="/singup" element={<Singup />} />
+
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/home" element={<Home />}/>
+        <Route path="/about" element={<About />} />
+        <Route path="/" element={<About />} />
+      </Routes>
     </div>
   )
 }

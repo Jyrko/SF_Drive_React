@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import validateUser from '~/functions/validateUser';
 
@@ -19,7 +19,7 @@ export default function AuthedWrapper(props) {
     <>
       { isValidUser
         ? props.children
-        : <Redirect to="/" />}
+        : <Route path="*" element={<Navigate replace to="/" />} />}
     </>
   )
 }

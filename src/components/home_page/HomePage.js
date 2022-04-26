@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import Header from "../nav/Header";
 import Footer from "../Footer";
@@ -35,7 +35,7 @@ function HomePage(props) {
   return (
     <>
       { isLogined ?
-        <Redirect to="/authed" />
+        <Route path="*" element={<Navigate replace to="/authed" />} />
         :
         <>
         <Header />

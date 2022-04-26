@@ -77,7 +77,7 @@ const AddNewCar = (props) => {
             {currentStepH2(step)}
             </>
             : <Confirmation />
-          : <Redirect to="/" />
+          : <Route path="*" element={<Navigate replace to="/" />} />
         }
         { (step === 0)
           ? <Step1 parentCallback={callbackFunction}/>

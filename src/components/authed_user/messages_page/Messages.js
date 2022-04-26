@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import Loading from '~/components/Loading';
 import Header from '~/components/nav/Header';
@@ -27,7 +27,7 @@ export default function Messages() {
           <h4>In development...</h4>
         </section>
         </>
-        : <Redirect to="/" />
+        : <Route path="*" element={<Navigate replace to="/" />} />
       }
     </Loading>
   )

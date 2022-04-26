@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import Loading from '~/components/Loading';
 import Header from '~/components/nav/Header';
@@ -68,7 +68,7 @@ export default function CarSearchResults() {
             </div>
           </div>
         </>
-        : <Redirect to="/" />
+        : <Route path="*" element={<Navigate replace to="/" />} />
       }
       <Footer />
       </>
