@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 import Loading from '~/components/Loading';
 import Header from '~/components/nav/Header';
@@ -26,7 +26,7 @@ export default function Messages() {
           <h2>Messages</h2>
         </section>
         </>
-        : <Route path="*" element={<Navigate replace to="/" />} />
+        : <Navigate replace to="/" />
       }
     </Loading>
   )

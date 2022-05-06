@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Navigate } from 'react-router-dom';
 
 import Header from '../nav/Header';
 import Footer from '../Footer';
@@ -27,7 +27,7 @@ const About = (props) => {
   return (
     <>
       { isLogined ?
-        <Route path="*" element={<Navigate replace to="/authed" />} />
+        <Navigate replace to="/authed" />
         :
         <>
           <div className="About">

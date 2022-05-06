@@ -1,4 +1,4 @@
-export const HOSTNAME = "http://localhost:8000";
+export const HOSTNAME = "http://31.131.21.56:8000"; // local test on http://localhost:8000  prod - http://31.131.21.56:8000
 
 //JWT Storage
 export const ACCESS_TOKEN_KEY = "accessToken";

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+import { HOSTNAME } from "../../../constants";
 import SClasse from '~/assets/img/rent_car_search_page/recommended_cars/merc.jpg'
 import star from "~/assets/svg/authed/star.svg";
 import engineIcon from "~/assets/svg/authed/engine.svg";
@@ -15,7 +16,7 @@ export default function CarCardSmall({car}) {
   useEffect(() => {
     console.log(car);
     if (car.images) {
-      setCarImage(car.images[0]);
+      setCarImage(HOSTNAME + car.images[0]);
     }
   }, [])
 
