@@ -66,12 +66,12 @@ export default function Step1(props) {
   const YEAR_OF_PROUCTION_REGEX = /^[2][0][0-2][0-9]$/;
   const LICENSE_PLATE_REGEX = /[^]*/;
   const VIN_REGEX = /^[A-HJ-NPR-Z0-9]{17}$/i;
-  const COLOR_REGEX = /^[а-яА-Я-]{3,15}$/;
+  const COLOR_REGEX = /^[а-яА-Я-a-zA-Z]{3,15}$/;
 
   const ENGINE_TYPE_REGEX = COLOR_REGEX;
   const ENGINE_VOLUME_REGEX = /^(\d{1,2})[,\.](\d{1,2})$/;
   const ENGINE_HP_REGEX = /^\d{2,4}$/;
-  const WHEEL_DRIVE_REGEX = /^[a-яА-Я]{4,14}$/;
+  const WHEEL_DRIVE_REGEX = /^[a-яА-Яa-zA-Z]{4,14}$/;
   const MILEAGE_REGEX = /^(\d{1,3})[ -]?(\d{1,3})?$/;
   const VEHICLE_TYPE_REGEX = COLOR_REGEX;
 

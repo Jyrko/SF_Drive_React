@@ -17,7 +17,7 @@ export default function Confirmation() {
         <h2>Success!</h2>
          <p>The car has been added. Wait until the information you entered
          will be checked by moderators.</p>
-         <Link to="/authenticated">
+         <Link to="/authed">
            <button id="return-main-page">Go to main page</button>
          </Link>
       </section>

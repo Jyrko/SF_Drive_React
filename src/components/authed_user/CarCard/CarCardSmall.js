@@ -16,7 +16,7 @@ export default function CarCardSmall({car}) {
   useEffect(() => {
     console.log(car);
     if (car.images) {
-      setCarImage(HOSTNAME + car.images[0]);
+      setCarImage(car.images[0]);
     }
   }, [])
 

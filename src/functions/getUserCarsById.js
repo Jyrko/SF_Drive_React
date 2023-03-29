@@ -1,4 +1,5 @@
 import {HOSTNAME, ACCESS_TOKEN_KEY} from '~/constants';
+import editImagesToCurrentHost from "~/functions/additional/editImagesToCurrentHost";
 
 export default async function getUserBasicInfoById(id) {
   const accessToken = sessionStorage.getItem(ACCESS_TOKEN_KEY);
@@ -20,5 +21,9 @@ export default async function getUserBasicInfoById(id) {
     return [];
   }
 
+  if (Array.isArray(result)) {
+    const carListUpdated = editImagesToCurrentHost(result);
+    return carListUpdated;
+  }
   return result;
 }

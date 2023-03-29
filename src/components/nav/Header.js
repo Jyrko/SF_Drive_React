@@ -56,7 +56,7 @@ const Header = (props) => {
          <li><a href="/authed" className="nav_default_link">Reservations</a></li>
          <li><a href="/authed/my-cars" className="nav_default_link">My Cars</a></li>
          <li><a href="/authed/messages" className="nav_default_link">Messages</a></li>
-         <Link to="/authed/my-profile">
+         <Link to="/authed/">
            <img className="profile_image" src={userImageUrl}/>
          </Link>
          </>

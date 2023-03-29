@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Redirect} from 'react-router-dom';
+import {Redirect, Navigate} from 'react-router-dom';
 
 import Header from '~/components/nav/Header';
 
@@ -77,7 +77,7 @@ const AddNewCar = (props) => {
             {currentStepH2(step)}
             </>
             : <Confirmation />
-          : <Route path="*" element={<Navigate replace to="/" />} />
+          : <Navigate replace to="/" />
         }
         { (step === 0)
           ? <Step1 parentCallback={callbackFunction}/>
